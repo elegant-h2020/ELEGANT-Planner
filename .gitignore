@@ -9,5 +9,3 @@ pyvenv.cfg
 /gpu_new
 /gpu_model_minmax
 /gpu_model_unscaled
-/cpu_model_standard/CPUexec_lr0001_nl1_b32_crossruns_nopool_newparametrized_relu_scale.txt
-/gpu_model_standard/GPUexec_lr0001_nl1_b32_crossruns_nopool_newparametrized_relu_scale.txt
