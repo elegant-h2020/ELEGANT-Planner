@@ -5,3 +5,7 @@
 /lib64
 /__pycache__
 pyvenv.cfg
+/cpu_new
+/gpu_new
+/gpu_model_minmax
+/gpu_model_unscaled

@@ -141,15 +141,15 @@ class TransformerConv(MessagePassing):
                 out += x_r
 
         if isinstance(return_attention_weights, bool):
-            print(f'You want to return attention weigths')
-            print(f'give the shape of out {out.shape}')
+            #print(f'You want to return attention weigths')
+            #print(f'give the shape of out {out.shape}')
             assert alpha is not None
             if isinstance(edge_index, Tensor):
                 return out, (edge_index, alpha)
             elif isinstance(edge_index, SparseTensor):
                 return out, edge_index.set_value(alpha, layout='coo')
         else:
-            print(f'out inside the transf conv layer {out.shape}')
+            #print(f'out inside the transf conv layer {out.shape}')
             return out
         
     """

@@ -37,7 +37,12 @@ import programl as pg
 
 def feature_scale(data, scale_type):
     if scale_type == 'minmax':
-        scale = MinMaxScaler()
+        #scale = MinMaxScaler()
+        data = data.squeeze().tolist()
+        Max = max(data)
+        Min = min(data)
+        scaled = (np.asarray(data) - Min) / (Max - Min)
+        return scaled, Max, Min
     elif scale_type == 'standardization':
         data = data.squeeze().tolist()
         meand = mean(data)
@@ -45,7 +50,7 @@ def feature_scale(data, scale_type):
         std = stdev(data)
         print(f'std is {std}')
         scaled = (np.asarray(data) - meand) / std
-    return scaled, meand, std
+        return scaled, meand, std
     
 
 # I want to load the files containing all the llvm ir codes.

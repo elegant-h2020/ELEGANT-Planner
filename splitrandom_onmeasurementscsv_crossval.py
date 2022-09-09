@@ -75,7 +75,7 @@ def random_test_trainval_on_rows(d_measurements):
 def kfolds_split(df_trainval):
     shuffled = df_trainval.sample(frac=1) # sample(frac=1) shuffle the rows of df
     k1, k2, k3, k4, k5 = np.array_split(shuffled, 5) # np.array_split split it into parts that have equal size
-    print(f'k1 is {k1.shape}, k2 {k2.shape}')
+    #print(f'k1 is {k1.shape}, k2 {k2.shape}')
     return k1, k2, k3, k4, k5
 
 

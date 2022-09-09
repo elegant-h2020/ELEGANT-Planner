@@ -4,7 +4,37 @@ import networkx as nx
 import itertools
 
 
-def create_task_performance_statistics(num_tasks, num_cpu, num_gpu):
+def create_task_performance_statistics(operators_id_list,   predicted_times_cpu_standard_real, predicted_times_gpu_standard_real, devices_info, num_cpu, num_gpu):
+    """
+    """
+    operator_time_statistics = {}
+    operator_average_time_statistics = {}
+    operator_power_statistics = {}
+    
+    # Add zero execution times and powers for entry and exit nodes
+    operator_time_statistics["n_entry"] = np.zeros(num_cpu + num_gpu)
+    operator_time_statistics["n_exit"] = np.zeros(num_cpu + num_gpu)
+    operator_average_time_statistics["n_entry"] = 0
+    operator_average_time_statistics["n_exit"] = 0
+    operator_power_statistics["n_entry"] = 0
+    operator_power_statistics["n_exit"] = 0
+    
+    for operator_id in operators_id_list:
+        stats = [predicted_times_cpu_standard_real[operator_id].item() if devices_info[device_id]["device_type"] == "CPU" else predicted_times_gpu_standard_real[operator_id].item() for device_id in range(num_cpu+num_gpu)]
+        operator_time_statistics[operator_id] = np.array(stats)
+        operator_average_time_statistics[operator_id] = np.mean(stats)
+        
+        power_stats = [105 if devices_info[device_id]["device_type"] == "CPU" else 120 for device_id in range(num_cpu+num_gpu)]
+        operator_power_statistics[operator_id] = np.array(power_stats)
+        
+            
+    print(f"task statistics: {operator_time_statistics}")
+    print(f"average time statistics: {operator_average_time_statistics}")
+    print(f"task power statistics: {operator_power_statistics}")
+        
+    return operator_time_statistics, operator_average_time_statistics, operator_power_statistics
+
+def create_task_performance_statistics_simulated(num_tasks, num_cpu, num_gpu):
     """
     task_statistics: Dictionary with executions times of all tasks for all devices
     average_task_statistics: Dictionary with average execution time of all tasks across all devices
@@ -92,7 +122,7 @@ def create_task_transfer_times(G, num_cpu, num_gpu, same_node_devices):
             transfer_times[edge] = {link: 0 for link in device_combinations}
             average_transfer_times[edge] = 0
         else:
-            data_sent = random.uniform(5, 20)  # data transmitted between tasks in MB
+            data_sent = random.uniform(0, 10)  # data transmitted between tasks in MB
             data_sent_dict[edge] = data_sent
             # zero transfer times if both tasks executed on the same device or devices of same node
             transfer_times[edge] = {link: 0 if (link == link[::-1] or link in same_node_devices) else data_sent/transfer_rates[link] for link in device_combinations}

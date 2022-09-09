@@ -77,7 +77,7 @@ class GTModel(nn.Module):
         out = []
 
         # x, edge_attr, edge_index, batch_index = batch_graphs.x, batch_graphs.edge_attr, batch_graphs.edge_index, batch_graphs.batch
-        print(f'================x.shape in this new batch of graphs {batch_graphs.x.shape} ')#{batch_graphs.x}==============')
+        #print(f'================x.shape in this new batch of graphs {batch_graphs.x.shape} ')#{batch_graphs.x}==============')
 
         nodefeature = NodeFeatureEncoder.FeatureEncoder(batch_graphs, emb_dim=64) # emb_dim=hidden_dim=64
         renewed_data = nodefeature(batch_graphs) # forward pass
@@ -85,12 +85,12 @@ class GTModel(nn.Module):
         edgefeature = EdgeFeatureEncoder.eFeatureEncoder(renewed_data, emb_dim=64)
         renewed_data = edgefeature(renewed_data) 
 
-        print(f'x after the Embedding layer {renewed_data.x}')
+        #print(f'x after the Embedding layer {renewed_data.x}')
 
         x, edge_attr, edge_index, batch_index= renewed_data.x, renewed_data.edge_attr, renewed_data.edge_index, renewed_data.batch
 
-        print(f'shape of x after the calculation and summation of the node embeddings {x.shape}')
-        print(f'edge_attr shape {edge_attr.shape}')
+        #print(f'shape of x after the calculation and summation of the node embeddings {x.shape}')
+        #print(f'edge_attr shape {edge_attr.shape}')
 
         # Initial Transformation
         #x = self.conv1(x, edge_index, edge_attr)
@@ -104,27 +104,27 @@ class GTModel(nn.Module):
         for i in range(self.num_layers):
             x = self.conv_layers[i](x, edge_index, edge_attr)
             x  = self.norm_layers[i](x)
-            x = torch.nn.functional.elu(self.transf_layers[i](x))
+            x = torch.nn.functional.relu(self.transf_layers[i](x))
             #x = self.norm_layers[i](x)
             # Always aggregate last layer
             #if i % self.top_k_every_n == 0 or i == self.num_layers:
             #    x, edge_index, edge_attr, batch_index, _, _ = self.pooling_layers[int(i/self.top_k_every_n)](x, edge_index, edge_attr, batch_index) 
-            print(f'shape x: {x.shape}, batch_index shape {batch_index.shape}')
+           # print(f'shape x: {x.shape}, batch_index shape {batch_index.shape}')
             # Add current representation
             global_representation.append(torch.cat([gmp(x, batch_index), gap(x, batch_index)], dim=1))
 
         x = sum(global_representation)
 
-        print(f'out shape after gap, cat and sum {x.shape}') #[batchsize, hiddendim*lendatalist]
+        #print(f'out shape after gap, cat and sum {x.shape}') #[batchsize, hiddendim*lendatalist]
 
         # Output block
-        x = torch.nn.functional.elu(self.linear1(x))
+        x = torch.nn.functional.relu(self.linear1(x))
         x = F.dropout(x, p=0.4, training=self.training)
-        x = torch.nn.functional.elu(self.linear2(x))
+        x = torch.nn.functional.relu(self.linear2(x))
         x = F.dropout(x, p=0.4, training=self.training)
         x = self.linear3(x)
 
-        print(f'x shape from GTModel {x.shape}')
+        #print(f'x shape from GTModel {x.shape}')
 
         return x
 

@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, abort
 from flask_restful import Api, Resource, reqparse
 import json
 import base64
+import numpy as np
 from optimizer.Heft import HeftScheduler
 from optimizer.utils import create_random_DAG, insert_entry_and_exit_nodes, create_task_transfer_times, create_task_performance_statistics, total_power_consumption
 import networkx as nx
@@ -10,6 +11,8 @@ from argparse import ArgumentParser
 import itertools
 import torch
 from torch_geometric.data import Data
+from torch_geometric.loader import DataLoader
+from GTMcrossval_nwrap_nospatial_newparametrized import GTModel
 
 app = Flask(__name__)
 api = Api(app)
@@ -17,11 +20,32 @@ api = Api(app)
 EXEC_TIME_WEIGHT = 0.5
 POWER_WEIGHT = 0.5
 
-#PATH = "../20220623_140935/model=GTModel_batch=8_nheads=8_hdim=64_kfold=5_lr=0.0001.pt"
-#print(torch.__version__)
+print(torch.__version__)
 
-#gpu_model = torch.load(PATH)
-#print(type(gpu_model))
+PATH_GPU_standard = "gpu_model_standard/model=GTModel_batch=32_nheads=8_hdim=64_kfold=5_lr=0.0001.pt"
+
+PATH_CPU_standard = "cpu_model_standard/model=GTModel_batch=32_nheads=8_hdim=64_kfold=5_lr=0.0001.pt"
+
+gpu_model_standard = GTModel(num_layers=1,
+                    	     hidden_dim=64,
+                             heads=8,
+                             feat_dropout=0.0,
+                             top_k_pool=5,
+                             norm=None)
+                             
+cpu_model_standard = GTModel(num_layers=1,
+                    	     hidden_dim=64,
+                             heads=8,
+                             feat_dropout=0.0,
+                             top_k_pool=5,
+                             norm=None)
+                             
+ 
+gpu_model_standard.load_state_dict(torch.load(PATH_GPU_standard))                  
+gpu_model_standard.eval()
+
+cpu_model_standard.load_state_dict(torch.load(PATH_CPU_standard))                  
+cpu_model_standard.eval()
 
 
 def nx_from_json(task_graph_json):
@@ -252,8 +276,8 @@ class Scheduling(Resource):
             abort(400, description="Invalid form of request data: operatorGraph argument missing")
 
         try:
-            task_graph, source_codes = nx_from_json(task_graph_json)
-            task_graph = insert_entry_and_exit_nodes(task_graph)
+            operator_graph, source_codes = nx_from_json(task_graph_json)
+            operator_graph = insert_entry_and_exit_nodes(operator_graph)
         except:
             abort(400, description="Invalid form of request data in the operatorGraph")
 
@@ -267,46 +291,56 @@ class Scheduling(Resource):
             devices_info, num_cpu, num_gpu, same_node_devices = device_info_from_json(nodes_json)
         except:
             abort(400, description="Invalid form of request data in availNodes")
-            
-        #print(f"The task graph is: {task_graph.nodes()} and {task_graph.edges()}")
-        #print("*********************************")
-        #rint(f"The codes for each operator are: {source_codes}")
-        #print("*********************************")
-        #print(same_node_devices)   
-        
+             
         pyg_list = create_pyg_list(source_codes)
-        print(pyg_list)
-        """
-        statistics = create_task_performance_statistics(len(task_graph), num_cpu, num_gpu)
-        task_statistics = statistics[0]
-        average_task_statistics = statistics[1]
-        task_power_statistics = statistics[2]
+        batch_loader = DataLoader(pyg_list, batch_size=len(pyg_list))
+        
+        predicted_times_gpu_standard = gpu_model_standard(next(iter(batch_loader)))
+               
+        predicted_times_cpu_standard = cpu_model_standard(next(iter(batch_loader)))
+        
+        # rescale the predictions 
+        predicted_times_gpu_standard_real = predicted_times_gpu_standard * 0.075227 + 0.310192
+        
+        predicted_times_cpu_standard_real = predicted_times_cpu_standard * 29.09 + 2.71
+        
+        print(f" estimates for gpu standard real: {predicted_times_gpu_standard_real}")
+        print(f" estimates for cpu standard real: {predicted_times_cpu_standard_real}")
+        
+        operators_id_list = list(source_codes.keys())
+        
+        # Calculate the execution times for each operator on each device
+        operator_time_statistics, operator_average_time_statistics, operator_power_statistics = 				create_task_performance_statistics(operators_id_list,   predicted_times_cpu_standard_real, predicted_times_gpu_standard_real, devices_info, num_cpu, num_gpu)
+   
+        transfer_times, average_transfer_times, _ = create_task_transfer_times(operator_graph, num_cpu, num_gpu, same_node_devices)
+        
+        print(f"CCR: {np.mean(list(average_transfer_times.values()))/ np.mean(list(operator_average_time_statistics.values()))}")
 
-        transfer_times, average_transfer_times, _ = create_task_transfer_times(task_graph, num_cpu, num_gpu)
-
-        scheduler = HeftScheduler(task_graph, task_statistics, average_task_statistics, task_power_statistics,
+        scheduler = HeftScheduler(operator_graph, operator_time_statistics, operator_average_time_statistics, operator_power_statistics,
                                   transfer_times, average_transfer_times, list(range(num_cpu + num_gpu)))
 
-        weights = (1.0, 0.0)
+        weights = (EXEC_TIME_WEIGHT, POWER_WEIGHT)
         scheduling = scheduler.schedule(weights)
         makespan = scheduler.aft["n_exit"]
-        power = total_power_consumption(scheduling, task_power_statistics)
+        power = total_power_consumption(scheduling, operator_power_statistics)
 
         response = {"placement": [], "objective": {}}
-        for task_id, device_id in scheduling.items():
-            item = {
-                    "operator_id": task_id,
-                    "device_id": str(device_id)
-                    }
+        for operator_id, device_id in scheduling.items():
+            if operator_id not in ["n_entry", "n_exit"]:
+                item = {
+                      "operator_id": str(operator_id),
+                      "device_id": devices_info[device_id]["nes_device_id"],
+                      "node_id": devices_info[device_id]["node_id"],
+                      "device_type": devices_info[device_id]["device_type"]
+                       }
 
-            response["placement"].append(item)
+                response["placement"].append(item)
 
-        response["objective"]["time"] = makespan
-        response["objective"]["power"] = power
-        """
+        response["objective"]["time"] = str(makespan)
+        response["objective"]["power"] = str(power)
+        
+        return response
 
-
-        return {"status": "ok"}
 
 api.add_resource(Scheduling, "/planner/schedule")
 api.add_resource(ObjectivesConfig, "/planner/configure_objectives")

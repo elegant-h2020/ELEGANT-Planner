@@ -223,11 +223,18 @@ class HeftScheduler():
             # order to have an accurate combined objective
             eft_min = np.min(efts)
             eft_max = np.max(efts)
+            eft_mean = np.mean(efts)
+            eft_std = np.std(efts)
             power_min = np.min(powers)
             power_max = np.max(powers)
+            power_mean = np.mean(powers)
+            power_std = np.std(powers)
 
-            standardized_efts = (efts - eft_min) / (eft_max - eft_min)
-            standardized_powers = (powers - power_min) / (power_max - power_min)
+            #standardized_efts = (efts - eft_min) / (eft_max - eft_min)
+            #standardized_powers = (powers - power_min) / (power_max - power_min)          
+            standardized_efts = (efts - eft_mean) / eft_std
+            standardized_powers = (powers - power_mean) / power_std
+            
             combined_objectives = weights[0] * standardized_efts + weights[1] * standardized_powers
 
             # Select the device that minimizes the combined objective
