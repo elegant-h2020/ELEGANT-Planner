@@ -34,10 +34,12 @@ class HeftScheduler():
         aft : dict
                 Actual finish times for each task
         avail: list
-                Finish time of last scheduled task for each device
+                Finish time of last scheduled task for each device,
+        constraints: dict
+                Mapping of tasks to nodes as defined by the user
     """
 
-    def __init__(self, G, task_statistics, average_task_statistics, task_power_statistics, transfer_times, average_transfer_times, available_devices):
+    def __init__(self, G, task_statistics, average_task_statistics, task_power_statistics, transfer_times, average_transfer_times, available_devices,constraints, devices_info):
         self.task_graph = G
         self.task_statistics = task_statistics
         self.average_task_statistics = average_task_statistics
@@ -46,6 +48,8 @@ class HeftScheduler():
         self.average_transfer_times = average_transfer_times
         self.available_devices = available_devices
         self.topological_order = list(nx.topological_sort(self.task_graph))
+        self.constraints = constraints
+        self.devices_info = devices_info
         self.est = {}
         self.eft = {}
         self.aft = {}
@@ -178,7 +182,7 @@ class HeftScheduler():
         else:
             return self.task_power_statistics[task_id][device_id]
 
-    def schedule(self, weights):
+    def schedule(self, weights, constraints, devices_info):
         """
         Assigns tasks to devices according to the HEFT heuristic
 
@@ -186,7 +190,11 @@ class HeftScheduler():
         ----------
         weights: tuple
                 How much to weigh each objective (time_weight, power_weight)
-
+        
+        constraints: dict
+                Forced schedule of a task to a specific node (but not device)
+        devices_info: dict
+                Dictionary that include info for devices and in which node they belong
         Returns
         -------
         scheduled_tasks: dict
@@ -195,6 +203,23 @@ class HeftScheduler():
         scheduled_tasks = {}
         rank = self.upward_rank()
         unscheduled_tasks = self.prioritize_tasks(rank)
+        print("Constraints",constraints)
+        print("Devices Info", devices_info)
+        print("Available devices:",self.available_devices)
+        new_constraints = {}
+        #explain what you do here
+        for key, value in constraints.items():
+            #map node constraints with the devices the node has
+            devs = []
+            for x, y in devices_info.items():
+               # print(y["node_id"])
+                if value == int(''.join(filter(str.isdigit, y["node_id"]))):
+                    devs.append(x)
+            new_constraints[key] = devs
+            
+
+        print("New Device Constraints: ", new_constraints)
+            
 
         while not unscheduled_tasks.empty():
             # task_to_schedule = (- rank of task, task id)
@@ -207,7 +232,7 @@ class HeftScheduler():
                 task_id = int(task_to_schedule[1])
 
             rank_of_task = - task_to_schedule[0]
-
+            
             # Compute the combined_objective of the task in each device
             min_combined_objective = 99999999999999999
             efts = np.zeros(len(self.available_devices))
@@ -239,10 +264,18 @@ class HeftScheduler():
 
             # Select the device that minimizes the combined objective
             min_device = np.argmin(combined_objectives)
-            scheduled_tasks[task_id] = min_device
-            self.avail[min_device] = efts[min_device]
-            self.aft[task_id] = efts[min_device]
-            self.ast[task_id] = efts[min_device] - self.task_statistics[task_id][min_device]
+            if task_id in new_constraints: # can be better than randomness
+                random_dev = random.choice(new_constraints[task_id])
+                scheduled_tasks[task_id] = random_dev
+                self.avail[random_dev] = efts[random_dev]
+                self.aft[task_id] = efts[random_dev]
+                self.ast[task_id] = efts[random_dev] - self.task_statistics[task_id][random_dev]
+
+            else:
+                scheduled_tasks[task_id] = min_device
+                self.avail[min_device] = efts[min_device]
+                self.aft[task_id] = efts[min_device]
+                self.ast[task_id] = efts[min_device] - self.task_statistics[task_id][min_device]
 
         return scheduled_tasks
 

@@ -18,9 +18,25 @@ def create_task_performance_statistics(operators_id_list,   predicted_times_cpu_
     operator_average_time_statistics["n_exit"] = 0
     operator_power_statistics["n_entry"] = 0
     operator_power_statistics["n_exit"] = 0
+    print("Operators ID list:", operators_id_list)
+    print("Pred cpu time vector: ",predicted_times_cpu_standard_real, type(predicted_times_cpu_standard_real))
+    
+    #========== additions to fix tensor indexing problem ======# -x 
+    pred_cpu_list = predicted_times_cpu_standard_real.flatten().tolist()
+    pred_gpu_list = predicted_times_gpu_standard_real.flatten().tolist()
+    pred_cpu_dict = dict(map(lambda i,j : (i,j), operators_id_list, pred_cpu_list)) #could be one dict -x
+    pred_gpu_dict = dict(map(lambda i,j : (i,j), operators_id_list, pred_gpu_list))
+    print(pred_cpu_dict)
+    for device_id in range(num_cpu+num_gpu): # what is happening with devices ID? -x
+        print("Device ID: ", device_id) 
     
     for operator_id in operators_id_list:
-        stats = [predicted_times_cpu_standard_real[operator_id].item() if devices_info[device_id]["device_type"] == "CPU" else predicted_times_gpu_standard_real[operator_id].item() for device_id in range(num_cpu+num_gpu)]
+        #print("Pred time item: ", predicted_times_cpu_standard_real[operator_id].item(), "Operator ID: ", operator_id)
+        print("Pred time from dict: ", pred_cpu_dict[operator_id], "Operator ID: ",operator_id)
+        #========# -x
+        stats = [pred_cpu_dict[operator_id] if devices_info[device_id]["device_type"] == "CPU" else pred_gpu_dict[operator_id] for device_id in range(num_cpu+num_gpu)]
+        #========#
+
         operator_time_statistics[operator_id] = np.array(stats)
         operator_average_time_statistics[operator_id] = np.mean(stats)
         

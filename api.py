@@ -52,6 +52,7 @@ def nx_from_json(task_graph_json):
     """
     Convert the task graph from json format to networkx graph and store the
     source code of each task in a dictionary
+    and create constraints dictionary
 
     Parameters
     ----------
@@ -65,16 +66,23 @@ def nx_from_json(task_graph_json):
     source_codes : dict
             Dictionary with the operator id's int integer format as keys and
             tuples with their source code and input data size as values
+    constraints : dict
+            Dictionary with operator id's int integer format as key and node id             that the task must be executed to, as defined by the user, as value
     """
     task_graph = nx.DiGraph()
     source_codes = {}
+    constraints = {}
     for task in task_graph_json:
         # Create the graph
         task_id = int(task["operatorId"])
         task_graph.add_node(task_id)
+        print("task ids in nx_from_json",task_id)
         for child in task["children"]:
             task_graph.add_edge(task_id, int(child))
         
+        # Create Constraints
+        if task["constraint"] != '':
+            constraints[task_id] = int(''.join(filter(str.isdigit, task["constraint"])))
         # Decode the source code in string format
         code_encoded = task["sourceCode"]
         code_encoded = str.encode(code_encoded)
@@ -83,7 +91,7 @@ def nx_from_json(task_graph_json):
         
         source_codes[task_id] = (code_str, int(task["inputData"]))
         
-    return task_graph, source_codes
+    return task_graph, source_codes, constraints
 
 def device_info_from_json(nodes_json):
     """
@@ -140,7 +148,8 @@ def device_info_from_json(nodes_json):
         same_node_devices += list(itertools.combinations(current_node_devices, 2))
 
     same_node_devices = set(same_node_devices)
-
+    print("Devices_info", devices_info)
+    print("same_node_devices", same_node_devices)
     return devices_info, num_cpu, num_gpu, same_node_devices
     
 def pyg_from_string(code_str, input_bytes):
@@ -237,9 +246,11 @@ def create_pyg_list(source_codes):
     """
     pyg_list = []
     for operator in source_codes:
+        
         pyg_graph = pyg_from_string(source_codes[operator][0], source_codes[operator][1])
+        print(f"Pyg Graph of operator {operator} : {pyg_graph}")
         pyg_list.append(pyg_graph)
-     
+        print("Operator from pyg_list:", operator)
     return pyg_list
     
     
@@ -268,15 +279,15 @@ class ObjectivesConfig(Resource):
 class Scheduling(Resource):
     def post(self):
         # Parse arguments from request object
-        args = request.get_json()
-        
+        args = request.get_json(force=False, silent=True)
         # Get the operator graph and transform it to networkx
         task_graph_json = args.get("operatorGraph")
         if task_graph_json is None:
             abort(400, description="Invalid form of request data: operatorGraph argument missing")
 
         try:
-            operator_graph, source_codes = nx_from_json(task_graph_json)
+            operator_graph, source_codes, constraints = nx_from_json(task_graph_json)
+            print("Constraints",constraints)
             operator_graph = insert_entry_and_exit_nodes(operator_graph)
         except:
             abort(400, description="Invalid form of request data in the operatorGraph")
@@ -293,8 +304,14 @@ class Scheduling(Resource):
             abort(400, description="Invalid form of request data in availNodes")
              
         pyg_list = create_pyg_list(source_codes)
+        print("Pyg List: ", pyg_list)
         batch_loader = DataLoader(pyg_list, batch_size=len(pyg_list))
-        
+        for step, data in enumerate(batch_loader):
+            print(f'Step {step + 1}:')
+            print('=======')
+            print(f'Number of graphs in the current batch: {data.num_graphs}')
+            print(data)
+            
         predicted_times_gpu_standard = gpu_model_standard(next(iter(batch_loader)))
                
         predicted_times_cpu_standard = cpu_model_standard(next(iter(batch_loader)))
@@ -306,21 +323,22 @@ class Scheduling(Resource):
         
         print(f" estimates for gpu standard real: {predicted_times_gpu_standard_real}")
         print(f" estimates for cpu standard real: {predicted_times_cpu_standard_real}")
-        
+        print(f" Source Code Keys: {source_codes.keys()}")
         operators_id_list = list(source_codes.keys())
         
         # Calculate the execution times for each operator on each device
-        operator_time_statistics, operator_average_time_statistics, operator_power_statistics = 				create_task_performance_statistics(operators_id_list,   predicted_times_cpu_standard_real, predicted_times_gpu_standard_real, devices_info, num_cpu, num_gpu)
+        operator_time_statistics, operator_average_time_statistics, operator_power_statistics = create_task_performance_statistics(operators_id_list,   predicted_times_cpu_standard_real, predicted_times_gpu_standard_real, devices_info, num_cpu, num_gpu)
    
         transfer_times, average_transfer_times, _ = create_task_transfer_times(operator_graph, num_cpu, num_gpu, same_node_devices)
         
         print(f"CCR: {np.mean(list(average_transfer_times.values()))/ np.mean(list(operator_average_time_statistics.values()))}")
-
+        
         scheduler = HeftScheduler(operator_graph, operator_time_statistics, operator_average_time_statistics, operator_power_statistics,
-                                  transfer_times, average_transfer_times, list(range(num_cpu + num_gpu)))
+                                  transfer_times, average_transfer_times, list(range(num_cpu + num_gpu)),constraints,devices_info)
 
+       
         weights = (EXEC_TIME_WEIGHT, POWER_WEIGHT)
-        scheduling = scheduler.schedule(weights)
+        scheduling = scheduler.schedule(weights,constraints,devices_info)
         makespan = scheduler.aft["n_exit"]
         power = total_power_consumption(scheduling, operator_power_statistics)
 
@@ -347,7 +365,7 @@ api.add_resource(ObjectivesConfig, "/planner/configure_objectives")
 
 if __name__ == "__main__":
     parser = ArgumentParser()
-    parser.add_argument("-p", "--port", default=5000, type=int, help="Port to listen on")
+    parser.add_argument("-p", "--port", default=8080, type=int, help="Port to listen on")
     args = parser.parse_args()
     port = args.port
 
