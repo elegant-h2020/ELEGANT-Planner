@@ -1,0 +1,49 @@
+let's visualize first the ones from gpu.
+
+
+GPU:
+
+> dungani in total: 237(uncompiled) and 165(compiled)
+> dungani_QuadroTesla_exp1 (downloaded)
+> dungani_QuadroTesla_exp2 (downloaded)
+	initial dataset from config (146, 8)
+	compiled kernels (55, 8)
+	uncompiled kernels (91, 8)
+	 
+
+
+> epyc7 in total: 234(uncompiled) and 166(compiled)
+> epyc7_NvidiaA100_exp1 (downloaded)
+> epyc7_NvidiaA100_exp2 (downloaded)
+	initial dataset from config (144, 8)
+	compiled kernels (54, 8)
+	uncompiled kernels (90, 8)
+
+
+
+> silver1_Tesla_exp1 (downloaded)
+	initial dataset from config (256, 8)
+	compiled kernels (110, 8)
+	uncompiled kernels (146, 8)
+
+
+
+> silver1_Tesla_exp2 (downloaded)
+	initial dataset from config (146, 8)
+	compiled kernels (56, 8)
+	uncompiled kernels (90, 8)
+
+
+
+(for gold2 I have gpu and cpu together)
+> gold2_GeForceGTX_IntelXeonCPU_exp1 (downloaded)
+	initial dataset from config (256, 8)
+	compiled kernels (120, 8)
+	uncompiled kernels (136, 8)
+
+
+
+> gold2_GeForceGTX_IntelXeonCPU_exp2 (downloaded)
+	initial dataset from config (136, 8)
+	compiled kernels (48, 8)
+	uncompiled kernels (88, 8)

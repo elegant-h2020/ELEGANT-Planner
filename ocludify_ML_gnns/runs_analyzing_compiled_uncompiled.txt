@@ -1,0 +1,7 @@
+(pyg) marianna@marianna-G3-3500:~/Documents/programl/ocludify$ python3 compiled_and_not_compiled_kernels.py results/cpu/results_dungani_CPU_exp1.csv benchmarks_config.csv dungani cpu exp1
+
+the number of unique compiled kernels is 112
+initial dataset from config (256, 8)
+compiled kernels (112, 8)
+uncompiled kernels (144, 8)
+(pyg) marianna@marianna-G3-3500:~/Documents/programl/ocludify$ python3 compiled_and_not_compiled_kernels.py results/gpu/results_epyc7_NvidiaA100_exp1.csv benchmarks_config.csv epyc7 gpu exp1
