@@ -1,0 +1,14 @@
+available device in this HW is cuda
+This is the name of the program: visualization.py
+Argument List: ['visualization.py', 'results/cpu/', 'results/analyzing_compiled_uncompiled_kernels/', 'compiledkernels', 'epyc7', 'cpu', 'CPU']
+filename is results/analyzing_compiled_uncompiled_kernels/compiledkernels_epyc7_cpu_exp1.csv
+(55, 8)
+filename is results/analyzing_compiled_uncompiled_kernels/compiledkernels_epyc7_cpu_exp2.csv
+(9, 8)
+show me the total number of compiled kernels of the runs for device cpu in epyc7 machine: 64
+filename is results/cpu/results_epyc7_CPU_exp1.csv
+dataset_size 293
+unique kernels 55
+filename is results/cpu/results_epyc7_CPU_exp2.csv
+dataset_size 15
+unique kernels 9

@@ -1,0 +1,14 @@
+available device in this HW is cuda
+This is the name of the program: visualization.py
+Argument List: ['visualization.py', 'results/cpu/', 'results/analyzing_compiled_uncompiled_kernels/', 'compiledkernels', 'dungani', 'cpu', 'CPU']
+filename is results/analyzing_compiled_uncompiled_kernels/compiledkernels_dungani_cpu_exp1.csv
+(58, 8)
+filename is results/analyzing_compiled_uncompiled_kernels/compiledkernels_dungani_cpu_exp2.csv
+(2, 8)
+show me the total number of compiled kernels of the runs for device cpu in dungani machine: 60
+filename is results/cpu/results_dungani_CPU_exp1.csv
+dataset_size 296
+unique kernels 58
+filename is results/cpu/results_dungani_CPU_exp2.csv
+dataset_size 4
+unique kernels 2

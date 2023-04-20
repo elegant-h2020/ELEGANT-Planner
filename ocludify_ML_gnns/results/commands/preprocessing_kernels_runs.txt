@@ -1,0 +1,32 @@
+available device in this HW is cuda
+This is the name of the program: preprocessing_kernels_runs.py
+Argument List: ['preprocessing_kernels_runs.py', 'results/gpu_cpu_together/', 'results/cpu/', 'results/gpu']
+######## GPU #########
+shape of gold2 is (860, 16)
+shape of gold2 is (281, 16)
+shape of epyc7 is (855, 16)
+shape of silver1 is (344, 16)
+shape of silver1 is (853, 16)
+shape of epyc7 is (322, 16)
+shape of dungani is (443, 16)
+shape of dungani is (1648, 16)
+shape of all the gpu dataset is: (5606, 16)
+unique kernels in the gpu dataset are: 167
+counter is 80
+shape of the cleaned gpu dataset is: (4945, 16)
+unique kernels in the clean gpu dataset are: 149
+
+ ######## CPU ########
+shape of gold2 is (388, 16)
+shape of gold2 is (21, 16)
+shape of silver1 is (61, 16)
+shape of dungani is (4, 16)
+shape of silver1 is (387, 16)
+shape of epyc7 is (293, 16)
+shape of dungani is (296, 16)
+shape of epyc7 is (15, 16)
+shape of all the cpu dataset is: (1465, 16)
+unique kernels in the cpu dataset are: 100
+counter is 19
+shape of the cleaned cpu dataset is: (1111, 16)
+unique kernels in the clean cpu dataset are: 90

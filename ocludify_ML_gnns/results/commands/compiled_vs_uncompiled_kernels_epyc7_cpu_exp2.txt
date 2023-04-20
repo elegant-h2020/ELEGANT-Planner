@@ -1,0 +1,22 @@
+available device in this HW is cuda
+This is the name of the program: compiled_and_not_compiled_kernels.py
+Argument List: ['compiled_and_not_compiled_kernels.py', 'results/cpu/results_epyc7_CPU_exp2.csv', 'results/analyzing_compiled_uncompiled_kernels/uncompiledkernels_epyc7_cpu_exp1.csv', 'epyc7', 'cpu', 'exp2']
+                                              kernel  ...  transfer_var
+0    amd-app-sdk-3.0-FloydWarshall-floydWarshallPass  ...      0.003471
+1    amd-app-sdk-3.0-FloydWarshall-floydWarshallPass  ...      7.082427
+2  amd-app-sdk-3.0-SimpleConvolution-simpleNonSep...  ...      0.005993
+3                                npb-3.3-BT-rhs_norm  ...      0.014085
+4                                   npb-3.3-SP-ninvr  ...      2.713215
+
+[5 rows x 15 columns]
+these are the ['amd-app-sdk-3.0-FloydWarshall-floydWarshallPass'
+ 'amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution'
+ 'npb-3.3-BT-rhs_norm' 'npb-3.3-SP-ninvr' 'npb-3.3-SP-rhs_norm'
+ 'nvidia-4.2-MatVecMul-MatVecMulCoalesced0'
+ 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced0'
+ 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced1'
+ 'polybench-gpu-1.0-2mm-mm2_kernel2'], and is of type <class 'numpy.ndarray'>
+the number of unique compiled kernels is 9
+initial dataset from config (201, 8)
+compiled kernels (9, 8)
+uncompiled kernels (192, 8)

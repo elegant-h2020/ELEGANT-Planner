@@ -1,0 +1,6 @@
+This is the name of the program: random_split_dataset_step0.py
+Argument List: ['random_split_dataset_step0.py', 'gpu', 'results/final_gpu.csv', 'results/team1', 'results/team2']
+148 147 148 147
+(1062, 10) (1006, 10) (1042, 10) (1835, 10)
+unique kernels for team1 148, with total runs (2104, 11)
+unique kernels for team2 149, with total runs (2841, 11)

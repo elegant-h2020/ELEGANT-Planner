@@ -1,0 +1,15 @@
+available device in this HW is cuda
+This is the name of the program: compiled_and_not_compiled_kernels.py
+Argument List: ['compiled_and_not_compiled_kernels.py', 'results/cpu/results_dungani_CPU_exp2.csv', 'results/analyzing_compiled_uncompiled_kernels/uncompiledkernels_dungani_cpu_exp1.csv', 'dungani', 'cpu', 'exp2']
+                   kernel  gsize  ... transfer_median  transfer_var
+0  shoc-1.1.5-Scan-reduce    100  ...        0.071126     84.589906
+1  shoc-1.1.5-Scan-reduce    200  ...        0.088906     15.292907
+2  shoc-1.1.5-Sort-reduce    100  ...        0.069326    125.125134
+3  shoc-1.1.5-Sort-reduce    200  ...        0.074362      4.237960
+
+[4 rows x 15 columns]
+these are the ['shoc-1.1.5-Scan-reduce' 'shoc-1.1.5-Sort-reduce'], and is of type <class 'numpy.ndarray'>
+the number of unique compiled kernels is 2
+initial dataset from config (198, 8)
+compiled kernels (2, 8)
+uncompiled kernels (196, 8)

@@ -1,0 +1,21 @@
+available device in this HW is cuda
+This is the name of the program: compiled_and_not_compiled_kernels.py
+Argument List: ['compiled_and_not_compiled_kernels.py', 'results/cpu/results_silver1_CPU_exp1.csv', 'benchmarks_config.csv', 'silver1', 'cpu', 'exp1']
+                                            kernel  ...  transfer_var
+0  amd-app-sdk-3.0-BinomialOption-binomial_options  ...    276.178577
+1  amd-app-sdk-3.0-BinomialOption-binomial_options  ...    267.244788
+2  amd-app-sdk-3.0-BinomialOption-binomial_options  ...    286.911554
+3  amd-app-sdk-3.0-BinomialOption-binomial_options  ...      0.008668
+4  amd-app-sdk-3.0-BinomialOption-binomial_options  ...    231.893274
+
+[5 rows x 15 columns]
+these are the ['amd-app-sdk-3.0-BinomialOption-binomial_options'
+ 'amd-app-sdk-3.0-FloydWarshall-floydWarshallPass'
+ 'amd-app-sdk-3.0-PrefixSum-group_prefixSum'
+ 'amd-app-sdk-3.0-Reduction-reduce'
+ 'amd-app-sdk-3.0-ScanLargeArrays-blockAddition'
+ 'amd-app-sdk-3.0-SobelFilter-sobel_filter' 'npb-3.3-BT-compute_rhs1'], and is of type <class 'numpy.ndarray'>
+the number of unique compiled kernels is 7
+initial dataset from config (256, 8)
+compiled kernels (7, 8)
+uncompiled kernels (249, 8)

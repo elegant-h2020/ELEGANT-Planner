@@ -1,0 +1,53 @@
+available device in this HW is cuda
+This is the name of the program: compiled_and_not_compiled_kernels.py
+Argument List: ['compiled_and_not_compiled_kernels.py', 'results/cpu/results_dungani_CPU_exp1.csv', 'benchmarks_config.csv', 'dungani', 'cpu', 'exp1']
+                                            kernel  ...  transfer_var
+0  amd-app-sdk-3.0-BinomialOption-binomial_options  ...    258.145618
+1  amd-app-sdk-3.0-BinomialOption-binomial_options  ...    191.580497
+2  amd-app-sdk-3.0-BinomialOption-binomial_options  ...      0.010174
+3  amd-app-sdk-3.0-BinomialOption-binomial_options  ...    186.387346
+4  amd-app-sdk-3.0-BinomialOption-binomial_options  ...      0.005559
+
+[5 rows x 15 columns]
+these are the ['amd-app-sdk-3.0-BinomialOption-binomial_options'
+ 'amd-app-sdk-3.0-FloydWarshall-floydWarshallPass'
+ 'amd-app-sdk-3.0-PrefixSum-group_prefixSum'
+ 'amd-app-sdk-3.0-Reduction-reduce'
+ 'amd-app-sdk-3.0-ScanLargeArrays-blockAddition'
+ 'amd-app-sdk-3.0-SobelFilter-sobel_filter' 'npb-3.3-BT-compute_rhs1'
+ 'npb-3.3-CG-conj_grad_0' 'npb-3.3-CG-init_mem_0' 'npb-3.3-CG-init_mem_1'
+ 'npb-3.3-CG-main_1' 'npb-3.3-CG-main_2' 'npb-3.3-CG-makea_7'
+ 'npb-3.3-FT-compute_indexmap' 'npb-3.3-FT-evolve' 'npb-3.3-FT-init_ui'
+ 'npb-3.3-LU-l2norm' 'npb-3.3-LU-pintgr_reduce' 'npb-3.3-SP-compute_rhs1'
+ 'npb-3.3-SP-rhs_norm' 'nvidia-4.2-DotProduct-DotProduct'
+ 'nvidia-4.2-MatVecMul-MatVecMulCoalesced0'
+ 'nvidia-4.2-MatVecMul-MatVecMulCoalesced1'
+ 'nvidia-4.2-MatVecMul-MatVecMulCoalesced2'
+ 'nvidia-4.2-MatVecMul-MatVecMulCoalesced3'
+ 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced0'
+ 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced1'
+ 'nvidia-4.2-MatrixMul-matrixMul' 'nvidia-4.2-VectorAdd-VectorAdd'
+ 'polybench-gpu-1.0-2DConvolution-Convolution2D_kernel'
+ 'polybench-gpu-1.0-2mm-mm2_kernel1' 'polybench-gpu-1.0-3mm-mm3_kernel1'
+ 'polybench-gpu-1.0-3mm-mm3_kernel3' 'polybench-gpu-1.0-atax-atax_kernel1'
+ 'polybench-gpu-1.0-atax-atax_kernel2'
+ 'polybench-gpu-1.0-bicg-bicgKernel1' 'polybench-gpu-1.0-bicg-bicgKernel2'
+ 'polybench-gpu-1.0-correlation-mean_kernel'
+ 'polybench-gpu-1.0-correlation-std_kernel'
+ 'polybench-gpu-1.0-covariance-mean_kernel' 'polybench-gpu-1.0-gemm-gemm'
+ 'polybench-gpu-1.0-gesummv-gesummv_kernel'
+ 'polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1'
+ 'polybench-gpu-1.0-mvt-mvt_kernel1' 'polybench-gpu-1.0-mvt-mvt_kernel2'
+ 'polybench-gpu-1.0-syr2k-syr2k_kernel'
+ 'polybench-gpu-1.0-syrk-syrk_kernel' 'rodinia-3.1-bfs-BFS_2'
+ 'rodinia-3.1-cfd-memset_kernel' 'rodinia-3.1-hotspot-hotspot'
+ 'rodinia-3.1-nn-NearestNeighbor'
+ 'rodinia-3.1-particlefilter-find_index_kernel'
+ 'rodinia-3.1-pathfinder-dynproc_kernel'
+ 'rodinia-3.1-streamcluster-memset_kernel' 'shoc-1.1.5-FFT-chk1D_512'
+ 'shoc-1.1.5-Reduction-reduce' 'shoc-1.1.5-S3D-rdwdot_kernel'
+ 'shoc-1.1.5-Triad-Triad'], and is of type <class 'numpy.ndarray'>
+the number of unique compiled kernels is 58
+initial dataset from config (256, 8)
+compiled kernels (58, 8)
+uncompiled kernels (198, 8)

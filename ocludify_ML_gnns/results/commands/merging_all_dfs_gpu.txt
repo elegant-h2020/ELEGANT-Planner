@@ -1,0 +1,10 @@
+available device in this HW is cuda
+This is the name of the program: preprocessing_kernels_runs.py
+Argument List: ['preprocessing_kernels_runs.py', 'results/gpu_cpu_together/', 'results/cpu/', 'results/gpu']
+shape of epyc7 is (855, 16)
+shape of silver1 is (344, 16)
+shape of silver1 is (853, 16)
+shape of epyc7 is (322, 16)
+shape of dungani is (443, 16)
+shape of dungani is (1648, 16)
+shape of all the gpu dataset is: (5606, 16)
