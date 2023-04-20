@@ -1,0 +1,30 @@
+This is the name of the program: random_split_dataset_step1.py
+Argument List: ['random_split_dataset_step1.py', 'cpu', 'results/team1/team1_cpu.csv', 'team1', 'results/ir/', 'results/team1/', 'results/team1/kfolder_cpu', 'results/team1/testfolder_cpu', '--scale_type', 'minmax', '--percentage', '0.9', '--k', '5']
+unique kernels for the team team1 55, <class 'numpy.ndarray'>
+give me the columns                                           unkernel
+0  amd-app-sdk-3.0-BinomialOption-binomial_options
+1  amd-app-sdk-3.0-FloydWarshall-floydWarshallPass
+2        amd-app-sdk-3.0-PrefixSum-group_prefixSum
+3                 amd-app-sdk-3.0-Reduction-reduce
+4    amd-app-sdk-3.0-ScanLargeArrays-blockAddition
+pathfile is results/team1/ir_cpu
+How many ir files do I have in total? 93
+Total ir files: 93
+kfold files 83
+test files 10
+team_df columns are Index(['kernel', 'gsize', 'device', 'input_bytes', 'output_bytes',
+       'device_mean', 'transfer_mean', 'machine', 'hostcode_mean',
+       'devicetransfer', '#device'],
+      dtype='object') and shape (584, 11)
+kfold_df is (350, 11)
+team_df columns are Index(['kernel', 'gsize', 'device', 'input_bytes', 'output_bytes',
+       'device_mean', 'transfer_mean', 'machine', 'hostcode_mean',
+       'devicetransfer', '#device'],
+      dtype='object') and shape (584, 11)
+testfold_df is (63, 11)
+
+ scaling the exectime and the output bytes (both are targets of the prediction model) for each team
+scaling input bytes:
+scaling output bytes:
+scaling execution time:
+k1 is (70, 12) and type <class 'pandas.core.frame.DataFrame'>
