@@ -63,6 +63,7 @@ if __name__ == '__main__':
     parser.add_argument('ndevice', type=str, default='cpu', help='show me the device used for the experiments')
     parser.add_argument('num_team', type=str, default='team1', help='The team in which the current kernels belong')
     parser.add_argument('--target_is', type=str, default='devicetransfer', help='the target variable to predict each time')
+    parser.add_argument('team_path', type=str, default='/home/marianna/Documents/programl/ocludify/results/team1/', help='team_path')
     parser.add_argument('team_kfolder_device', type=str, default='/home/marianna/Documents/programl/ocludify/results/team1/kfolder_cpu', help='kfolder team path')
     parser.add_argument('team_testfolder_device', type=str, default='/home/marianna/Documents/programl/ocludify/results/team1/testfolder_cpu', help='testfolder team path')
     parser.add_argument('scaled_testfolder_device', type=str, default='/home/marianna/Documents/programl/ocludify/results/team1/scaled_testfolder_cpu.csv', help='csv for scaled testfolder')
@@ -72,7 +73,7 @@ if __name__ == '__main__':
     # parser.add_argument('--pct_close', type=float, default=0.05, help='In regression problem, you have to define what a correct prediction is. You define correctness as being within a certain percentage of the true value. pct_close is the percentage.')
     #parser.add_argument('--num_layers', type=int, default=3, help='number of iterations over the neighborhood')
 
-    parser.add_argument('experiments_path', type=str, default='/home/marianna/Documents/programl/ocludify/experiments/results', help='The path containing the experiments.')
+    parser.add_argument('experiments_path', type=str, default='/home/marianna/Documents/programl/ocludify/results/experiments/', help='The path containing the experiments.')
     parser.add_argument('--dataset_name', type=str, default='fromCummins', help='name of the dataset that is used for the experiments.')
 
     parser.add_argument('--hidden_dim', type=int, default=64, help='Dimmension of the hidden states.')
@@ -164,7 +165,7 @@ if __name__ == '__main__':
                         whole_exp_states.append(val_state)
 
                         # early stopping here comparing with the val loss
-                    test_state = test_per_epoch(args.scale_type, args.target_is, args.num_team, args.ndevice, epoch, model, test_pg_graphs, args.batch_size)#, args.pct_close)
+                    test_state = test_per_epoch(args.team_path, args.scale_type, args.target_is, args.num_team, args.ndevice, epoch, model, test_pg_graphs, args.batch_size)#, args.pct_close)
                     whole_exp_states.append(test_state)
 
                     print(f'End of experiment {exp}.')
@@ -176,7 +177,7 @@ if __name__ == '__main__':
     experiments_folder = None
     if True:
         now = time.strftime("%Y%m%d_%H%M%S")
-        experiments_folder = os.path.join(args.experiments_path, args.num_team, args.dataset_name, now)
+        experiments_folder = os.path.join(args.experiments_path, args.num_team, args.ndevice, args.dataset_name, now)
         # Create a new directory at this given path.
         Path(experiments_folder).mkdir(parents=True, exist_ok=True)
 
