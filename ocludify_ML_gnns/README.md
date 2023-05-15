@@ -12,8 +12,12 @@
 5. Split the dataset based on unique kernels.
 
 ## Codes for preprocessing:
-      1. compiled_and_not_compilded_kernels.py
+1. [compiled_and_not_compiled_kernels.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/compiled_and_not_compiled_kernels.py)
+2.
+3. 
+     
       2. visualization.py
       3. preprocessing_kernels_runs.py
       4. random_split_dataset_step0.py
       5. random_split_dataset_step1.py
+      
