@@ -1,6 +1,6 @@
-# Preprocessing of kernel runs
+# Preprocessing of kernel runs #
 
-I have one dataset for the cpu, and one for the gpu.
+* I have one dataset for the cpu, and one for the gpu.
 
 Codes for preprocessing:
       1. compiled_and_not_compilded_kernels.py
