@@ -34,13 +34,11 @@
    ['preprocessing_kernels_runs.py', 'results/gpu_cpu_together', 'results/cpu', 'results/gpu'] <br>
    **Output:** <br>
    final_gpu.csv and final_cpu.csv
-   
- 
-4. 
+4. [random_split_dataset_step0.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/random_split_dataset_step0.py)
 5. 
      
     
    
-      4. random_split_dataset_step0.py
+      4
       5. random_split_dataset_step1.py
       
