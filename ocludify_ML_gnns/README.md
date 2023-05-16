@@ -12,9 +12,19 @@
 5. Split the dataset based on unique kernels.
 
 ## Codes for preprocessing:
-1. [compiled_and_not_compiled_kernels.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/compiled_and_not_compiled_kernels.py)
-2.
-3. 
+
+1. [compiled_and_not_compiled_kernels.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/compiled_and_not_compiled_kernels.py) <br>
+   This script reads results.csv from the different runs, and returns which kernels are compiled and which are not, in the form of two dataframes converted into csv.<br>
+   **Argument List:** <br>
+   ['compiled_and_not_compiled_kernels.py', 'results/cpu/results_epyc7_cpu_exp2.csv', 'results/analyzing_compiled_uncompiled_kernels/uncompiled_kernels_epyc7_cpu_exp1.csv', 'epyc7', 'cpu', 'exp2']
+
+2. [visualization.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/visualization.py)   
+   Count all the compiled and uncompiled kernels for each machine, and for each device. Then, we print how many unique kernels I have for compiled kernels.
+   **Argument List:**<br>
+   ['visualization.py', 'results/cpu/', 'results/analyzing_compiled_uncompiled_kernels/', 'compiledkernels', 'silver1', 'cpu', 'CPU']
+3.     
+4. 
+5. 
      
       2. visualization.py
       3. preprocessing_kernels_runs.py
