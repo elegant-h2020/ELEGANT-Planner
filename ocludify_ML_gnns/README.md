@@ -44,17 +44,13 @@
       Team1-->testfolder;
       kfolder-->cpu_k;
       kfolder-->gpu_k;
-      cpu_k-->k1;
-      cpu_k-->k2;
-      cpu_k-->k3;
-      cpu_k-->k4;
-      cpu_k-->k5;
+      cpu_k-->k1_cpu;
+      cpu_k-->...;
+      cpu_k-->k5_cpu;
       
-      gpu_k-->k1;
-      gpu_k-->k2;
-      gpu_k-->k3;
-      gpu_k-->k4;
-      gpu_k-->k5;
+      gpu_k-->k1_gpu;
+      gpu_k-->..;
+      gpu_k-->k5_gpu;
       
       testfolder-->cpu_test;
       testfolder-->gpu_test;
