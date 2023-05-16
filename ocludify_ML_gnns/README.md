@@ -35,10 +35,28 @@
    **Output:** <br>
    final_gpu.csv and final_cpu.csv
 4. [random_split_dataset_step0.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/random_split_dataset_step0.py)
-5. 
+5. [random_split_dataset_step1.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/random_split_dataset_step1.py)
      
-    
-   
-      4
-      5. random_split_dataset_step1.py
+ 
+ ```mermaid
+  graph TD;
+      Team1-->kfolder;
+      Team1-->testfolder;
+      kfolder-->cpu_k;
+      kfolder-->gpu_k;
+      cpu_k-->k1;
+      cpu_k-->k2;
+      cpu_k-->k3;
+      cpu_k-->k4;
+      cpu_k-->k5;
       
+      gpu_k-->k1;
+      gpu_k-->k2;
+      gpu_k-->k3;
+      gpu_k-->k4;
+      gpu_k-->k5;
+      
+      testfolder-->cpu_test;
+      testfolder-->gpu_test;
+```
+  
