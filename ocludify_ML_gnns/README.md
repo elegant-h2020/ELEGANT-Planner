@@ -68,13 +68,13 @@
    - **class split_llvmir()** <br>
    
      ```python
-     def __init__(self, pathlife) #ex. the pathfile of ir_cpu folder. <br>
-     def __init__(self) : #len of files in the ir_cpu folder. <br>
-     def __getitem__(self,args) <br>
+     def __init__(self, pathlife) #ex. the pathfile of ir_cpu folder.
+     def __init__(self) : #len of files in the ir_cpu folder.
+     def __getitem__(self,args)
      ```
      
-     Split a file (ex. ir_cpu folder) into kfolder and testfolder, *given the percentage to go in the large file*. <br> So, for example, I have for <br>
-     **folder ir_cpu** : kfolder_cpu **+** testfolder_cpu.
+     Split a file (ex. ir_cpu folder) into kfolder and testfolder, *given the percentage to go in the large file*. <br> 
+     ex. **folder ir_cpu** : kfolder_cpu **+** testfolder_cpu.
       
      
  
