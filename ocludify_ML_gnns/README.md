@@ -81,7 +81,17 @@
       - For each filename, inside the **kfolder**, where the llvm ir code exists, if there is any row of the team dataframe, with the same kernel name, I keep the rows in a new dataframe. So, *I create a new dataframe, corresponding to all the runs of the kernels of the kfolder (kfold_df)*.  <br>
       - I'm doing the same with the **testforlder**, so as to *create a new dataframe, corresponding to all the runs of the kernels that belong to the testfolder*.
    
+   - ```def kfolds_split(kfold_df, k)``` <br>
+   
+      - For the cross validation, I need to create the *k chunks*. I'm taking the **kfold_df** dataframe (kfolder_cpu, kfolder_gpu), and at first I shuffle the rows. Then I split the dataframe into k parts that have equal size. From this function I return the *k chunks*.
+   
+   - ```def makedirectories(args,chunks)``` <br>
+   
+      - I create **dynamically directories**, so for range (0, kfold), I create the directories 0, 1, 2, ... kfold (ex.kfold=5). For every chunk, I have to save its data into every corresponding directory. So, for the data from chunk0, I have to first copy the llvm ir files from kfolder_cpu (or kfolder_gpu), into the directory of chunk0. Then for these runs I create a new csv, called cpu.csv (or gpu.csv).
       
+         (*Instead of splitting the kfolds ir files based on kernels, I split the ir files of the kfolds based on runs*).
+         
+         ex. I want to split randomly in chunks the files inside the kfolder_cpu. I'm taking the rows of team1_cpu.csv (after converting it into dataframe), and if there is a row belonging to some of the k_i, create the corresponding csv.
      
  
  ```mermaid
