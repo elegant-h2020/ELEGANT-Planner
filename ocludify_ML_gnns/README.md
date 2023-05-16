@@ -42,12 +42,30 @@
   graph TD;
       Team1-->kfolder;
       Team1-->testfolder;
+      
       kfolder-->cpu_k;
       kfolder-->gpu_k;
       cpu_k-->k1_cpu;
       cpu_k-->...;
-      cpu_k-->k5_cpu;
+      cpu_k-->k5_cpu;      
+      gpu_k-->k1_gpu;
+      gpu_k-->..;
+      gpu_k-->k5_gpu;
       
+      testfolder-->cpu_test;
+      testfolder-->gpu_test;
+```
+
+ ```mermaid
+  graph TD;
+      Team2-->kfolder;
+      Team2-->testfolder;
+      
+      kfolder-->cpu_k;
+      kfolder-->gpu_k;
+      cpu_k-->k1_cpu;
+      cpu_k-->...;
+      cpu_k-->k5_cpu;      
       gpu_k-->k1_gpu;
       gpu_k-->..;
       gpu_k-->k5_gpu;
