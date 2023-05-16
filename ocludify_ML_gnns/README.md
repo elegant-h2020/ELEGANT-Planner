@@ -42,7 +42,29 @@
    - I create csv, so as to have team1_cpu.csv and team1_gpu.csv (for team1) and team2_cpu.csv and team2_gpu.csv (for team2).
    - Randomly split the dataset based on unique kernels, and for each machine. Create 2 teams, team1 with silver1 and epyc7, and team2 with gold2 and dungani.
    
+   
+   silver1 **CPU**                     |    epyc7 **CPU**
+   ----------------------------  | ----------------------------
+   367 runs (54 unique kernels) | 217 runs (54 unique kernels)
+   
+   
+
+   gold2 **CPU**                 |    dungani **CPU**
+   ---------------------------- | ----------------------------
+   318 runs (75 unique kernels) | 209 runs (50 unique kernels)
+   
 5. [random_split_dataset_step1.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/random_split_dataset_step1.py)
+   
+   * I have to run [random_split_dataset_step1.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/random_split_dataset_step1.py) for *team1_cpu.csv, team1_gpu.csv, team2_cpu.csv, and team2_gpu.csv*
+   
+   - **def split_on_teams(args)** <br>
+      For each team, before I split it into kfolder and testfolder, I keep the name of the unique kerenls, and I compare them with the llvm ir files. For every llvm ir file that have correspondence to the unique kernels of the team, I copy them to the corresponding team folder. <br>
+      
+      *(Create for each team the corresponding ir folder, based on its unique kernels).*
+      
+      ex. for team1 folder, I create ir_cpu with ir files which belong to the kernels of team1 (for cpu).
+   
+   - **class split_llvmir()** <br>
      
  
  ```mermaid
