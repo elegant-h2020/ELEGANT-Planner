@@ -57,7 +57,7 @@
    
    - I have to run [random_split_dataset_step1.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/random_split_dataset_step1.py) for *team1_cpu.csv, team1_gpu.csv, team2_cpu.csv, and team2_gpu.csv*
    
-   - **def split_on_teams(args)** <br>
+   - ```def split_on_teams(args)``` <br>
   
       For each team, before I split it into kfolder and testfolder, I keep the name of the unique kerenls, and I compare them with the llvm ir files. For every llvm ir file that have correspondence to the unique kernels of the team, I copy them to the corresponding team folder. <br>
       
@@ -65,7 +65,7 @@
       
       ex. for team1 folder, I create ir_cpu with ir files which belong to the kernels of team1 (for cpu).
    
-   - **class split_llvmir()** <br>
+   - ```class split_llvmir()``` <br>
    
      ```python
      def __init__(self, pathlife) #ex. the pathfile of ir_cpu folder.
@@ -75,6 +75,12 @@
      
      Split a file (ex. ir_cpu folder) into kfolder and testfolder, *given the percentage to go in the large file*. <br> 
      ex. **folder ir_cpu** : kfolder_cpu **+** testfolder_cpu.
+   
+   - ```def fold_into_df(args,fold)``` <br>
+   
+      - For each filename, inside the **kfolder**, where the llvm ir code exists, if there is any row of the team dataframe, with the same kernel name, I keep the rows in a new dataframe. So, *I create a new dataframe, corresponding to all the runs of the kernels of the kfolder (kfold_df)*.  <br>
+      - I'm doing the same with the **testforlder**, so as to *create a new dataframe, corresponding to all the runs of the kernels that belong to the testfolder*.
+   
       
      
  
