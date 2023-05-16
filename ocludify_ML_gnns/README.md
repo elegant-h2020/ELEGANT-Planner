@@ -35,6 +35,11 @@
    **Output:** <br>
    final_gpu.csv and final_cpu.csv
 4. [random_split_dataset_step0.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/random_split_dataset_step0.py)
+   * **team1:** consists of silver1 (Tesla 2018, cpu 2017) and epyc7 (A100 2020, cpu 2019).
+   * **team2:** consists of gold2 (GeForce 2018, cpu 2017) and dungani (Quadro 2015, Tesla 2013, cpu 2013). <br>
+   
+   - When my input (final_csv) is from CPU, then I create a new column, encoding this information (team1['#device']=0). When my input is from GPU, then the encoding goes like this: team1['#device']=1).
+   
 5. [random_split_dataset_step1.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/random_split_dataset_step1.py)
      
  
