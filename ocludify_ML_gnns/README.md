@@ -27,14 +27,20 @@
    - Separate the csv results file of gold2, into gold2_gpu & gold_cpu. <br>
    - Join the input csv for all the machines into one for cpu, and one for gpu. <br>
    - I group the data __on kernel and on device__, and, 
-   - I *remove* the intialization kernels (__Initialization kernels__ are those which have for the same kernel, gsize <> 0, and inputByte = constant or 0, and output <> 0). 
+   - I *remove* the intialization kernels (__Initialization kernels__ are those which have for the same kernel, gsize <> 0, and inputByte = constant or 0, and output <> 0). (For checking the condition for InputByte, I use the function is_unique(s)).
+   - I keep the essential kernel attributes: <br>
+   ['kernel', 'gsize', 'device', 'input_bytes', 'output_bytes', 'device_mean', 'transfer_mean', 'machine', 'hostcode_mean'] + 'devicetransfer' <br>
+   **Argument List:**<br>
+   ['preprocessing_kernels_runs.py', 'results/gpu_cpu_together', 'results/cpu', 'results/gpu'] <br>
+   **Output:** <br>
+   final_gpu.csv and final_cpu.csv
    
  
 4. 
 5. 
      
     
-      3. preprocessing_kernels_runs.py
+      3.
       4. random_split_dataset_step0.py
       5. random_split_dataset_step1.py
       
