@@ -20,6 +20,14 @@ I used 4 machines for my experiments.
 | silver1      | pthread-Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz   |  Portable Computing Language | 1 | 0 | 
 
 
+* **gold2**
+
+| Machines        | Device Type         | Platform Type  | Platform ID         |Platform Type  |
+| ------------- |:-------------:|:-----:|:-------------:|:-------------:|
+| gold2      | GeForce GTX 1060 6GB | NVIDIA CUDA | 0 | 0 |
+| gold2      | Intel(R) Xeon(R) Gold 5120 CPU @ 2.20GHz   |  Intel(R) OpenCL | 1 | 0 | 
+
+
 
 
 
