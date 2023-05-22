@@ -2,13 +2,23 @@
 I used 4 machines for my experiments.
 
 
-* dungani
+* **dungani**
 
-| Machines        | Device Type         | Platform Type  |
-| ------------- |:-------------:| -----:|
-| dungani      | Quadro M4000 | NVIDIA CUDA |
-| dungani      | Tesla K40     |  NVIDIA CUDA |
-| dungani | pthread-Intel(R) Core(TM) i7-4820K CPU @ 3.70GHz      |    Portable Computing Language |
+| Machines        | Device Type         | Platform Type  | Platform ID         |Platform Type  |
+| ------------- |:-------------:|:-----:|:-------------:|:-------------:|
+| dungani      | Quadro M4000 | NVIDIA CUDA | 1 | 0 |
+| dungani      | Tesla K40     |  NVIDIA CUDA | 0 | 2 | 
+| dungani | pthread-Intel(R) Core(TM) i7-4820K CPU @ 3.70GHz      |    Portable Computing Language | 1 | 0 |
+
+
+
+* **silver1**
+
+| Machines        | Device Type         | Platform Type  | Platform ID         |Platform Type  |
+| ------------- |:-------------:|:-----:|:-------------:|:-------------:|
+| silver1      | Tesla V100-SXM2-32GB | NVIDIA CUDA | 0 | 0 |
+| silver1      | pthread-Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz   |  Portable Computing Language | 1 | 0 | 
+
 
 
 
