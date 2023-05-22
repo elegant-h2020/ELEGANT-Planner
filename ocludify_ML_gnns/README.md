@@ -1,3 +1,15 @@
+# Oclude runs #
+I used 4 machines for my experiments.
+
+
+| Machines      | Device Type   | Platform Type  | Platform ID | Device ID |
+| ------------- |:-------------:|:-----:|:-------------:|:-------------:| -----:|
+|dungani        | Quadro M4000  | NVIDIA CUDA | 0 | 0 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
+
 # Preprocessing of kernel runs #
 
 * I have one dataset for the cpu, and one for the gpu.
