@@ -1,6 +1,6 @@
 # Oclude runs #
-I used 4 machines for my experiments.
 
+## I used 4 machines for my experiments.
 
 * **dungani**
 
@@ -29,7 +29,12 @@ I used 4 machines for my experiments.
 
 
 
+* **epyc7**
 
+| Machines        | Device Type         | Platform Type  | Platform ID         |Platform Type  |
+| ------------- |:-------------:|:-----:|:-------------:|:-------------:|
+| epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |
+| epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 | 
 
 
 
