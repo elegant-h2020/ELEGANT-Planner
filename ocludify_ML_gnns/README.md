@@ -2,11 +2,18 @@
 I used 4 machines for my experiments.
 
 
-| Machines      | Device Type   | Platform Type  | Platform ID | Device ID |
-| ------------- |:-------------:|:-----:|:-------------:|:-------------:| -----:|
-|dungani        | Quadro M4000  | NVIDIA CUDA | 0 | 0 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+* dungani
+
+| Machines        | Device Type         | Platform Type  |
+| ------------- |:-------------:| -----:|
+| dungani      | Quadro M4000 | NVIDIA CUDA |
+| dungani      | Tesla K40     |  NVIDIA CUDA |
+| dungani | pthread-Intel(R) Core(TM) i7-4820K CPU @ 3.70GHz      |    Portable Computing Language |
+
+
+
+
+
 
 
 
