@@ -12,10 +12,12 @@
 
 ## Oclude runs
 
-| Machines        | Device Type         | Platform Type  | Platform ID         |Device ID  |Gsizes  |Samples  |Timeouts  |Output File  |Labels  |
+- **Experiment1**
+
+| Machines        | Device Type         | Platform Type  | Platform ID         |Device ID  |Gsizes  |Samples  |Timeouts  |Output File  |Compiled Kernels  |
 | ------------- |:-------------:|:-----:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
-| epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_epyc7_NvidiaA100_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_epyc7_NvidiaA100_exp1.csv) |Experiment1 |
-| epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_epyc7_CPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_epyc7_CPU_exp1.csv) |Experiment1 |
+| epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_epyc7_NvidiaA100_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_epyc7_NvidiaA100_exp1.csv) |855 (total kernels) 112 (unique kernels) |
+| epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_epyc7_CPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_epyc7_CPU_exp1.csv) |293 (total kernels) 55 (unique kernels) |
 | silver1      | Tesla V100-SXM2-32GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_silver1_Tesla_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_silver1_Tesla_exp1.csv) |Experiment1 |
 | silver1      | pthread-Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz   |  Portable Computing Language | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_silver1_CPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_silver1_CPU_exp1.csv) |Experiment1 | 
 | gold2      | GeForce GTX 1060 6GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu_cpu_together/results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv) |Experiment1 |
