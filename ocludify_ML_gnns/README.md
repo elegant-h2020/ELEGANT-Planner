@@ -14,7 +14,7 @@
 
 - **Experiment1**
 
-| Machines        | Device Type         | Platform Type  | Platform ID         |Device ID  |Gsizes  |Samples  |Timeouts  |Output File  |Compiled Kernels  |
+| Machines        | Device Type         | Platform Type  | Platform ID         |Device ID  |Gsizes  |Samples  |Timeouts  |Output File  |Compiled  Kernels  |
 | ------------- |:-------------:|:-----:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
 | epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_epyc7_NvidiaA100_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_epyc7_NvidiaA100_exp1.csv) |855 (#runs) 112 (unique kernels) |
 | epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_epyc7_CPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_epyc7_CPU_exp1.csv) |293 (#runs) 55 (unique kernels) |
@@ -28,7 +28,7 @@
 
 - **Experiment2**
 
-| Machines        | Device Type         | Platform Type  | Platform ID         |Device ID  |Gsizes  |Samples  |Timeouts  |Output File  |Compiled Kernels  |
+| Machines        | Device Type         | Platform Type  | Platform ID         |Device ID  |Gsizes  |Samples  |Timeouts  |Output File  |Compiled  Kernels  |
 | ------------- |:-------------:|:-----:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
 | epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |[100,1000,100] |200 |[10,35] |[results_epyc7_NvidiaA100_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_epyc7_NvidiaA100_exp2.csv) |322 (#runs) 54 (unique kernels) |
 | epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 |[100,1000,100] |200 |~~[10,35]~~ [35,40] |[results_epyc7_CPU_exp2.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_epyc7_CPU_exp2.csv) |15 (#runs) 9 (unique kernels) |
