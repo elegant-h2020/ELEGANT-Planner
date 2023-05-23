@@ -20,8 +20,8 @@
 | silver1      | pthread-Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz   |  Portable Computing Language | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_silver1_CPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_silver1_CPU_exp1.csv) | 
 | gold2      | GeForce GTX 1060 6GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu_cpu_together/results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv) |
 | gold2      | Intel(R) Xeon(R) Gold 5120 CPU @ 2.20GHz   |  Intel(R) OpenCL | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu_cpu_together/results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv) | 
-| dungani      | Quadro M4000 | NVIDIA CUDA | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |
-| dungani      | Tesla K40     |  NVIDIA CUDA | 0 | 2 |[1000,21000,2000] |200 |[10,15,20] | 
+| dungani      | Quadro M4000 | NVIDIA CUDA | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_dungani_QuadroTesla_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_dungani_QuadroTesla_exp1.csv) |
+| dungani      | Tesla K40     |  NVIDIA CUDA | 0 | 2 |[1000,21000,2000] |200 |[10,15,20] |[results_dungani_QuadroTesla_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_dungani_QuadroTesla_exp1.csv) | 
 | dungani | pthread-Intel(R) Core(TM) i7-4820K CPU @ 3.70GHz      |    Portable Computing Language | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_dungani_CPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_dungani_CPU_exp1.csv) |
 
 
