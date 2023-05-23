@@ -4,52 +4,25 @@
 
 * I used 4 machines for my experiments.
 
-* **dungani**
-
-| Machines        | Device Type         | Platform Type  | Platform ID         |Platform Type  |
-| ------------- |:-------------:|:-----:|:-------------:|:-------------:|
-| dungani      | Quadro M4000 | NVIDIA CUDA | 1 | 0 |
-| dungani      | Tesla K40     |  NVIDIA CUDA | 0 | 2 | 
-| dungani | pthread-Intel(R) Core(TM) i7-4820K CPU @ 3.70GHz      |    Portable Computing Language | 1 | 0 |
-
-
-* **silver1**
-
-| Machines        | Device Type         | Platform Type  | Platform ID         |Platform Type  |
-| ------------- |:-------------:|:-----:|:-------------:|:-------------:|
-| silver1      | Tesla V100-SXM2-32GB | NVIDIA CUDA | 0 | 0 |
-| silver1      | pthread-Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz   |  Portable Computing Language | 1 | 0 | 
-
-
-* **gold2**
-
-| Machines        | Device Type         | Platform Type  | Platform ID         |Platform Type  |
-| ------------- |:-------------:|:-----:|:-------------:|:-------------:|
-| gold2      | GeForce GTX 1060 6GB | NVIDIA CUDA | 0 | 0 |
-| gold2      | Intel(R) Xeon(R) Gold 5120 CPU @ 2.20GHz   |  Intel(R) OpenCL | 1 | 0 | 
-
-
-* **epyc7**
-
-| Machines        | Device Type         | Platform Type  | Platform ID         |Platform Type  |
-| ------------- |:-------------:|:-----:|:-------------:|:-------------:|
-| epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |
-| epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 | 
+1. **dungani**
+2. **silver1**
+3. **gold2**
+4. **epyc7**
 
 
 ## Oclude runs
 
-| Machines        | Device Type         | Platform Type  | Platform ID         |Platform Type  |
-| ------------- |:-------------:|:-----:|:-------------:|:-------------:|
-| epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |
-| epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 | 
-| silver1      | Tesla V100-SXM2-32GB | NVIDIA CUDA | 0 | 0 |
-| silver1      | pthread-Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz   |  Portable Computing Language | 1 | 0 | 
-| gold2      | GeForce GTX 1060 6GB | NVIDIA CUDA | 0 | 0 |
-| gold2      | Intel(R) Xeon(R) Gold 5120 CPU @ 2.20GHz   |  Intel(R) OpenCL | 1 | 0 | 
-| dungani      | Quadro M4000 | NVIDIA CUDA | 1 | 0 |
-| dungani      | Tesla K40     |  NVIDIA CUDA | 0 | 2 | 
-| dungani | pthread-Intel(R) Core(TM) i7-4820K CPU @ 3.70GHz      |    Portable Computing Language | 1 | 0 |
+| Machines        | Device Type         | Platform Type  | Platform ID         |Device ID  |Gsizes  |
+| ------------- |:-------------:|:-----:|:-------------:|:-------------:|:-------------:|
+| epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |
+| epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 |[1000,21000,2000] |
+| silver1      | Tesla V100-SXM2-32GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |
+| silver1      | pthread-Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz   |  Portable Computing Language | 1 | 0 |[1000,21000,2000] | 
+| gold2      | GeForce GTX 1060 6GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |
+| gold2      | Intel(R) Xeon(R) Gold 5120 CPU @ 2.20GHz   |  Intel(R) OpenCL | 1 | 0 |[1000,21000,2000] | 
+| dungani      | Quadro M4000 | NVIDIA CUDA | 1 | 0 |[1000,21000,2000] |
+| dungani      | Tesla K40     |  NVIDIA CUDA | 0 | 2 |[1000,21000,2000] | 
+| dungani | pthread-Intel(R) Core(TM) i7-4820K CPU @ 3.70GHz      |    Portable Computing Language | 1 | 0 |[1000,21000,2000] |
 
 
 
