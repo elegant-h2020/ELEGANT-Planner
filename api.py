@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, send_file, after_this_request
 from flask_restful import Api, Resource, reqparse
 import json
 import base64
@@ -13,6 +13,7 @@ import torch
 from torch_geometric.data import Data
 from torch_geometric.loader import DataLoader
 from GTMcrossval_nwrap_nospatial_newparametrized import GTModel
+import os
 
 app = Flask(__name__)
 api = Api(app)
@@ -356,10 +357,22 @@ class Scheduling(Resource):
 
         response["objective"]["time"] = str(makespan)
         response["objective"]["power"] = str(power)
+        ####
+        filename = 'response.json'
+        with open(filename,'w') as f:
+            json.dump(response,f)
         
-        return response
+        @after_this_request
+        def remove_file(response):
+            try:
+                os.remove(filename)
+            except Exception as error:
+                app.logger.error("Error removing response file", error)
+            return response
 
+        return send_file(filename,mimetype='application/json')
 
+        ####
 api.add_resource(Scheduling, "/planner/schedule")
 api.add_resource(ObjectivesConfig, "/planner/configure_objectives")
 

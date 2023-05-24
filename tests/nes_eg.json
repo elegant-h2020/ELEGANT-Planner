@@ -1,52 +1,10 @@
 {
       "placement": [
             {
-                  "operator_id": "2",
-                  "device_id": "node_2-device_1",
-                  "node_id": "node_2",
-                  "device_type": "CPU"
-            },
-            {
-                  "operator_id": "3",
-                  "device_id": "node_2-device_1",
-                  "node_id": "node_2",
-                  "device_type": "CPU"
-            },
-            {
-                  "operator_id": "1",
+                  "operator_id": "4",
                   "device_id": "node_1-device_1",
                   "node_id": "node_1",
                   "device_type": "CPU"
-            },
-            {
-                  "operator_id": "5",
-                  "device_id": "node_2-device_1",
-                  "node_id": "node_2",
-                  "device_type": "CPU"
-            },
-            {
-                  "operator_id": "6",
-                  "device_id": "node_2-device_1",
-                  "node_id": "node_2",
-                  "device_type": "CPU"
-            },
-            {
-                  "operator_id": "4",
-                  "device_id": "node_1-device_2",
-                  "node_id": "node_1",
-                  "device_type": "GPU"
-            },
-            {
-                  "operator_id": "8",
-                  "device_id": "node_2-device_2",
-                  "node_id": "node_2",
-                  "device_type": "GPU"
-            },
-            {
-                  "operator_id": "9",
-                  "device_id": "node_2-device_2",
-                  "node_id": "node_2",
-                  "device_type": "GPU"
             },
             {
                   "operator_id": "7",
@@ -55,44 +13,38 @@
                   "device_type": "CPU"
             },
             {
-                  "operator_id": "11",
-                  "device_id": "node_2-device_1",
-                  "node_id": "node_2",
+                  "operator_id": "10",
+                  "device_id": "node_1-device_1",
+                  "node_id": "node_1",
                   "device_type": "CPU"
             },
             {
-                  "operator_id": "14",
-                  "device_id": "node_1-device_2",
+                  "operator_id": "9",
+                  "device_id": "node_3-device_1",
+                  "node_id": "node_3",
+                  "device_type": "CPU"
+            },
+            {
+                  "operator_id": "6",
+                  "device_id": "node_3-device_1",
+                  "node_id": "node_3",
+                  "device_type": "CPU"
+            },
+            {
+                  "operator_id": "5",
+                  "device_id": "node_3-device_1",
+                  "node_id": "node_3",
+                  "device_type": "CPU"
+            },
+            {
+                  "operator_id": "8",
+                  "device_id": "node_1-device_1",
                   "node_id": "node_1",
-                  "device_type": "GPU"
-            },
-            {
-                  "operator_id": "12",
-                  "device_id": "node_2-device_2",
-                  "node_id": "node_2",
-                  "device_type": "GPU"
-            },
-            {
-                  "operator_id": "10",
-                  "device_id": "node_1-device_2",
-                  "node_id": "node_1",
-                  "device_type": "GPU"
-            },
-            {
-                  "operator_id": "13",
-                  "device_id": "node_2-device_2",
-                  "node_id": "node_2",
-                  "device_type": "GPU"
-            },
-            {
-                  "operator_id": "15",
-                  "device_id": "node_2-device_2",
-                  "node_id": "node_2",
-                  "device_type": "GPU"
+                  "device_type": "CPU"
             }
       ],
       "objective": {
-            "time": "6.450710773468018",
-            "power": "1695"
+            "time": "7.275099516204664",
+            "power": "735"
       }
 }
