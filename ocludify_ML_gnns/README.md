@@ -26,6 +26,13 @@
    > DEVICES_FILE = f'devices_{machine}.txt'
    > ```
 
+* **oclude** can be used as a command line tool through its CLI (command line interface).
+* **oclude** is a command line tool and a Python3 module to run and test arbitrary standalone OpenCL kernels, without the need to write hostcode or specify the arguments.
+*  **oclude** supports 2 different commands:
+   1. the profiling of the selected device
+   2. the execution and/or profiling of an OpenCL kernel, which supports 2 different modes (apart from simply executing the kernel):
+      a. count the LLVM instructions
+      b. measure the execution time
 
 
 
