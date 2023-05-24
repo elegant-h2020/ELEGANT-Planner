@@ -34,6 +34,10 @@
       a. count the LLVM instructions
       b. measure the execution time
 
+   > * Some extra information concerning **GSIZE**. 
+   > **GSIZE** is the quantity which controls the length of the vectors, whether is output, or input. 
+   > In OpenCL, InputByte and OutputByte arise from the gsize in a deterministic manner.
+
 [^1]: You can check [oclude's](https://github.com/zehanort/oclude) github page for more information.
 
 
