@@ -1,6 +1,6 @@
 # Oclude runs #
 
-* **[ocludify.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/ocludify.py)** runs the **oclude profiler** (which must be installed) on a list of OpenCL kernels and times them. To run it expects 3 files:
+* **[ocludify.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/ocludify.py)** runs the **oclude profiler[^1]** (which must be installed) on a list of OpenCL kernels and times them. To run it expects 3 files:
   
    1. a **csv file** with the list of kernels to run. The name of this csv is stored in the **constant [KERNELS_FILE](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/cgo17-amd.csv)** in the GLOBAL VARIABLE SECTION.
    2. a **csv file** with the list of configurations to use for each kernel. The name of this csv is stored in the **CONFIG_FILE**. The script will only deal with the kernels listed in the **CONFIG_FILE**, regardless of how many kernels are listed in the [KERNELS_FILE](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/cgo17-amd.csv). This is because the **CONFIG_FILE** is expected to be manually edited by the user to specify the kernels to run and their respective configurations.
@@ -34,7 +34,7 @@
       a. count the LLVM instructions
       b. measure the execution time
 
-
+[^1]: You can check [oclude's](https://github.com/zehanort/oclude) github page for more information.
 
 
 ## Machines 
