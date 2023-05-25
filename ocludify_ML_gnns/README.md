@@ -158,7 +158,7 @@
    
    - ```def split_on_teams(args)``` <br>
   
-      For each team, before I split it into kfolder and testfolder, I keep the name of the unique kerenls, and I compare them with the llvm ir files. For every llvm ir file that have correspondence to the unique kernels of the team, I copy them to the corresponding team folder. <br>
+      For each team, before I split it into kfolder and testfolder, I keep the name of the unique kernels, and I compare them with the llvm ir files. For every llvm ir file that have correspondence to the unique kernels of the team, I copy them to the corresponding team folder. <br>
       
       *(Create for each team the corresponding ir folder, based on its unique kernels).*
       
