@@ -229,3 +229,4 @@
       testfolder-->gpu_test;
 ```
   
+## Codes for training the GNNs: 
