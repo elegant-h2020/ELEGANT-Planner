@@ -1,0 +1,172 @@
+show me the available device in this machine cuda
+                                            kernel  ...  devicetransfer
+0  amd-app-sdk-3.0-BinomialOption-binomial_options  ...        0.351106
+1        amd-app-sdk-3.0-PrefixSum-group_prefixSum  ...        0.202962
+
+[2 rows x 10 columns]
+show me how many unique kernel names we have 90
+
+ commonkernels across the 4 machine runs are 40 and ['rodinia-3.1-nn-NearestNeighbor', 'polybench-gpu-1.0-mvt-mvt_kernel1', 'shoc-1.1.5-S3D-rdwdot_kernel', 'rodinia-3.1-particlefilter-find_index_kernel', 'polybench-gpu-1.0-covariance-mean_kernel', 'polybench-gpu-1.0-atax-atax_kernel1', 'amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'npb-3.3-BT-compute_rhs1', 'polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', 'npb-3.3-SP-compute_rhs1', 'polybench-gpu-1.0-syr2k-syr2k_kernel', 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', 'polybench-gpu-1.0-3mm-mm3_kernel1', 'npb-3.3-CG-conj_grad_0', 'amd-app-sdk-3.0-Reduction-reduce', 'polybench-gpu-1.0-correlation-mean_kernel', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced0', 'polybench-gpu-1.0-mvt-mvt_kernel2', 'polybench-gpu-1.0-gemm-gemm', 'polybench-gpu-1.0-bicg-bicgKernel2', 'shoc-1.1.5-Reduction-reduce', 'amd-app-sdk-3.0-BinomialOption-binomial_options', 'polybench-gpu-1.0-gesummv-gesummv_kernel', 'amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', 'polybench-gpu-1.0-syrk-syrk_kernel', 'nvidia-4.2-DotProduct-DotProduct', 'npb-3.3-CG-makea_7', 'shoc-1.1.5-Triad-Triad', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced3', 'nvidia-4.2-VectorAdd-VectorAdd', 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', 'amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'polybench-gpu-1.0-atax-atax_kernel2', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced1', 'rodinia-3.1-bfs-BFS_2', 'amd-app-sdk-3.0-SobelFilter-sobel_filter', 'polybench-gpu-1.0-bicg-bicgKernel1', 'shoc-1.1.5-FFT-chk1D_512', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced2', 'polybench-gpu-1.0-correlation-std_kernel'] 
+
+
+ print the shape of the new dataframe: (800, 10) 
+
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-BinomialOption-binomial_options', 'dungani')? 6
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', 'dungani')? 1
+for the kernel amd-app-sdk-3.0-FloydWarshall-floydWarshallPass I do not have common input bytes!!!
+for the kernel amd-app-sdk-3.0-FloydWarshall-floydWarshallPass I do not have common input bytes!!!
+for the kernel amd-app-sdk-3.0-FloydWarshall-floydWarshallPass I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-Reduction-reduce', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-compute_rhs1', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-conj_grad_0', 'dungani')? 10
+for the kernel npb-3.3-CG-conj_grad_0 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-makea_7', 'dungani')? 10
+for the kernel npb-3.3-CG-makea_7 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-compute_rhs1', 'dungani')? 10
+for the kernel npb-3.3-SP-compute_rhs1 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-DotProduct-DotProduct', 'dungani')? 9
+for the kernel nvidia-4.2-DotProduct-DotProduct I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulCoalesced0', 'dungani')? 1
+for the kernel nvidia-4.2-MatVecMul-MatVecMulCoalesced0 I do not have common input bytes!!!
+for the kernel nvidia-4.2-MatVecMul-MatVecMulCoalesced0 I do not have common input bytes!!!
+for the kernel nvidia-4.2-MatVecMul-MatVecMulCoalesced0 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulCoalesced1', 'dungani')? 1
+for the kernel nvidia-4.2-MatVecMul-MatVecMulCoalesced1 I do not have common input bytes!!!
+for the kernel nvidia-4.2-MatVecMul-MatVecMulCoalesced1 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulCoalesced2', 'dungani')? 1
+for the kernel nvidia-4.2-MatVecMul-MatVecMulCoalesced2 I do not have common input bytes!!!
+for the kernel nvidia-4.2-MatVecMul-MatVecMulCoalesced2 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulCoalesced3', 'dungani')? 1
+for the kernel nvidia-4.2-MatVecMul-MatVecMulCoalesced3 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', 'dungani')? 1
+for the kernel nvidia-4.2-MatVecMul-MatVecMulUncoalesced0 I do not have common input bytes!!!
+for the kernel nvidia-4.2-MatVecMul-MatVecMulUncoalesced0 I do not have common input bytes!!!
+for the kernel nvidia-4.2-MatVecMul-MatVecMulUncoalesced0 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', 'dungani')? 1
+for the kernel nvidia-4.2-MatVecMul-MatVecMulUncoalesced1 I do not have common input bytes!!!
+for the kernel nvidia-4.2-MatVecMul-MatVecMulUncoalesced1 I do not have common input bytes!!!
+for the kernel nvidia-4.2-MatVecMul-MatVecMulUncoalesced1 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-VectorAdd-VectorAdd', 'dungani')? 10
+for the kernel nvidia-4.2-VectorAdd-VectorAdd I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', 'dungani')? 10
+for the kernel polybench-gpu-1.0-2DConvolution-Convolution2D_kernel I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-3mm-mm3_kernel1', 'dungani')? 1
+for the kernel polybench-gpu-1.0-3mm-mm3_kernel1 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-atax-atax_kernel1', 'dungani')? 1
+for the kernel polybench-gpu-1.0-atax-atax_kernel1 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-atax-atax_kernel1 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-atax-atax_kernel2', 'dungani')? 1
+for the kernel polybench-gpu-1.0-atax-atax_kernel2 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-atax-atax_kernel2 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-bicg-bicgKernel1', 'dungani')? 1
+for the kernel polybench-gpu-1.0-bicg-bicgKernel1 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-bicg-bicgKernel1 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-bicg-bicgKernel2', 'dungani')? 1
+for the kernel polybench-gpu-1.0-bicg-bicgKernel2 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-bicg-bicgKernel2 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-correlation-mean_kernel', 'dungani')? 1
+for the kernel polybench-gpu-1.0-correlation-mean_kernel I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-correlation-mean_kernel I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-correlation-std_kernel', 'dungani')? 1
+for the kernel polybench-gpu-1.0-correlation-std_kernel I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-correlation-std_kernel I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-covariance-mean_kernel', 'dungani')? 1
+for the kernel polybench-gpu-1.0-covariance-mean_kernel I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-covariance-mean_kernel I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-gemm-gemm', 'dungani')? 1
+for the kernel polybench-gpu-1.0-gemm-gemm I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-gemm-gemm I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-gesummv-gesummv_kernel', 'dungani')? 1
+for the kernel polybench-gpu-1.0-gesummv-gesummv_kernel I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-gesummv-gesummv_kernel I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-mvt-mvt_kernel1', 'dungani')? 1
+for the kernel polybench-gpu-1.0-mvt-mvt_kernel1 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-mvt-mvt_kernel1 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-mvt-mvt_kernel2', 'dungani')? 1
+for the kernel polybench-gpu-1.0-mvt-mvt_kernel2 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-mvt-mvt_kernel2 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-syr2k-syr2k_kernel', 'dungani')? 1
+for the kernel polybench-gpu-1.0-syr2k-syr2k_kernel I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-syr2k-syr2k_kernel I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-syrk-syrk_kernel', 'dungani')? 1
+for the kernel polybench-gpu-1.0-syrk-syrk_kernel I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-syrk-syrk_kernel I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-bfs-BFS_2', 'dungani')? 10
+for the kernel rodinia-3.1-bfs-BFS_2 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-nn-NearestNeighbor', 'dungani')? 3
+for the kernel rodinia-3.1-nn-NearestNeighbor I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-particlefilter-find_index_kernel', 'dungani')? 10
+for the kernel rodinia-3.1-particlefilter-find_index_kernel I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-FFT-chk1D_512', 'dungani')? 8
+for the kernel shoc-1.1.5-FFT-chk1D_512 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-Reduction-reduce', 'dungani')? 10
+for the kernel shoc-1.1.5-Reduction-reduce I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-rdwdot_kernel', 'dungani')? 10
+for the kernel shoc-1.1.5-S3D-rdwdot_kernel I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-Triad-Triad', 'dungani')? 10
+for the kernel shoc-1.1.5-Triad-Triad I do not have common input bytes!!!
+how many times did I find kernels with common input bytes across all machines? 6
+finaltotalkernels 6 [[('amd-app-sdk-3.0-BinomialOption-binomial_options', 'dungani'), ('amd-app-sdk-3.0-BinomialOption-binomial_options', 'epyc7'), ('amd-app-sdk-3.0-BinomialOption-binomial_options', 'gold2'), ('amd-app-sdk-3.0-BinomialOption-binomial_options', 'silver1')], [('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'dungani'), ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'epyc7'), ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'gold2'), ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'silver1')], [('amd-app-sdk-3.0-Reduction-reduce', 'dungani'), ('amd-app-sdk-3.0-Reduction-reduce', 'epyc7'), ('amd-app-sdk-3.0-Reduction-reduce', 'gold2'), ('amd-app-sdk-3.0-Reduction-reduce', 'silver1')], [('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'dungani'), ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'epyc7'), ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'gold2'), ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'silver1')], [('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'dungani'), ('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'epyc7'), ('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'gold2'), ('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'silver1')], [('npb-3.3-BT-compute_rhs1', 'dungani'), ('npb-3.3-BT-compute_rhs1', 'epyc7'), ('npb-3.3-BT-compute_rhs1', 'gold2'), ('npb-3.3-BT-compute_rhs1', 'silver1')]]
+final bytes and final kernels that are common across the 4 machines: 6 
+ [[48004], [8008], [32000], [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000], [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000], [8012, 72012]]
+uniquefinalkernels ['amd-app-sdk-3.0-BinomialOption-binomial_options', 'amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'amd-app-sdk-3.0-Reduction-reduce', 'amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'amd-app-sdk-3.0-SobelFilter-sobel_filter', 'npb-3.3-BT-compute_rhs1'] 
+
+list of tuples kernelsbytes [('amd-app-sdk-3.0-BinomialOption-binomial_options', [48004]), ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', [8008]), ('amd-app-sdk-3.0-Reduction-reduce', [32000]), ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]), ('amd-app-sdk-3.0-SobelFilter-sobel_filter', [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000]), ('npb-3.3-BT-compute_rhs1', [8012, 72012])] 
+
+*Conditions: [['amd-app-sdk-3.0-BinomialOption-binomial_options', [48004]], ['amd-app-sdk-3.0-PrefixSum-group_prefixSum', [8008]], ['amd-app-sdk-3.0-Reduction-reduce', [32000]], ['amd-app-sdk-3.0-ScanLargeArrays-blockAddition', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]], ['amd-app-sdk-3.0-SobelFilter-sobel_filter', [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000]], ['npb-3.3-BT-compute_rhs1', [8012, 72012]]] 
+
+['amd-app-sdk-3.0-BinomialOption-binomial_options', [48004]]
+['amd-app-sdk-3.0-PrefixSum-group_prefixSum', [8008]]
+['amd-app-sdk-3.0-Reduction-reduce', [32000]]
+['amd-app-sdk-3.0-ScanLargeArrays-blockAddition', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]]
+['amd-app-sdk-3.0-SobelFilter-sobel_filter', [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000]]
+['npb-3.3-BT-compute_rhs1', [8012, 72012]]

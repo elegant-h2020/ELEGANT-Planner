@@ -1,0 +1,605 @@
+show me the available device in this machine cuda
+                                            kernel  ...  devicetransfer
+0  amd-app-sdk-3.0-BinomialOption-binomial_options  ...        0.297042
+1        amd-app-sdk-3.0-PrefixSum-group_prefixSum  ...        0.303020
+
+[2 rows x 10 columns]
+show me how many unique kernel names we have 149
+
+ commonkernels across the 4 machine runs are 145 and ['polybench-gpu-1.0-atax-atax_kernel2', 'polybench-gpu-1.0-gesummv-gesummv_kernel', 'polybench-gpu-1.0-3mm-mm3_kernel3', 'npb-3.3-LU-erhs2', 'shoc-1.1.5-S3D-ratt6_kernel', 'shoc-1.1.5-S3D-rdwdot7_kernel', 'npb-3.3-CG-main_0', 'npb-3.3-LU-rhsx', 'npb-3.3-LU-erhs1', 'npb-3.3-SP-txinvr', 'rodinia-3.1-cfd-time_step', 'polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', 'shoc-1.1.5-S3D-qssab_kernel', 'amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', 'rodinia-3.1-gaussian-Fan2', 'rodinia-3.1-particlefilter-find_index_kernel', 'npb-3.3-LU-buts', 'npb-3.3-BT-z_solve3', 'shoc-1.1.5-S3D-rdwdot3_kernel', 'npb-3.3-MG-kernel_comm3_1', 'npb-3.3-LU-pintgr_reduce', 'amd-app-sdk-3.0-SobelFilter-sobel_filter', 'shoc-1.1.5-S3D-ratt8_kernel', 'npb-3.3-SP-tzetar', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced0', 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', 'amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'shoc-1.1.5-S3D-rdwdot8_kernel', 'npb-3.3-BT-compute_rhs2', 'shoc-1.1.5-FFT-chk1D_512', 'amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', 'polybench-gpu-1.0-syrk-syrk_kernel', 'npb-3.3-SP-compute_rhs4', 'npb-3.3-SP-compute_rhs1', 'npb-3.3-BT-compute_rhs3', 'npb-3.3-BT-y_solve3', 'shoc-1.1.5-Sort-reduce', 'polybench-gpu-1.0-correlation-reduce_kernel', 'npb-3.3-SP-z_solve', 'npb-3.3-LU-blts', 'npb-3.3-CG-makea_5', 'npb-3.3-SP-pinvr', 'shoc-1.1.5-S3D-rdwdot6_kernel', 'polybench-gpu-1.0-2mm-mm2_kernel1', 'polybench-gpu-1.0-atax-atax_kernel1', 'npb-3.3-BT-add', 'shoc-1.1.5-S3D-ratt9_kernel', 'polybench-gpu-1.0-3mm-mm3_kernel2', 'npb-3.3-LU-erhs3', 'npb-3.3-LU-rhsz', 'polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', 'npb-3.3-LU-pintgr3', 'polybench-gpu-1.0-mvt-mvt_kernel1', 'shoc-1.1.5-S3D-ratx_kernel', 'polybench-gpu-1.0-covariance-covar_kernel', 'npb-3.3-BT-compute_rhs4', 'amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', 'polybench-gpu-1.0-correlation-corr_kernel', 'npb-3.3-SP-compute_rhs6', 'amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', 'shoc-1.1.5-Reduction-reduce', 'npb-3.3-SP-compute_rhs5', 'shoc-1.1.5-S3D-rdwdot2_kernel', 'npb-3.3-BT-z_solve1', 'npb-3.3-MG-kernel_comm3_2', 'polybench-gpu-1.0-covariance-mean_kernel', 'npb-3.3-LU-rhs', 'polybench-gpu-1.0-2mm-mm2_kernel2', 'shoc-1.1.5-S3D-ratt2_kernel', 'npb-3.3-LU-ssor2', 'amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', 'rodinia-3.1-cfd-initialize_variables', 'npb-3.3-LU-pintgr1', 'polybench-gpu-1.0-bicg-bicgKernel2', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced2', 'parboil-0.2-bfs-BFS_kernel', 'amd-app-sdk-3.0-BinomialOption-binomial_options', 'npb-3.3-CG-makea_6', 'nvidia-4.2-VectorAdd-VectorAdd', 'shoc-1.1.5-S3D-rdwdot10_kernel', 'npb-3.3-SP-ninvr', 'npb-3.3-BT-compute_rhs6', 'polybench-gpu-1.0-correlation-std_kernel', 'npb-3.3-LU-pintgr2', 'npb-3.3-CG-makea_4', 'shoc-1.1.5-S3D-ratt3_kernel', 'npb-3.3-BT-x_solve3', 'shoc-1.1.5-S3D-ratx4_kernel', 'npb-3.3-SP-compute_rhs2', 'amd-app-sdk-3.0-ScanLargeArrays-prefixSum', 'nvidia-4.2-DotProduct-DotProduct', 'shoc-1.1.5-S3D-ratt7_kernel', 'shoc-1.1.5-Triad-Triad', 'polybench-gpu-1.0-mvt-mvt_kernel2', 'shoc-1.1.5-S3D-ratt4_kernel', 'shoc-1.1.5-S3D-rdwdot9_kernel', 'shoc-1.1.5-S3D-qssa_kernel', 'npb-3.3-CG-makea_2', 'rodinia-3.1-backprop-bpnn_adjust_weights_ocl', 'polybench-gpu-1.0-covariance-reduce_kernel', 'polybench-gpu-1.0-syr2k-syr2k_kernel', 'parboil-0.2-stencil-naive_kernel', 'shoc-1.1.5-S3D-ratt_kernel', 'polybench-gpu-1.0-correlation-mean_kernel', 'rodinia-3.1-leukocyte-dilate_kernel', 'npb-3.3-SP-y_solve', 'npb-3.3-BT-compute_rhs5', 'shoc-1.1.5-S3D-ratt5_kernel', 'rodinia-3.1-backprop-bpnn_layerforward_ocl', 'polybench-gpu-1.0-bicg-bicgKernel1', 'npb-3.3-CG-makea_1', 'amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', 'npb-3.3-LU-ssor3', 'npb-3.3-SP-compute_rhs3', 'npb-3.3-LU-erhs4', 'rodinia-3.1-nn-NearestNeighbor', 'npb-3.3-MG-kernel_resid', 'shoc-1.1.5-S3D-gr_base', 'npb-3.3-BT-y_solve1', 'npb-3.3-SP-add', 'shoc-1.1.5-S3D-rdwdot_kernel', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced1', 'shoc-1.1.5-S3D-ratx2_kernel', 'shoc-1.1.5-S3D-ratt10_kernel', 'npb-3.3-CG-conj_grad_0', 'amd-app-sdk-3.0-Reduction-reduce', 'npb-3.3-BT-compute_rhs1', 'polybench-gpu-1.0-3mm-mm3_kernel1', 'npb-3.3-CG-makea_7', 'npb-3.3-SP-exact_rhs5', 'npb-3.3-MG-kernel_psinv', 'shoc-1.1.5-S3D-qssa2_kernel', 'shoc-1.1.5-Scan-reduce', 'npb-3.3-BT-exact_rhs5', 'polybench-gpu-1.0-gemm-gemm', 'polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', 'rodinia-3.1-bfs-BFS_2', 'rodinia-3.1-gaussian-Fan1', 'polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', 'shoc-1.1.5-S3D-ratxb_kernel', 'npb-3.3-LU-rhsy', 'npb-3.3-BT-x_solve1', 'npb-3.3-SP-x_solve', 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', 'amd-app-sdk-3.0-ScanLargeArrays-blockAddition'] 
+
+
+ print the shape of the new dataframe: (4896, 10) 
+
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-BinomialOption-binomial_options', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-Reduction-reduce', 'dungani')? 2
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', 'dungani')? 6
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-ScanLargeArrays-prefixSum', 'dungani')? 6
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-add', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-compute_rhs1', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-compute_rhs2', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-compute_rhs3', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-compute_rhs4', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-compute_rhs5', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-compute_rhs6', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-exact_rhs5', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-x_solve1', 'dungani')? 2
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-x_solve3', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-y_solve1', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-y_solve3', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-z_solve1', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-BT-z_solve3', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-conj_grad_0', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-main_0', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-makea_1', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-makea_2', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-makea_4', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-makea_5', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-makea_6', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-CG-makea_7', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-blts', 'dungani')? 3
+for the kernel npb-3.3-LU-blts I do not have common input bytes!!!
+for the kernel npb-3.3-LU-blts I do not have common input bytes!!!
+for the kernel npb-3.3-LU-blts I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-buts', 'dungani')? 3
+for the kernel npb-3.3-LU-buts I do not have common input bytes!!!
+for the kernel npb-3.3-LU-buts I do not have common input bytes!!!
+for the kernel npb-3.3-LU-buts I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-erhs1', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-erhs2', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-erhs3', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-erhs4', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-pintgr1', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-pintgr2', 'dungani')? 2
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-pintgr3', 'dungani')? 2
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-pintgr_reduce', 'dungani')? 3
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-rhs', 'dungani')? 9
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-rhsx', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-rhsy', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-rhsz', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-ssor2', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-LU-ssor3', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-MG-kernel_comm3_1', 'dungani')? 2
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-MG-kernel_comm3_2', 'dungani')? 2
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-MG-kernel_psinv', 'dungani')? 2
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-MG-kernel_resid', 'dungani')? 2
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-add', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-compute_rhs1', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-compute_rhs2', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-compute_rhs3', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-compute_rhs4', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-compute_rhs5', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-compute_rhs6', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-exact_rhs5', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-ninvr', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-pinvr', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-txinvr', 'dungani')? 7
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-tzetar', 'dungani')? 7
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-x_solve', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-y_solve', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('npb-3.3-SP-z_solve', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-DotProduct-DotProduct', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulCoalesced0', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulCoalesced1', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulCoalesced2', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('nvidia-4.2-VectorAdd-VectorAdd', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('parboil-0.2-bfs-BFS_kernel', 'dungani')? 2
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('parboil-0.2-stencil-naive_kernel', 'dungani')? 4
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-2mm-mm2_kernel1', 'dungani')? 5
+for the kernel polybench-gpu-1.0-2mm-mm2_kernel1 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-2mm-mm2_kernel1 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-2mm-mm2_kernel2', 'dungani')? 5
+for the kernel polybench-gpu-1.0-2mm-mm2_kernel2 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-2mm-mm2_kernel2 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-3mm-mm3_kernel1', 'dungani')? 5
+for the kernel polybench-gpu-1.0-3mm-mm3_kernel1 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-3mm-mm3_kernel1 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-3mm-mm3_kernel2', 'dungani')? 5
+for the kernel polybench-gpu-1.0-3mm-mm3_kernel2 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-3mm-mm3_kernel2 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-3mm-mm3_kernel3', 'dungani')? 5
+for the kernel polybench-gpu-1.0-3mm-mm3_kernel3 I do not have common input bytes!!!
+for the kernel polybench-gpu-1.0-3mm-mm3_kernel3 I do not have common input bytes!!!
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-atax-atax_kernel1', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-atax-atax_kernel2', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-bicg-bicgKernel1', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-bicg-bicgKernel2', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-correlation-corr_kernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-correlation-mean_kernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-correlation-reduce_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-correlation-std_kernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-covariance-covar_kernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-covariance-mean_kernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-covariance-reduce_kernel', 'dungani')? 9
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-gemm-gemm', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-gesummv-gesummv_kernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-mvt-mvt_kernel1', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-mvt-mvt_kernel2', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-syr2k-syr2k_kernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('polybench-gpu-1.0-syrk-syrk_kernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-backprop-bpnn_adjust_weights_ocl', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-backprop-bpnn_layerforward_ocl', 'dungani')? 3
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-bfs-BFS_2', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-cfd-initialize_variables', 'dungani')? 8
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-cfd-time_step', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-gaussian-Fan1', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-gaussian-Fan2', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-leukocyte-dilate_kernel', 'dungani')? 5
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-nn-NearestNeighbor', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('rodinia-3.1-particlefilter-find_index_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-FFT-chk1D_512', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-Reduction-reduce', 'dungani')? 6
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-gr_base', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-qssa2_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-qssa_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-qssab_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt10_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt2_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt3_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt4_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt5_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt6_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt7_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt8_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt9_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratt_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratx2_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratx4_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratx_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-ratxb_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-rdwdot10_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-rdwdot2_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-rdwdot3_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-rdwdot6_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-rdwdot7_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-rdwdot8_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-rdwdot9_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-S3D-rdwdot_kernel', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-Scan-reduce', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-Sort-reduce', 'dungani')? 1
+I found a kernel common across all machines, with at least one common input_byte :)
+
+ How many unique input_bytes we have in this group name ('shoc-1.1.5-Triad-Triad', 'dungani')? 10
+I found a kernel common across all machines, with at least one common input_byte :)
+how many times did I find kernels with common input bytes across all machines? 138
+finaltotalkernels 138 [[('amd-app-sdk-3.0-BinomialOption-binomial_options', 'dungani'), ('amd-app-sdk-3.0-BinomialOption-binomial_options', 'epyc7'), ('amd-app-sdk-3.0-BinomialOption-binomial_options', 'gold2'), ('amd-app-sdk-3.0-BinomialOption-binomial_options', 'silver1')], [('amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', 'dungani'), ('amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', 'epyc7'), ('amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', 'gold2'), ('amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', 'silver1')], [('amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', 'dungani'), ('amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', 'epyc7'), ('amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', 'gold2'), ('amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', 'silver1')], [('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'dungani'), ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'epyc7'), ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'gold2'), ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'silver1')], [('amd-app-sdk-3.0-Reduction-reduce', 'dungani'), ('amd-app-sdk-3.0-Reduction-reduce', 'epyc7'), ('amd-app-sdk-3.0-Reduction-reduce', 'gold2'), ('amd-app-sdk-3.0-Reduction-reduce', 'silver1')], [('amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', 'dungani'), ('amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', 'epyc7'), ('amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', 'gold2'), ('amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', 'silver1')], [('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'dungani'), ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'epyc7'), ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'gold2'), ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'silver1')], [('amd-app-sdk-3.0-ScanLargeArrays-prefixSum', 'dungani'), ('amd-app-sdk-3.0-ScanLargeArrays-prefixSum', 'epyc7'), ('amd-app-sdk-3.0-ScanLargeArrays-prefixSum', 'gold2'), ('amd-app-sdk-3.0-ScanLargeArrays-prefixSum', 'silver1')], [('amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', 'dungani'), ('amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', 'epyc7'), ('amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', 'gold2'), ('amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', 'silver1')], [('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', 'dungani'), ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', 'epyc7'), ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', 'gold2'), ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', 'silver1')], [('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', 'dungani'), ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', 'epyc7'), ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', 'gold2'), ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', 'silver1')], [('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'dungani'), ('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'epyc7'), ('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'gold2'), ('amd-app-sdk-3.0-SobelFilter-sobel_filter', 'silver1')], [('npb-3.3-BT-add', 'dungani'), ('npb-3.3-BT-add', 'epyc7'), ('npb-3.3-BT-add', 'gold2'), ('npb-3.3-BT-add', 'silver1')], [('npb-3.3-BT-compute_rhs1', 'dungani'), ('npb-3.3-BT-compute_rhs1', 'epyc7'), ('npb-3.3-BT-compute_rhs1', 'gold2'), ('npb-3.3-BT-compute_rhs1', 'silver1')], [('npb-3.3-BT-compute_rhs2', 'dungani'), ('npb-3.3-BT-compute_rhs2', 'epyc7'), ('npb-3.3-BT-compute_rhs2', 'gold2'), ('npb-3.3-BT-compute_rhs2', 'silver1')], [('npb-3.3-BT-compute_rhs3', 'dungani'), ('npb-3.3-BT-compute_rhs3', 'epyc7'), ('npb-3.3-BT-compute_rhs3', 'gold2'), ('npb-3.3-BT-compute_rhs3', 'silver1')], [('npb-3.3-BT-compute_rhs4', 'dungani'), ('npb-3.3-BT-compute_rhs4', 'epyc7'), ('npb-3.3-BT-compute_rhs4', 'gold2'), ('npb-3.3-BT-compute_rhs4', 'silver1')], [('npb-3.3-BT-compute_rhs5', 'dungani'), ('npb-3.3-BT-compute_rhs5', 'epyc7'), ('npb-3.3-BT-compute_rhs5', 'gold2'), ('npb-3.3-BT-compute_rhs5', 'silver1')], [('npb-3.3-BT-compute_rhs6', 'dungani'), ('npb-3.3-BT-compute_rhs6', 'epyc7'), ('npb-3.3-BT-compute_rhs6', 'gold2'), ('npb-3.3-BT-compute_rhs6', 'silver1')], [('npb-3.3-BT-exact_rhs5', 'dungani'), ('npb-3.3-BT-exact_rhs5', 'epyc7'), ('npb-3.3-BT-exact_rhs5', 'gold2'), ('npb-3.3-BT-exact_rhs5', 'silver1')], [('npb-3.3-BT-x_solve1', 'dungani'), ('npb-3.3-BT-x_solve1', 'epyc7'), ('npb-3.3-BT-x_solve1', 'gold2'), ('npb-3.3-BT-x_solve1', 'silver1')], [('npb-3.3-BT-x_solve3', 'dungani'), ('npb-3.3-BT-x_solve3', 'epyc7'), ('npb-3.3-BT-x_solve3', 'gold2'), ('npb-3.3-BT-x_solve3', 'silver1')], [('npb-3.3-BT-y_solve1', 'dungani'), ('npb-3.3-BT-y_solve1', 'epyc7'), ('npb-3.3-BT-y_solve1', 'gold2'), ('npb-3.3-BT-y_solve1', 'silver1')], [('npb-3.3-BT-y_solve3', 'dungani'), ('npb-3.3-BT-y_solve3', 'epyc7'), ('npb-3.3-BT-y_solve3', 'gold2'), ('npb-3.3-BT-y_solve3', 'silver1')], [('npb-3.3-BT-z_solve1', 'dungani'), ('npb-3.3-BT-z_solve1', 'epyc7'), ('npb-3.3-BT-z_solve1', 'gold2'), ('npb-3.3-BT-z_solve1', 'silver1')], [('npb-3.3-BT-z_solve3', 'dungani'), ('npb-3.3-BT-z_solve3', 'epyc7'), ('npb-3.3-BT-z_solve3', 'gold2'), ('npb-3.3-BT-z_solve3', 'silver1')], [('npb-3.3-CG-conj_grad_0', 'dungani'), ('npb-3.3-CG-conj_grad_0', 'epyc7'), ('npb-3.3-CG-conj_grad_0', 'gold2'), ('npb-3.3-CG-conj_grad_0', 'silver1')], [('npb-3.3-CG-main_0', 'dungani'), ('npb-3.3-CG-main_0', 'epyc7'), ('npb-3.3-CG-main_0', 'gold2'), ('npb-3.3-CG-main_0', 'silver1')], [('npb-3.3-CG-makea_1', 'dungani'), ('npb-3.3-CG-makea_1', 'epyc7'), ('npb-3.3-CG-makea_1', 'gold2'), ('npb-3.3-CG-makea_1', 'silver1')], [('npb-3.3-CG-makea_2', 'dungani'), ('npb-3.3-CG-makea_2', 'epyc7'), ('npb-3.3-CG-makea_2', 'gold2'), ('npb-3.3-CG-makea_2', 'silver1')], [('npb-3.3-CG-makea_4', 'dungani'), ('npb-3.3-CG-makea_4', 'epyc7'), ('npb-3.3-CG-makea_4', 'gold2'), ('npb-3.3-CG-makea_4', 'silver1')], [('npb-3.3-CG-makea_5', 'dungani'), ('npb-3.3-CG-makea_5', 'epyc7'), ('npb-3.3-CG-makea_5', 'gold2'), ('npb-3.3-CG-makea_5', 'silver1')], [('npb-3.3-CG-makea_6', 'dungani'), ('npb-3.3-CG-makea_6', 'epyc7'), ('npb-3.3-CG-makea_6', 'gold2'), ('npb-3.3-CG-makea_6', 'silver1')], [('npb-3.3-CG-makea_7', 'dungani'), ('npb-3.3-CG-makea_7', 'epyc7'), ('npb-3.3-CG-makea_7', 'gold2'), ('npb-3.3-CG-makea_7', 'silver1')], [('npb-3.3-LU-erhs1', 'dungani'), ('npb-3.3-LU-erhs1', 'epyc7'), ('npb-3.3-LU-erhs1', 'gold2'), ('npb-3.3-LU-erhs1', 'silver1')], [('npb-3.3-LU-erhs2', 'dungani'), ('npb-3.3-LU-erhs2', 'epyc7'), ('npb-3.3-LU-erhs2', 'gold2'), ('npb-3.3-LU-erhs2', 'silver1')], [('npb-3.3-LU-erhs3', 'dungani'), ('npb-3.3-LU-erhs3', 'epyc7'), ('npb-3.3-LU-erhs3', 'gold2'), ('npb-3.3-LU-erhs3', 'silver1')], [('npb-3.3-LU-erhs4', 'dungani'), ('npb-3.3-LU-erhs4', 'epyc7'), ('npb-3.3-LU-erhs4', 'gold2'), ('npb-3.3-LU-erhs4', 'silver1')], [('npb-3.3-LU-pintgr1', 'dungani'), ('npb-3.3-LU-pintgr1', 'epyc7'), ('npb-3.3-LU-pintgr1', 'gold2'), ('npb-3.3-LU-pintgr1', 'silver1')], [('npb-3.3-LU-pintgr2', 'dungani'), ('npb-3.3-LU-pintgr2', 'epyc7'), ('npb-3.3-LU-pintgr2', 'gold2'), ('npb-3.3-LU-pintgr2', 'silver1')], [('npb-3.3-LU-pintgr3', 'dungani'), ('npb-3.3-LU-pintgr3', 'epyc7'), ('npb-3.3-LU-pintgr3', 'gold2'), ('npb-3.3-LU-pintgr3', 'silver1')], [('npb-3.3-LU-pintgr_reduce', 'dungani'), ('npb-3.3-LU-pintgr_reduce', 'epyc7'), ('npb-3.3-LU-pintgr_reduce', 'gold2'), ('npb-3.3-LU-pintgr_reduce', 'silver1')], [('npb-3.3-LU-rhs', 'dungani'), ('npb-3.3-LU-rhs', 'epyc7'), ('npb-3.3-LU-rhs', 'gold2'), ('npb-3.3-LU-rhs', 'silver1')], [('npb-3.3-LU-rhsx', 'dungani'), ('npb-3.3-LU-rhsx', 'epyc7'), ('npb-3.3-LU-rhsx', 'gold2'), ('npb-3.3-LU-rhsx', 'silver1')], [('npb-3.3-LU-rhsy', 'dungani'), ('npb-3.3-LU-rhsy', 'epyc7'), ('npb-3.3-LU-rhsy', 'gold2'), ('npb-3.3-LU-rhsy', 'silver1')], [('npb-3.3-LU-rhsz', 'dungani'), ('npb-3.3-LU-rhsz', 'epyc7'), ('npb-3.3-LU-rhsz', 'gold2'), ('npb-3.3-LU-rhsz', 'silver1')], [('npb-3.3-LU-ssor2', 'dungani'), ('npb-3.3-LU-ssor2', 'epyc7'), ('npb-3.3-LU-ssor2', 'gold2'), ('npb-3.3-LU-ssor2', 'silver1')], [('npb-3.3-LU-ssor3', 'dungani'), ('npb-3.3-LU-ssor3', 'epyc7'), ('npb-3.3-LU-ssor3', 'gold2'), ('npb-3.3-LU-ssor3', 'silver1')], [('npb-3.3-MG-kernel_comm3_1', 'dungani'), ('npb-3.3-MG-kernel_comm3_1', 'epyc7'), ('npb-3.3-MG-kernel_comm3_1', 'gold2'), ('npb-3.3-MG-kernel_comm3_1', 'silver1')], [('npb-3.3-MG-kernel_comm3_2', 'dungani'), ('npb-3.3-MG-kernel_comm3_2', 'epyc7'), ('npb-3.3-MG-kernel_comm3_2', 'gold2'), ('npb-3.3-MG-kernel_comm3_2', 'silver1')], [('npb-3.3-MG-kernel_psinv', 'dungani'), ('npb-3.3-MG-kernel_psinv', 'epyc7'), ('npb-3.3-MG-kernel_psinv', 'gold2'), ('npb-3.3-MG-kernel_psinv', 'silver1')], [('npb-3.3-MG-kernel_resid', 'dungani'), ('npb-3.3-MG-kernel_resid', 'epyc7'), ('npb-3.3-MG-kernel_resid', 'gold2'), ('npb-3.3-MG-kernel_resid', 'silver1')], [('npb-3.3-SP-add', 'dungani'), ('npb-3.3-SP-add', 'epyc7'), ('npb-3.3-SP-add', 'gold2'), ('npb-3.3-SP-add', 'silver1')], [('npb-3.3-SP-compute_rhs1', 'dungani'), ('npb-3.3-SP-compute_rhs1', 'epyc7'), ('npb-3.3-SP-compute_rhs1', 'gold2'), ('npb-3.3-SP-compute_rhs1', 'silver1')], [('npb-3.3-SP-compute_rhs2', 'dungani'), ('npb-3.3-SP-compute_rhs2', 'epyc7'), ('npb-3.3-SP-compute_rhs2', 'gold2'), ('npb-3.3-SP-compute_rhs2', 'silver1')], [('npb-3.3-SP-compute_rhs3', 'dungani'), ('npb-3.3-SP-compute_rhs3', 'epyc7'), ('npb-3.3-SP-compute_rhs3', 'gold2'), ('npb-3.3-SP-compute_rhs3', 'silver1')], [('npb-3.3-SP-compute_rhs4', 'dungani'), ('npb-3.3-SP-compute_rhs4', 'epyc7'), ('npb-3.3-SP-compute_rhs4', 'gold2'), ('npb-3.3-SP-compute_rhs4', 'silver1')], [('npb-3.3-SP-compute_rhs5', 'dungani'), ('npb-3.3-SP-compute_rhs5', 'epyc7'), ('npb-3.3-SP-compute_rhs5', 'gold2'), ('npb-3.3-SP-compute_rhs5', 'silver1')], [('npb-3.3-SP-compute_rhs6', 'dungani'), ('npb-3.3-SP-compute_rhs6', 'epyc7'), ('npb-3.3-SP-compute_rhs6', 'gold2'), ('npb-3.3-SP-compute_rhs6', 'silver1')], [('npb-3.3-SP-exact_rhs5', 'dungani'), ('npb-3.3-SP-exact_rhs5', 'epyc7'), ('npb-3.3-SP-exact_rhs5', 'gold2'), ('npb-3.3-SP-exact_rhs5', 'silver1')], [('npb-3.3-SP-ninvr', 'dungani'), ('npb-3.3-SP-ninvr', 'epyc7'), ('npb-3.3-SP-ninvr', 'gold2'), ('npb-3.3-SP-ninvr', 'silver1')], [('npb-3.3-SP-pinvr', 'dungani'), ('npb-3.3-SP-pinvr', 'epyc7'), ('npb-3.3-SP-pinvr', 'gold2'), ('npb-3.3-SP-pinvr', 'silver1')], [('npb-3.3-SP-txinvr', 'dungani'), ('npb-3.3-SP-txinvr', 'epyc7'), ('npb-3.3-SP-txinvr', 'gold2'), ('npb-3.3-SP-txinvr', 'silver1')], [('npb-3.3-SP-tzetar', 'dungani'), ('npb-3.3-SP-tzetar', 'epyc7'), ('npb-3.3-SP-tzetar', 'gold2'), ('npb-3.3-SP-tzetar', 'silver1')], [('npb-3.3-SP-x_solve', 'dungani'), ('npb-3.3-SP-x_solve', 'epyc7'), ('npb-3.3-SP-x_solve', 'gold2'), ('npb-3.3-SP-x_solve', 'silver1')], [('npb-3.3-SP-y_solve', 'dungani'), ('npb-3.3-SP-y_solve', 'epyc7'), ('npb-3.3-SP-y_solve', 'gold2'), ('npb-3.3-SP-y_solve', 'silver1')], [('npb-3.3-SP-z_solve', 'dungani'), ('npb-3.3-SP-z_solve', 'epyc7'), ('npb-3.3-SP-z_solve', 'gold2'), ('npb-3.3-SP-z_solve', 'silver1')], [('nvidia-4.2-DotProduct-DotProduct', 'dungani'), ('nvidia-4.2-DotProduct-DotProduct', 'epyc7'), ('nvidia-4.2-DotProduct-DotProduct', 'gold2'), ('nvidia-4.2-DotProduct-DotProduct', 'silver1')], [('nvidia-4.2-MatVecMul-MatVecMulCoalesced0', 'dungani'), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced0', 'epyc7'), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced0', 'gold2'), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced0', 'silver1')], [('nvidia-4.2-MatVecMul-MatVecMulCoalesced1', 'dungani'), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced1', 'epyc7'), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced1', 'gold2'), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced1', 'silver1')], [('nvidia-4.2-MatVecMul-MatVecMulCoalesced2', 'dungani'), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced2', 'epyc7'), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced2', 'gold2'), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced2', 'silver1')], [('nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', 'dungani'), ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', 'epyc7'), ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', 'gold2'), ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', 'silver1')], [('nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', 'dungani'), ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', 'epyc7'), ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', 'gold2'), ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', 'silver1')], [('nvidia-4.2-VectorAdd-VectorAdd', 'dungani'), ('nvidia-4.2-VectorAdd-VectorAdd', 'epyc7'), ('nvidia-4.2-VectorAdd-VectorAdd', 'gold2'), ('nvidia-4.2-VectorAdd-VectorAdd', 'silver1')], [('parboil-0.2-bfs-BFS_kernel', 'dungani'), ('parboil-0.2-bfs-BFS_kernel', 'epyc7'), ('parboil-0.2-bfs-BFS_kernel', 'gold2'), ('parboil-0.2-bfs-BFS_kernel', 'silver1')], [('parboil-0.2-stencil-naive_kernel', 'dungani'), ('parboil-0.2-stencil-naive_kernel', 'epyc7'), ('parboil-0.2-stencil-naive_kernel', 'gold2'), ('parboil-0.2-stencil-naive_kernel', 'silver1')], [('polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', 'dungani'), ('polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', 'epyc7'), ('polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', 'gold2'), ('polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', 'silver1')], [('polybench-gpu-1.0-atax-atax_kernel1', 'dungani'), ('polybench-gpu-1.0-atax-atax_kernel1', 'epyc7'), ('polybench-gpu-1.0-atax-atax_kernel1', 'gold2'), ('polybench-gpu-1.0-atax-atax_kernel1', 'silver1')], [('polybench-gpu-1.0-atax-atax_kernel2', 'dungani'), ('polybench-gpu-1.0-atax-atax_kernel2', 'epyc7'), ('polybench-gpu-1.0-atax-atax_kernel2', 'gold2'), ('polybench-gpu-1.0-atax-atax_kernel2', 'silver1')], [('polybench-gpu-1.0-bicg-bicgKernel1', 'dungani'), ('polybench-gpu-1.0-bicg-bicgKernel1', 'epyc7'), ('polybench-gpu-1.0-bicg-bicgKernel1', 'gold2'), ('polybench-gpu-1.0-bicg-bicgKernel1', 'silver1')], [('polybench-gpu-1.0-bicg-bicgKernel2', 'dungani'), ('polybench-gpu-1.0-bicg-bicgKernel2', 'epyc7'), ('polybench-gpu-1.0-bicg-bicgKernel2', 'gold2'), ('polybench-gpu-1.0-bicg-bicgKernel2', 'silver1')], [('polybench-gpu-1.0-correlation-corr_kernel', 'dungani'), ('polybench-gpu-1.0-correlation-corr_kernel', 'epyc7'), ('polybench-gpu-1.0-correlation-corr_kernel', 'gold2'), ('polybench-gpu-1.0-correlation-corr_kernel', 'silver1')], [('polybench-gpu-1.0-correlation-mean_kernel', 'dungani'), ('polybench-gpu-1.0-correlation-mean_kernel', 'epyc7'), ('polybench-gpu-1.0-correlation-mean_kernel', 'gold2'), ('polybench-gpu-1.0-correlation-mean_kernel', 'silver1')], [('polybench-gpu-1.0-correlation-reduce_kernel', 'dungani'), ('polybench-gpu-1.0-correlation-reduce_kernel', 'epyc7'), ('polybench-gpu-1.0-correlation-reduce_kernel', 'gold2'), ('polybench-gpu-1.0-correlation-reduce_kernel', 'silver1')], [('polybench-gpu-1.0-correlation-std_kernel', 'dungani'), ('polybench-gpu-1.0-correlation-std_kernel', 'epyc7'), ('polybench-gpu-1.0-correlation-std_kernel', 'gold2'), ('polybench-gpu-1.0-correlation-std_kernel', 'silver1')], [('polybench-gpu-1.0-covariance-covar_kernel', 'dungani'), ('polybench-gpu-1.0-covariance-covar_kernel', 'epyc7'), ('polybench-gpu-1.0-covariance-covar_kernel', 'gold2'), ('polybench-gpu-1.0-covariance-covar_kernel', 'silver1')], [('polybench-gpu-1.0-covariance-mean_kernel', 'dungani'), ('polybench-gpu-1.0-covariance-mean_kernel', 'epyc7'), ('polybench-gpu-1.0-covariance-mean_kernel', 'gold2'), ('polybench-gpu-1.0-covariance-mean_kernel', 'silver1')], [('polybench-gpu-1.0-covariance-reduce_kernel', 'dungani'), ('polybench-gpu-1.0-covariance-reduce_kernel', 'epyc7'), ('polybench-gpu-1.0-covariance-reduce_kernel', 'gold2'), ('polybench-gpu-1.0-covariance-reduce_kernel', 'silver1')], [('polybench-gpu-1.0-gemm-gemm', 'dungani'), ('polybench-gpu-1.0-gemm-gemm', 'epyc7'), ('polybench-gpu-1.0-gemm-gemm', 'gold2'), ('polybench-gpu-1.0-gemm-gemm', 'silver1')], [('polybench-gpu-1.0-gesummv-gesummv_kernel', 'dungani'), ('polybench-gpu-1.0-gesummv-gesummv_kernel', 'epyc7'), ('polybench-gpu-1.0-gesummv-gesummv_kernel', 'gold2'), ('polybench-gpu-1.0-gesummv-gesummv_kernel', 'silver1')], [('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', 'dungani'), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', 'epyc7'), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', 'gold2'), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', 'silver1')], [('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', 'dungani'), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', 'epyc7'), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', 'gold2'), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', 'silver1')], [('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', 'dungani'), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', 'epyc7'), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', 'gold2'), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', 'silver1')], [('polybench-gpu-1.0-mvt-mvt_kernel1', 'dungani'), ('polybench-gpu-1.0-mvt-mvt_kernel1', 'epyc7'), ('polybench-gpu-1.0-mvt-mvt_kernel1', 'gold2'), ('polybench-gpu-1.0-mvt-mvt_kernel1', 'silver1')], [('polybench-gpu-1.0-mvt-mvt_kernel2', 'dungani'), ('polybench-gpu-1.0-mvt-mvt_kernel2', 'epyc7'), ('polybench-gpu-1.0-mvt-mvt_kernel2', 'gold2'), ('polybench-gpu-1.0-mvt-mvt_kernel2', 'silver1')], [('polybench-gpu-1.0-syr2k-syr2k_kernel', 'dungani'), ('polybench-gpu-1.0-syr2k-syr2k_kernel', 'epyc7'), ('polybench-gpu-1.0-syr2k-syr2k_kernel', 'gold2'), ('polybench-gpu-1.0-syr2k-syr2k_kernel', 'silver1')], [('polybench-gpu-1.0-syrk-syrk_kernel', 'dungani'), ('polybench-gpu-1.0-syrk-syrk_kernel', 'epyc7'), ('polybench-gpu-1.0-syrk-syrk_kernel', 'gold2'), ('polybench-gpu-1.0-syrk-syrk_kernel', 'silver1')], [('rodinia-3.1-backprop-bpnn_adjust_weights_ocl', 'dungani'), ('rodinia-3.1-backprop-bpnn_adjust_weights_ocl', 'epyc7'), ('rodinia-3.1-backprop-bpnn_adjust_weights_ocl', 'gold2'), ('rodinia-3.1-backprop-bpnn_adjust_weights_ocl', 'silver1')], [('rodinia-3.1-backprop-bpnn_layerforward_ocl', 'dungani'), ('rodinia-3.1-backprop-bpnn_layerforward_ocl', 'epyc7'), ('rodinia-3.1-backprop-bpnn_layerforward_ocl', 'gold2'), ('rodinia-3.1-backprop-bpnn_layerforward_ocl', 'silver1')], [('rodinia-3.1-bfs-BFS_2', 'dungani'), ('rodinia-3.1-bfs-BFS_2', 'epyc7'), ('rodinia-3.1-bfs-BFS_2', 'gold2'), ('rodinia-3.1-bfs-BFS_2', 'silver1')], [('rodinia-3.1-cfd-initialize_variables', 'dungani'), ('rodinia-3.1-cfd-initialize_variables', 'epyc7'), ('rodinia-3.1-cfd-initialize_variables', 'gold2'), ('rodinia-3.1-cfd-initialize_variables', 'silver1')], [('rodinia-3.1-cfd-time_step', 'dungani'), ('rodinia-3.1-cfd-time_step', 'epyc7'), ('rodinia-3.1-cfd-time_step', 'gold2'), ('rodinia-3.1-cfd-time_step', 'silver1')], [('rodinia-3.1-gaussian-Fan1', 'dungani'), ('rodinia-3.1-gaussian-Fan1', 'epyc7'), ('rodinia-3.1-gaussian-Fan1', 'gold2'), ('rodinia-3.1-gaussian-Fan1', 'silver1')], [('rodinia-3.1-gaussian-Fan2', 'dungani'), ('rodinia-3.1-gaussian-Fan2', 'epyc7'), ('rodinia-3.1-gaussian-Fan2', 'gold2'), ('rodinia-3.1-gaussian-Fan2', 'silver1')], [('rodinia-3.1-leukocyte-dilate_kernel', 'dungani'), ('rodinia-3.1-leukocyte-dilate_kernel', 'epyc7'), ('rodinia-3.1-leukocyte-dilate_kernel', 'gold2'), ('rodinia-3.1-leukocyte-dilate_kernel', 'silver1')], [('rodinia-3.1-nn-NearestNeighbor', 'dungani'), ('rodinia-3.1-nn-NearestNeighbor', 'epyc7'), ('rodinia-3.1-nn-NearestNeighbor', 'gold2'), ('rodinia-3.1-nn-NearestNeighbor', 'silver1')], [('rodinia-3.1-particlefilter-find_index_kernel', 'dungani'), ('rodinia-3.1-particlefilter-find_index_kernel', 'epyc7'), ('rodinia-3.1-particlefilter-find_index_kernel', 'gold2'), ('rodinia-3.1-particlefilter-find_index_kernel', 'silver1')], [('shoc-1.1.5-FFT-chk1D_512', 'dungani'), ('shoc-1.1.5-FFT-chk1D_512', 'epyc7'), ('shoc-1.1.5-FFT-chk1D_512', 'gold2'), ('shoc-1.1.5-FFT-chk1D_512', 'silver1')], [('shoc-1.1.5-Reduction-reduce', 'dungani'), ('shoc-1.1.5-Reduction-reduce', 'epyc7'), ('shoc-1.1.5-Reduction-reduce', 'gold2'), ('shoc-1.1.5-Reduction-reduce', 'silver1')], [('shoc-1.1.5-S3D-gr_base', 'dungani'), ('shoc-1.1.5-S3D-gr_base', 'epyc7'), ('shoc-1.1.5-S3D-gr_base', 'gold2'), ('shoc-1.1.5-S3D-gr_base', 'silver1')], [('shoc-1.1.5-S3D-qssa2_kernel', 'dungani'), ('shoc-1.1.5-S3D-qssa2_kernel', 'epyc7'), ('shoc-1.1.5-S3D-qssa2_kernel', 'gold2'), ('shoc-1.1.5-S3D-qssa2_kernel', 'silver1')], [('shoc-1.1.5-S3D-qssa_kernel', 'dungani'), ('shoc-1.1.5-S3D-qssa_kernel', 'epyc7'), ('shoc-1.1.5-S3D-qssa_kernel', 'gold2'), ('shoc-1.1.5-S3D-qssa_kernel', 'silver1')], [('shoc-1.1.5-S3D-qssab_kernel', 'dungani'), ('shoc-1.1.5-S3D-qssab_kernel', 'epyc7'), ('shoc-1.1.5-S3D-qssab_kernel', 'gold2'), ('shoc-1.1.5-S3D-qssab_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt10_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt10_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt10_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt10_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt2_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt2_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt2_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt2_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt3_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt3_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt3_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt3_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt4_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt4_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt4_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt4_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt5_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt5_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt5_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt5_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt6_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt6_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt6_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt6_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt7_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt7_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt7_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt7_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt8_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt8_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt8_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt8_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt9_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt9_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt9_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt9_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratt_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratt_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratt_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratt_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratx2_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratx2_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratx2_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratx2_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratx4_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratx4_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratx4_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratx4_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratx_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratx_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratx_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratx_kernel', 'silver1')], [('shoc-1.1.5-S3D-ratxb_kernel', 'dungani'), ('shoc-1.1.5-S3D-ratxb_kernel', 'epyc7'), ('shoc-1.1.5-S3D-ratxb_kernel', 'gold2'), ('shoc-1.1.5-S3D-ratxb_kernel', 'silver1')], [('shoc-1.1.5-S3D-rdwdot10_kernel', 'dungani'), ('shoc-1.1.5-S3D-rdwdot10_kernel', 'epyc7'), ('shoc-1.1.5-S3D-rdwdot10_kernel', 'gold2'), ('shoc-1.1.5-S3D-rdwdot10_kernel', 'silver1')], [('shoc-1.1.5-S3D-rdwdot2_kernel', 'dungani'), ('shoc-1.1.5-S3D-rdwdot2_kernel', 'epyc7'), ('shoc-1.1.5-S3D-rdwdot2_kernel', 'gold2'), ('shoc-1.1.5-S3D-rdwdot2_kernel', 'silver1')], [('shoc-1.1.5-S3D-rdwdot3_kernel', 'dungani'), ('shoc-1.1.5-S3D-rdwdot3_kernel', 'epyc7'), ('shoc-1.1.5-S3D-rdwdot3_kernel', 'gold2'), ('shoc-1.1.5-S3D-rdwdot3_kernel', 'silver1')], [('shoc-1.1.5-S3D-rdwdot6_kernel', 'dungani'), ('shoc-1.1.5-S3D-rdwdot6_kernel', 'epyc7'), ('shoc-1.1.5-S3D-rdwdot6_kernel', 'gold2'), ('shoc-1.1.5-S3D-rdwdot6_kernel', 'silver1')], [('shoc-1.1.5-S3D-rdwdot7_kernel', 'dungani'), ('shoc-1.1.5-S3D-rdwdot7_kernel', 'epyc7'), ('shoc-1.1.5-S3D-rdwdot7_kernel', 'gold2'), ('shoc-1.1.5-S3D-rdwdot7_kernel', 'silver1')], [('shoc-1.1.5-S3D-rdwdot8_kernel', 'dungani'), ('shoc-1.1.5-S3D-rdwdot8_kernel', 'epyc7'), ('shoc-1.1.5-S3D-rdwdot8_kernel', 'gold2'), ('shoc-1.1.5-S3D-rdwdot8_kernel', 'silver1')], [('shoc-1.1.5-S3D-rdwdot9_kernel', 'dungani'), ('shoc-1.1.5-S3D-rdwdot9_kernel', 'epyc7'), ('shoc-1.1.5-S3D-rdwdot9_kernel', 'gold2'), ('shoc-1.1.5-S3D-rdwdot9_kernel', 'silver1')], [('shoc-1.1.5-S3D-rdwdot_kernel', 'dungani'), ('shoc-1.1.5-S3D-rdwdot_kernel', 'epyc7'), ('shoc-1.1.5-S3D-rdwdot_kernel', 'gold2'), ('shoc-1.1.5-S3D-rdwdot_kernel', 'silver1')], [('shoc-1.1.5-Scan-reduce', 'dungani'), ('shoc-1.1.5-Scan-reduce', 'epyc7'), ('shoc-1.1.5-Scan-reduce', 'gold2'), ('shoc-1.1.5-Scan-reduce', 'silver1')], [('shoc-1.1.5-Sort-reduce', 'dungani'), ('shoc-1.1.5-Sort-reduce', 'epyc7'), ('shoc-1.1.5-Sort-reduce', 'gold2'), ('shoc-1.1.5-Sort-reduce', 'silver1')], [('shoc-1.1.5-Triad-Triad', 'dungani'), ('shoc-1.1.5-Triad-Triad', 'epyc7'), ('shoc-1.1.5-Triad-Triad', 'gold2'), ('shoc-1.1.5-Triad-Triad', 'silver1')]]
+final bytes and final kernels that are common across the 4 machines: 138 
+ [[48004], [808, 1608, 2008, 408, 1208], [3208, 6408, 12808, 9608, 16008], [8008], [32000, 96000], [40004, 24004, 72004, 56004, 8004, 88004], [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000], [40004, 24004, 72004, 56004, 8004, 88004], [3220, 4020, 2420, 820, 1620], [3220, 4020, 2420, 820, 1620], [3220, 4020, 2420, 820, 1620], [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000], [144012, 112012, 48012, 16012, 80012, 176012, 208012, 240012, 272012, 304012], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [64012], [64012], [6412], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [32012, 96012], [16012], [32012], [16012], [2412], [16012], [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000], [8008, 24008, 40008, 72008, 56008, 88008, 104008, 120008, 136008, 152008], [20004], [16000, 48000, 80000, 144000, 112000, 176000, 208000, 240000, 272000, 304000], [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008], [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008], [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008], [8008, 24008, 40008, 72008, 56008, 88008, 104008, 120008, 136008, 152008], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [16012], [16012], [1612], [824], [824, 1624], [824, 1624], [24016, 72016, 120016], [144012, 112012, 16012, 48012, 80012, 176012, 208012, 240012, 272012], [32012], [32012], [3212], [40020, 24020, 72020, 56020, 8020, 88020, 104020, 120020, 136020, 152020], [144020, 112020, 48020, 16020, 80020, 176020, 208020, 240020, 272020, 304020], [816, 1616], [816, 1616], [2416, 4816], [2416, 4816], [144012, 112012, 48012, 16012, 80012, 176012, 208012, 240012, 272012, 304012], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [64012], [64012], [6412], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [280012, 504012, 168012, 56012, 392012, 616012, 1064012], [280012, 504012, 168012, 56012, 392012, 616012, 1064012], [32016], [32016], [3216], [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004], [2408, 4808, 6008, 3608, 1208], [2408, 4808, 6008, 3608, 1208], [2408, 4808, 6008, 3608, 1208], [808, 1608, 2408, 3208, 4008], [808, 1608, 2408, 3208, 4008], [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004], [32012, 96012], [420, 1220, 820, 1620], [4008, 20008, 28008, 12008, 36008, 44008, 52008, 60008, 68008, 76008], [2408, 4808, 6008, 3608, 1208], [2408, 4808, 6008, 3608, 1208], [808, 1608, 2408, 3208, 4008], [808, 1608, 2408, 3208, 4008], [808, 1608, 2408, 3208, 4008], [2012, 812, 1612, 1212, 412], [12012, 84012, 36012, 60012, 108012, 132012, 156012, 180012, 204012, 228012], [816, 1616, 2416, 3216, 4016], [808, 1608, 2008, 408, 1208], [2012, 812, 1612, 1212, 412], [24008, 56008, 40008, 72008, 88008, 104008, 120008, 136008, 152008], [1220, 6020, 3620, 2420, 4820], [10012, 2012, 4012, 8012, 6012], [2012, 812, 1612, 1212, 412], [3212, 4012, 2412, 812, 1612], [6012, 2412, 4812, 1212, 3612], [4804, 2404, 6004, 1204, 3604], [4804, 2404, 6004, 1204, 3604], [1216, 3616, 6016, 2416, 4816], [816, 1616, 2416, 3216, 4016], [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008], [16008, 48008, 80008], [15004, 11004, 3004, 5004, 9004, 13004, 17004, 7004, 19004], [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004], [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008], [808, 1608, 2008, 408, 1208], [2408, 4808, 6008, 3608, 1208], [816, 1616, 2416, 3216, 4016], [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012], [32004, 288004, 224004, 160004, 96004, 352004, 416004, 480004, 544004, 608004], [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004], [40004, 24004, 72004, 56004, 8004, 88004], [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008], [12000, 84000, 60000, 36000, 108000, 132000, 156000, 180000, 204000, 228000], [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000], [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000], [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004, 68004, 76004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004, 68004, 76004], [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000], [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000], [100004, 180004, 60004, 140004, 20004, 220004, 260004, 300004, 340004, 380004], [100004, 180004, 60004, 140004, 20004, 220004, 260004, 300004, 340004, 380004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004], [8004], [8008], [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]]
+uniquefinalkernels ['amd-app-sdk-3.0-BinomialOption-binomial_options', 'amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', 'amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', 'amd-app-sdk-3.0-PrefixSum-group_prefixSum', 'amd-app-sdk-3.0-Reduction-reduce', 'amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', 'amd-app-sdk-3.0-ScanLargeArrays-blockAddition', 'amd-app-sdk-3.0-ScanLargeArrays-prefixSum', 'amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', 'amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', 'amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', 'amd-app-sdk-3.0-SobelFilter-sobel_filter', 'npb-3.3-BT-add', 'npb-3.3-BT-compute_rhs1', 'npb-3.3-BT-compute_rhs2', 'npb-3.3-BT-compute_rhs3', 'npb-3.3-BT-compute_rhs4', 'npb-3.3-BT-compute_rhs5', 'npb-3.3-BT-compute_rhs6', 'npb-3.3-BT-exact_rhs5', 'npb-3.3-BT-x_solve1', 'npb-3.3-BT-x_solve3', 'npb-3.3-BT-y_solve1', 'npb-3.3-BT-y_solve3', 'npb-3.3-BT-z_solve1', 'npb-3.3-BT-z_solve3', 'npb-3.3-CG-conj_grad_0', 'npb-3.3-CG-main_0', 'npb-3.3-CG-makea_1', 'npb-3.3-CG-makea_2', 'npb-3.3-CG-makea_4', 'npb-3.3-CG-makea_5', 'npb-3.3-CG-makea_6', 'npb-3.3-CG-makea_7', 'npb-3.3-LU-erhs1', 'npb-3.3-LU-erhs2', 'npb-3.3-LU-erhs3', 'npb-3.3-LU-erhs4', 'npb-3.3-LU-pintgr1', 'npb-3.3-LU-pintgr2', 'npb-3.3-LU-pintgr3', 'npb-3.3-LU-pintgr_reduce', 'npb-3.3-LU-rhs', 'npb-3.3-LU-rhsx', 'npb-3.3-LU-rhsy', 'npb-3.3-LU-rhsz', 'npb-3.3-LU-ssor2', 'npb-3.3-LU-ssor3', 'npb-3.3-MG-kernel_comm3_1', 'npb-3.3-MG-kernel_comm3_2', 'npb-3.3-MG-kernel_psinv', 'npb-3.3-MG-kernel_resid', 'npb-3.3-SP-add', 'npb-3.3-SP-compute_rhs1', 'npb-3.3-SP-compute_rhs2', 'npb-3.3-SP-compute_rhs3', 'npb-3.3-SP-compute_rhs4', 'npb-3.3-SP-compute_rhs5', 'npb-3.3-SP-compute_rhs6', 'npb-3.3-SP-exact_rhs5', 'npb-3.3-SP-ninvr', 'npb-3.3-SP-pinvr', 'npb-3.3-SP-txinvr', 'npb-3.3-SP-tzetar', 'npb-3.3-SP-x_solve', 'npb-3.3-SP-y_solve', 'npb-3.3-SP-z_solve', 'nvidia-4.2-DotProduct-DotProduct', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced0', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced1', 'nvidia-4.2-MatVecMul-MatVecMulCoalesced2', 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', 'nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', 'nvidia-4.2-VectorAdd-VectorAdd', 'parboil-0.2-bfs-BFS_kernel', 'parboil-0.2-stencil-naive_kernel', 'polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', 'polybench-gpu-1.0-atax-atax_kernel1', 'polybench-gpu-1.0-atax-atax_kernel2', 'polybench-gpu-1.0-bicg-bicgKernel1', 'polybench-gpu-1.0-bicg-bicgKernel2', 'polybench-gpu-1.0-correlation-corr_kernel', 'polybench-gpu-1.0-correlation-mean_kernel', 'polybench-gpu-1.0-correlation-reduce_kernel', 'polybench-gpu-1.0-correlation-std_kernel', 'polybench-gpu-1.0-covariance-covar_kernel', 'polybench-gpu-1.0-covariance-mean_kernel', 'polybench-gpu-1.0-covariance-reduce_kernel', 'polybench-gpu-1.0-gemm-gemm', 'polybench-gpu-1.0-gesummv-gesummv_kernel', 'polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', 'polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', 'polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', 'polybench-gpu-1.0-mvt-mvt_kernel1', 'polybench-gpu-1.0-mvt-mvt_kernel2', 'polybench-gpu-1.0-syr2k-syr2k_kernel', 'polybench-gpu-1.0-syrk-syrk_kernel', 'rodinia-3.1-backprop-bpnn_adjust_weights_ocl', 'rodinia-3.1-backprop-bpnn_layerforward_ocl', 'rodinia-3.1-bfs-BFS_2', 'rodinia-3.1-cfd-initialize_variables', 'rodinia-3.1-cfd-time_step', 'rodinia-3.1-gaussian-Fan1', 'rodinia-3.1-gaussian-Fan2', 'rodinia-3.1-leukocyte-dilate_kernel', 'rodinia-3.1-nn-NearestNeighbor', 'rodinia-3.1-particlefilter-find_index_kernel', 'shoc-1.1.5-FFT-chk1D_512', 'shoc-1.1.5-Reduction-reduce', 'shoc-1.1.5-S3D-gr_base', 'shoc-1.1.5-S3D-qssa2_kernel', 'shoc-1.1.5-S3D-qssa_kernel', 'shoc-1.1.5-S3D-qssab_kernel', 'shoc-1.1.5-S3D-ratt10_kernel', 'shoc-1.1.5-S3D-ratt2_kernel', 'shoc-1.1.5-S3D-ratt3_kernel', 'shoc-1.1.5-S3D-ratt4_kernel', 'shoc-1.1.5-S3D-ratt5_kernel', 'shoc-1.1.5-S3D-ratt6_kernel', 'shoc-1.1.5-S3D-ratt7_kernel', 'shoc-1.1.5-S3D-ratt8_kernel', 'shoc-1.1.5-S3D-ratt9_kernel', 'shoc-1.1.5-S3D-ratt_kernel', 'shoc-1.1.5-S3D-ratx2_kernel', 'shoc-1.1.5-S3D-ratx4_kernel', 'shoc-1.1.5-S3D-ratx_kernel', 'shoc-1.1.5-S3D-ratxb_kernel', 'shoc-1.1.5-S3D-rdwdot10_kernel', 'shoc-1.1.5-S3D-rdwdot2_kernel', 'shoc-1.1.5-S3D-rdwdot3_kernel', 'shoc-1.1.5-S3D-rdwdot6_kernel', 'shoc-1.1.5-S3D-rdwdot7_kernel', 'shoc-1.1.5-S3D-rdwdot8_kernel', 'shoc-1.1.5-S3D-rdwdot9_kernel', 'shoc-1.1.5-S3D-rdwdot_kernel', 'shoc-1.1.5-Scan-reduce', 'shoc-1.1.5-Sort-reduce', 'shoc-1.1.5-Triad-Triad'] 
+
+list of tuples kernelsbytes [('amd-app-sdk-3.0-BinomialOption-binomial_options', [48004]), ('amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', [808, 1608, 2008, 408, 1208]), ('amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', [3208, 6408, 12808, 9608, 16008]), ('amd-app-sdk-3.0-PrefixSum-group_prefixSum', [8008]), ('amd-app-sdk-3.0-Reduction-reduce', [32000, 96000]), ('amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', [40004, 24004, 72004, 56004, 8004, 88004]), ('amd-app-sdk-3.0-ScanLargeArrays-blockAddition', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]), ('amd-app-sdk-3.0-ScanLargeArrays-prefixSum', [40004, 24004, 72004, 56004, 8004, 88004]), ('amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', [3220, 4020, 2420, 820, 1620]), ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', [3220, 4020, 2420, 820, 1620]), ('amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', [3220, 4020, 2420, 820, 1620]), ('amd-app-sdk-3.0-SobelFilter-sobel_filter', [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000]), ('npb-3.3-BT-add', [144012, 112012, 48012, 16012, 80012, 176012, 208012, 240012, 272012, 304012]), ('npb-3.3-BT-compute_rhs1', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-BT-compute_rhs2', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-BT-compute_rhs3', [64012]), ('npb-3.3-BT-compute_rhs4', [64012]), ('npb-3.3-BT-compute_rhs5', [6412]), ('npb-3.3-BT-compute_rhs6', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-BT-exact_rhs5', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-BT-x_solve1', [32012, 96012]), ('npb-3.3-BT-x_solve3', [16012]), ('npb-3.3-BT-y_solve1', [32012]), ('npb-3.3-BT-y_solve3', [16012]), ('npb-3.3-BT-z_solve1', [2412]), ('npb-3.3-BT-z_solve3', [16012]), ('npb-3.3-CG-conj_grad_0', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]), ('npb-3.3-CG-main_0', [8008, 24008, 40008, 72008, 56008, 88008, 104008, 120008, 136008, 152008]), ('npb-3.3-CG-makea_1', [20004]), ('npb-3.3-CG-makea_2', [16000, 48000, 80000, 144000, 112000, 176000, 208000, 240000, 272000, 304000]), ('npb-3.3-CG-makea_4', [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008]), ('npb-3.3-CG-makea_5', [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008]), ('npb-3.3-CG-makea_6', [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008]), ('npb-3.3-CG-makea_7', [8008, 24008, 40008, 72008, 56008, 88008, 104008, 120008, 136008, 152008]), ('npb-3.3-LU-erhs1', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-LU-erhs2', [16012]), ('npb-3.3-LU-erhs3', [16012]), ('npb-3.3-LU-erhs4', [1612]), ('npb-3.3-LU-pintgr1', [824]), ('npb-3.3-LU-pintgr2', [824, 1624]), ('npb-3.3-LU-pintgr3', [824, 1624]), ('npb-3.3-LU-pintgr_reduce', [24016, 72016, 120016]), ('npb-3.3-LU-rhs', [144012, 112012, 16012, 48012, 80012, 176012, 208012, 240012, 272012]), ('npb-3.3-LU-rhsx', [32012]), ('npb-3.3-LU-rhsy', [32012]), ('npb-3.3-LU-rhsz', [3212]), ('npb-3.3-LU-ssor2', [40020, 24020, 72020, 56020, 8020, 88020, 104020, 120020, 136020, 152020]), ('npb-3.3-LU-ssor3', [144020, 112020, 48020, 16020, 80020, 176020, 208020, 240020, 272020, 304020]), ('npb-3.3-MG-kernel_comm3_1', [816, 1616]), ('npb-3.3-MG-kernel_comm3_2', [816, 1616]), ('npb-3.3-MG-kernel_psinv', [2416, 4816]), ('npb-3.3-MG-kernel_resid', [2416, 4816]), ('npb-3.3-SP-add', [144012, 112012, 48012, 16012, 80012, 176012, 208012, 240012, 272012, 304012]), ('npb-3.3-SP-compute_rhs1', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-SP-compute_rhs2', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-SP-compute_rhs3', [64012]), ('npb-3.3-SP-compute_rhs4', [64012]), ('npb-3.3-SP-compute_rhs5', [6412]), ('npb-3.3-SP-compute_rhs6', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-SP-exact_rhs5', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-SP-ninvr', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-SP-pinvr', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('npb-3.3-SP-txinvr', [280012, 504012, 168012, 56012, 392012, 616012, 1064012]), ('npb-3.3-SP-tzetar', [280012, 504012, 168012, 56012, 392012, 616012, 1064012]), ('npb-3.3-SP-x_solve', [32016]), ('npb-3.3-SP-y_solve', [32016]), ('npb-3.3-SP-z_solve', [3216]), ('nvidia-4.2-DotProduct-DotProduct', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced0', [2408, 4808, 6008, 3608, 1208]), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced1', [2408, 4808, 6008, 3608, 1208]), ('nvidia-4.2-MatVecMul-MatVecMulCoalesced2', [2408, 4808, 6008, 3608, 1208]), ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', [808, 1608, 2408, 3208, 4008]), ('nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', [808, 1608, 2408, 3208, 4008]), ('nvidia-4.2-VectorAdd-VectorAdd', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]), ('parboil-0.2-bfs-BFS_kernel', [32012, 96012]), ('parboil-0.2-stencil-naive_kernel', [420, 1220, 820, 1620]), ('polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', [4008, 20008, 28008, 12008, 36008, 44008, 52008, 60008, 68008, 76008]), ('polybench-gpu-1.0-atax-atax_kernel1', [2408, 4808, 6008, 3608, 1208]), ('polybench-gpu-1.0-atax-atax_kernel2', [2408, 4808, 6008, 3608, 1208]), ('polybench-gpu-1.0-bicg-bicgKernel1', [808, 1608, 2408, 3208, 4008]), ('polybench-gpu-1.0-bicg-bicgKernel2', [808, 1608, 2408, 3208, 4008]), ('polybench-gpu-1.0-correlation-corr_kernel', [808, 1608, 2408, 3208, 4008]), ('polybench-gpu-1.0-correlation-mean_kernel', [2012, 812, 1612, 1212, 412]), ('polybench-gpu-1.0-correlation-reduce_kernel', [12012, 84012, 36012, 60012, 108012, 132012, 156012, 180012, 204012, 228012]), ('polybench-gpu-1.0-correlation-std_kernel', [816, 1616, 2416, 3216, 4016]), ('polybench-gpu-1.0-covariance-covar_kernel', [808, 1608, 2008, 408, 1208]), ('polybench-gpu-1.0-covariance-mean_kernel', [2012, 812, 1612, 1212, 412]), ('polybench-gpu-1.0-covariance-reduce_kernel', [24008, 56008, 40008, 72008, 88008, 104008, 120008, 136008, 152008]), ('polybench-gpu-1.0-gemm-gemm', [1220, 6020, 3620, 2420, 4820]), ('polybench-gpu-1.0-gesummv-gesummv_kernel', [10012, 2012, 4012, 8012, 6012]), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', [2012, 812, 1612, 1212, 412]), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', [3212, 4012, 2412, 812, 1612]), ('polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', [6012, 2412, 4812, 1212, 3612]), ('polybench-gpu-1.0-mvt-mvt_kernel1', [4804, 2404, 6004, 1204, 3604]), ('polybench-gpu-1.0-mvt-mvt_kernel2', [4804, 2404, 6004, 1204, 3604]), ('polybench-gpu-1.0-syr2k-syr2k_kernel', [1216, 3616, 6016, 2416, 4816]), ('polybench-gpu-1.0-syrk-syrk_kernel', [816, 1616, 2416, 3216, 4016]), ('rodinia-3.1-backprop-bpnn_adjust_weights_ocl', [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008]), ('rodinia-3.1-backprop-bpnn_layerforward_ocl', [16008, 48008, 80008]), ('rodinia-3.1-bfs-BFS_2', [15004, 11004, 3004, 5004, 9004, 13004, 17004, 7004, 19004]), ('rodinia-3.1-cfd-initialize_variables', [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004]), ('rodinia-3.1-cfd-time_step', [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008]), ('rodinia-3.1-gaussian-Fan1', [808, 1608, 2008, 408, 1208]), ('rodinia-3.1-gaussian-Fan2', [2408, 4808, 6008, 3608, 1208]), ('rodinia-3.1-leukocyte-dilate_kernel', [816, 1616, 2416, 3216, 4016]), ('rodinia-3.1-nn-NearestNeighbor', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]), ('rodinia-3.1-particlefilter-find_index_kernel', [32004, 288004, 224004, 160004, 96004, 352004, 416004, 480004, 544004, 608004]), ('shoc-1.1.5-FFT-chk1D_512', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]), ('shoc-1.1.5-Reduction-reduce', [40004, 24004, 72004, 56004, 8004, 88004]), ('shoc-1.1.5-S3D-gr_base', [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008]), ('shoc-1.1.5-S3D-qssa2_kernel', [12000, 84000, 60000, 36000, 108000, 132000, 156000, 180000, 204000, 228000]), ('shoc-1.1.5-S3D-qssa_kernel', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]), ('shoc-1.1.5-S3D-qssab_kernel', [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000]), ('shoc-1.1.5-S3D-ratt10_kernel', [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004, 68004, 76004]), ('shoc-1.1.5-S3D-ratt2_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-ratt3_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-ratt4_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-ratt5_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-ratt6_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-ratt7_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-ratt8_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-ratt9_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-ratt_kernel', [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004, 68004, 76004]), ('shoc-1.1.5-S3D-ratx2_kernel', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]), ('shoc-1.1.5-S3D-ratx4_kernel', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]), ('shoc-1.1.5-S3D-ratx_kernel', [100004, 180004, 60004, 140004, 20004, 220004, 260004, 300004, 340004, 380004]), ('shoc-1.1.5-S3D-ratxb_kernel', [100004, 180004, 60004, 140004, 20004, 220004, 260004, 300004, 340004, 380004]), ('shoc-1.1.5-S3D-rdwdot10_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-rdwdot2_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-rdwdot3_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-rdwdot6_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-rdwdot7_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-rdwdot8_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-rdwdot9_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-S3D-rdwdot_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]), ('shoc-1.1.5-Scan-reduce', [8004]), ('shoc-1.1.5-Sort-reduce', [8008]), ('shoc-1.1.5-Triad-Triad', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004])] 
+
+*Conditions: [['amd-app-sdk-3.0-BinomialOption-binomial_options', [48004]], ['amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', [808, 1608, 2008, 408, 1208]], ['amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', [3208, 6408, 12808, 9608, 16008]], ['amd-app-sdk-3.0-PrefixSum-group_prefixSum', [8008]], ['amd-app-sdk-3.0-Reduction-reduce', [32000, 96000]], ['amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', [40004, 24004, 72004, 56004, 8004, 88004]], ['amd-app-sdk-3.0-ScanLargeArrays-blockAddition', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]], ['amd-app-sdk-3.0-ScanLargeArrays-prefixSum', [40004, 24004, 72004, 56004, 8004, 88004]], ['amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', [3220, 4020, 2420, 820, 1620]], ['amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', [3220, 4020, 2420, 820, 1620]], ['amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', [3220, 4020, 2420, 820, 1620]], ['amd-app-sdk-3.0-SobelFilter-sobel_filter', [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000]], ['npb-3.3-BT-add', [144012, 112012, 48012, 16012, 80012, 176012, 208012, 240012, 272012, 304012]], ['npb-3.3-BT-compute_rhs1', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-BT-compute_rhs2', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-BT-compute_rhs3', [64012]], ['npb-3.3-BT-compute_rhs4', [64012]], ['npb-3.3-BT-compute_rhs5', [6412]], ['npb-3.3-BT-compute_rhs6', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-BT-exact_rhs5', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-BT-x_solve1', [32012, 96012]], ['npb-3.3-BT-x_solve3', [16012]], ['npb-3.3-BT-y_solve1', [32012]], ['npb-3.3-BT-y_solve3', [16012]], ['npb-3.3-BT-z_solve1', [2412]], ['npb-3.3-BT-z_solve3', [16012]], ['npb-3.3-CG-conj_grad_0', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]], ['npb-3.3-CG-main_0', [8008, 24008, 40008, 72008, 56008, 88008, 104008, 120008, 136008, 152008]], ['npb-3.3-CG-makea_1', [20004]], ['npb-3.3-CG-makea_2', [16000, 48000, 80000, 144000, 112000, 176000, 208000, 240000, 272000, 304000]], ['npb-3.3-CG-makea_4', [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008]], ['npb-3.3-CG-makea_5', [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008]], ['npb-3.3-CG-makea_6', [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008]], ['npb-3.3-CG-makea_7', [8008, 24008, 40008, 72008, 56008, 88008, 104008, 120008, 136008, 152008]], ['npb-3.3-LU-erhs1', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-LU-erhs2', [16012]], ['npb-3.3-LU-erhs3', [16012]], ['npb-3.3-LU-erhs4', [1612]], ['npb-3.3-LU-pintgr1', [824]], ['npb-3.3-LU-pintgr2', [824, 1624]], ['npb-3.3-LU-pintgr3', [824, 1624]], ['npb-3.3-LU-pintgr_reduce', [24016, 72016, 120016]], ['npb-3.3-LU-rhs', [144012, 112012, 16012, 48012, 80012, 176012, 208012, 240012, 272012]], ['npb-3.3-LU-rhsx', [32012]], ['npb-3.3-LU-rhsy', [32012]], ['npb-3.3-LU-rhsz', [3212]], ['npb-3.3-LU-ssor2', [40020, 24020, 72020, 56020, 8020, 88020, 104020, 120020, 136020, 152020]], ['npb-3.3-LU-ssor3', [144020, 112020, 48020, 16020, 80020, 176020, 208020, 240020, 272020, 304020]], ['npb-3.3-MG-kernel_comm3_1', [816, 1616]], ['npb-3.3-MG-kernel_comm3_2', [816, 1616]], ['npb-3.3-MG-kernel_psinv', [2416, 4816]], ['npb-3.3-MG-kernel_resid', [2416, 4816]], ['npb-3.3-SP-add', [144012, 112012, 48012, 16012, 80012, 176012, 208012, 240012, 272012, 304012]], ['npb-3.3-SP-compute_rhs1', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-SP-compute_rhs2', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-SP-compute_rhs3', [64012]], ['npb-3.3-SP-compute_rhs4', [64012]], ['npb-3.3-SP-compute_rhs5', [6412]], ['npb-3.3-SP-compute_rhs6', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-SP-exact_rhs5', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-SP-ninvr', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-SP-pinvr', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['npb-3.3-SP-txinvr', [280012, 504012, 168012, 56012, 392012, 616012, 1064012]], ['npb-3.3-SP-tzetar', [280012, 504012, 168012, 56012, 392012, 616012, 1064012]], ['npb-3.3-SP-x_solve', [32016]], ['npb-3.3-SP-y_solve', [32016]], ['npb-3.3-SP-z_solve', [3216]], ['nvidia-4.2-DotProduct-DotProduct', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]], ['nvidia-4.2-MatVecMul-MatVecMulCoalesced0', [2408, 4808, 6008, 3608, 1208]], ['nvidia-4.2-MatVecMul-MatVecMulCoalesced1', [2408, 4808, 6008, 3608, 1208]], ['nvidia-4.2-MatVecMul-MatVecMulCoalesced2', [2408, 4808, 6008, 3608, 1208]], ['nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', [808, 1608, 2408, 3208, 4008]], ['nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', [808, 1608, 2408, 3208, 4008]], ['nvidia-4.2-VectorAdd-VectorAdd', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]], ['parboil-0.2-bfs-BFS_kernel', [32012, 96012]], ['parboil-0.2-stencil-naive_kernel', [420, 1220, 820, 1620]], ['polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', [4008, 20008, 28008, 12008, 36008, 44008, 52008, 60008, 68008, 76008]], ['polybench-gpu-1.0-atax-atax_kernel1', [2408, 4808, 6008, 3608, 1208]], ['polybench-gpu-1.0-atax-atax_kernel2', [2408, 4808, 6008, 3608, 1208]], ['polybench-gpu-1.0-bicg-bicgKernel1', [808, 1608, 2408, 3208, 4008]], ['polybench-gpu-1.0-bicg-bicgKernel2', [808, 1608, 2408, 3208, 4008]], ['polybench-gpu-1.0-correlation-corr_kernel', [808, 1608, 2408, 3208, 4008]], ['polybench-gpu-1.0-correlation-mean_kernel', [2012, 812, 1612, 1212, 412]], ['polybench-gpu-1.0-correlation-reduce_kernel', [12012, 84012, 36012, 60012, 108012, 132012, 156012, 180012, 204012, 228012]], ['polybench-gpu-1.0-correlation-std_kernel', [816, 1616, 2416, 3216, 4016]], ['polybench-gpu-1.0-covariance-covar_kernel', [808, 1608, 2008, 408, 1208]], ['polybench-gpu-1.0-covariance-mean_kernel', [2012, 812, 1612, 1212, 412]], ['polybench-gpu-1.0-covariance-reduce_kernel', [24008, 56008, 40008, 72008, 88008, 104008, 120008, 136008, 152008]], ['polybench-gpu-1.0-gemm-gemm', [1220, 6020, 3620, 2420, 4820]], ['polybench-gpu-1.0-gesummv-gesummv_kernel', [10012, 2012, 4012, 8012, 6012]], ['polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', [2012, 812, 1612, 1212, 412]], ['polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', [3212, 4012, 2412, 812, 1612]], ['polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', [6012, 2412, 4812, 1212, 3612]], ['polybench-gpu-1.0-mvt-mvt_kernel1', [4804, 2404, 6004, 1204, 3604]], ['polybench-gpu-1.0-mvt-mvt_kernel2', [4804, 2404, 6004, 1204, 3604]], ['polybench-gpu-1.0-syr2k-syr2k_kernel', [1216, 3616, 6016, 2416, 4816]], ['polybench-gpu-1.0-syrk-syrk_kernel', [816, 1616, 2416, 3216, 4016]], ['rodinia-3.1-backprop-bpnn_adjust_weights_ocl', [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008]], ['rodinia-3.1-backprop-bpnn_layerforward_ocl', [16008, 48008, 80008]], ['rodinia-3.1-bfs-BFS_2', [15004, 11004, 3004, 5004, 9004, 13004, 17004, 7004, 19004]], ['rodinia-3.1-cfd-initialize_variables', [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004]], ['rodinia-3.1-cfd-time_step', [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008]], ['rodinia-3.1-gaussian-Fan1', [808, 1608, 2008, 408, 1208]], ['rodinia-3.1-gaussian-Fan2', [2408, 4808, 6008, 3608, 1208]], ['rodinia-3.1-leukocyte-dilate_kernel', [816, 1616, 2416, 3216, 4016]], ['rodinia-3.1-nn-NearestNeighbor', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]], ['rodinia-3.1-particlefilter-find_index_kernel', [32004, 288004, 224004, 160004, 96004, 352004, 416004, 480004, 544004, 608004]], ['shoc-1.1.5-FFT-chk1D_512', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]], ['shoc-1.1.5-Reduction-reduce', [40004, 24004, 72004, 56004, 8004, 88004]], ['shoc-1.1.5-S3D-gr_base', [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008]], ['shoc-1.1.5-S3D-qssa2_kernel', [12000, 84000, 60000, 36000, 108000, 132000, 156000, 180000, 204000, 228000]], ['shoc-1.1.5-S3D-qssa_kernel', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]], ['shoc-1.1.5-S3D-qssab_kernel', [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000]], ['shoc-1.1.5-S3D-ratt10_kernel', [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004, 68004, 76004]], ['shoc-1.1.5-S3D-ratt2_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-ratt3_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-ratt4_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-ratt5_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-ratt6_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-ratt7_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-ratt8_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-ratt9_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-ratt_kernel', [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004, 68004, 76004]], ['shoc-1.1.5-S3D-ratx2_kernel', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]], ['shoc-1.1.5-S3D-ratx4_kernel', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]], ['shoc-1.1.5-S3D-ratx_kernel', [100004, 180004, 60004, 140004, 20004, 220004, 260004, 300004, 340004, 380004]], ['shoc-1.1.5-S3D-ratxb_kernel', [100004, 180004, 60004, 140004, 20004, 220004, 260004, 300004, 340004, 380004]], ['shoc-1.1.5-S3D-rdwdot10_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-rdwdot2_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-rdwdot3_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-rdwdot6_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-rdwdot7_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-rdwdot8_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-rdwdot9_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-S3D-rdwdot_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]], ['shoc-1.1.5-Scan-reduce', [8004]], ['shoc-1.1.5-Sort-reduce', [8008]], ['shoc-1.1.5-Triad-Triad', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]]] 
+
+['amd-app-sdk-3.0-BinomialOption-binomial_options', [48004]]
+['amd-app-sdk-3.0-FloydWarshall-floydWarshallPass', [808, 1608, 2008, 408, 1208]]
+['amd-app-sdk-3.0-MatrixMultiplication-mmmKernel', [3208, 6408, 12808, 9608, 16008]]
+['amd-app-sdk-3.0-PrefixSum-group_prefixSum', [8008]]
+['amd-app-sdk-3.0-Reduction-reduce', [32000, 96000]]
+['amd-app-sdk-3.0-ScanLargeArrays-ScanLargeArrays', [40004, 24004, 72004, 56004, 8004, 88004]]
+['amd-app-sdk-3.0-ScanLargeArrays-blockAddition', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]]
+['amd-app-sdk-3.0-ScanLargeArrays-prefixSum', [40004, 24004, 72004, 56004, 8004, 88004]]
+['amd-app-sdk-3.0-SimpleConvolution-simpleNonSeparableConvolution', [3220, 4020, 2420, 820, 1620]]
+['amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass1', [3220, 4020, 2420, 820, 1620]]
+['amd-app-sdk-3.0-SimpleConvolution-simpleSeparableConvolutionPass2', [3220, 4020, 2420, 820, 1620]]
+['amd-app-sdk-3.0-SobelFilter-sobel_filter', [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000]]
+['npb-3.3-BT-add', [144012, 112012, 48012, 16012, 80012, 176012, 208012, 240012, 272012, 304012]]
+['npb-3.3-BT-compute_rhs1', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-BT-compute_rhs2', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-BT-compute_rhs3', [64012]]
+['npb-3.3-BT-compute_rhs4', [64012]]
+['npb-3.3-BT-compute_rhs5', [6412]]
+['npb-3.3-BT-compute_rhs6', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-BT-exact_rhs5', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-BT-x_solve1', [32012, 96012]]
+['npb-3.3-BT-x_solve3', [16012]]
+['npb-3.3-BT-y_solve1', [32012]]
+['npb-3.3-BT-y_solve3', [16012]]
+['npb-3.3-BT-z_solve1', [2412]]
+['npb-3.3-BT-z_solve3', [16012]]
+['npb-3.3-CG-conj_grad_0', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]]
+['npb-3.3-CG-main_0', [8008, 24008, 40008, 72008, 56008, 88008, 104008, 120008, 136008, 152008]]
+['npb-3.3-CG-makea_1', [20004]]
+['npb-3.3-CG-makea_2', [16000, 48000, 80000, 144000, 112000, 176000, 208000, 240000, 272000, 304000]]
+['npb-3.3-CG-makea_4', [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008]]
+['npb-3.3-CG-makea_5', [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008]]
+['npb-3.3-CG-makea_6', [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008]]
+['npb-3.3-CG-makea_7', [8008, 24008, 40008, 72008, 56008, 88008, 104008, 120008, 136008, 152008]]
+['npb-3.3-LU-erhs1', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-LU-erhs2', [16012]]
+['npb-3.3-LU-erhs3', [16012]]
+['npb-3.3-LU-erhs4', [1612]]
+['npb-3.3-LU-pintgr1', [824]]
+['npb-3.3-LU-pintgr2', [824, 1624]]
+['npb-3.3-LU-pintgr3', [824, 1624]]
+['npb-3.3-LU-pintgr_reduce', [24016, 72016, 120016]]
+['npb-3.3-LU-rhs', [144012, 112012, 16012, 48012, 80012, 176012, 208012, 240012, 272012]]
+['npb-3.3-LU-rhsx', [32012]]
+['npb-3.3-LU-rhsy', [32012]]
+['npb-3.3-LU-rhsz', [3212]]
+['npb-3.3-LU-ssor2', [40020, 24020, 72020, 56020, 8020, 88020, 104020, 120020, 136020, 152020]]
+['npb-3.3-LU-ssor3', [144020, 112020, 48020, 16020, 80020, 176020, 208020, 240020, 272020, 304020]]
+['npb-3.3-MG-kernel_comm3_1', [816, 1616]]
+['npb-3.3-MG-kernel_comm3_2', [816, 1616]]
+['npb-3.3-MG-kernel_psinv', [2416, 4816]]
+['npb-3.3-MG-kernel_resid', [2416, 4816]]
+['npb-3.3-SP-add', [144012, 112012, 48012, 16012, 80012, 176012, 208012, 240012, 272012, 304012]]
+['npb-3.3-SP-compute_rhs1', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-SP-compute_rhs2', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-SP-compute_rhs3', [64012]]
+['npb-3.3-SP-compute_rhs4', [64012]]
+['npb-3.3-SP-compute_rhs5', [6412]]
+['npb-3.3-SP-compute_rhs6', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-SP-exact_rhs5', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-SP-ninvr', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-SP-pinvr', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['npb-3.3-SP-txinvr', [280012, 504012, 168012, 56012, 392012, 616012, 1064012]]
+['npb-3.3-SP-tzetar', [280012, 504012, 168012, 56012, 392012, 616012, 1064012]]
+['npb-3.3-SP-x_solve', [32016]]
+['npb-3.3-SP-y_solve', [32016]]
+['npb-3.3-SP-z_solve', [3216]]
+['nvidia-4.2-DotProduct-DotProduct', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]]
+['nvidia-4.2-MatVecMul-MatVecMulCoalesced0', [2408, 4808, 6008, 3608, 1208]]
+['nvidia-4.2-MatVecMul-MatVecMulCoalesced1', [2408, 4808, 6008, 3608, 1208]]
+['nvidia-4.2-MatVecMul-MatVecMulCoalesced2', [2408, 4808, 6008, 3608, 1208]]
+['nvidia-4.2-MatVecMul-MatVecMulUncoalesced0', [808, 1608, 2408, 3208, 4008]]
+['nvidia-4.2-MatVecMul-MatVecMulUncoalesced1', [808, 1608, 2408, 3208, 4008]]
+['nvidia-4.2-VectorAdd-VectorAdd', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]]
+['parboil-0.2-bfs-BFS_kernel', [32012, 96012]]
+['parboil-0.2-stencil-naive_kernel', [420, 1220, 820, 1620]]
+['polybench-gpu-1.0-2DConvolution-Convolution2D_kernel', [4008, 20008, 28008, 12008, 36008, 44008, 52008, 60008, 68008, 76008]]
+['polybench-gpu-1.0-atax-atax_kernel1', [2408, 4808, 6008, 3608, 1208]]
+['polybench-gpu-1.0-atax-atax_kernel2', [2408, 4808, 6008, 3608, 1208]]
+['polybench-gpu-1.0-bicg-bicgKernel1', [808, 1608, 2408, 3208, 4008]]
+['polybench-gpu-1.0-bicg-bicgKernel2', [808, 1608, 2408, 3208, 4008]]
+['polybench-gpu-1.0-correlation-corr_kernel', [808, 1608, 2408, 3208, 4008]]
+['polybench-gpu-1.0-correlation-mean_kernel', [2012, 812, 1612, 1212, 412]]
+['polybench-gpu-1.0-correlation-reduce_kernel', [12012, 84012, 36012, 60012, 108012, 132012, 156012, 180012, 204012, 228012]]
+['polybench-gpu-1.0-correlation-std_kernel', [816, 1616, 2416, 3216, 4016]]
+['polybench-gpu-1.0-covariance-covar_kernel', [808, 1608, 2008, 408, 1208]]
+['polybench-gpu-1.0-covariance-mean_kernel', [2012, 812, 1612, 1212, 412]]
+['polybench-gpu-1.0-covariance-reduce_kernel', [24008, 56008, 40008, 72008, 88008, 104008, 120008, 136008, 152008]]
+['polybench-gpu-1.0-gemm-gemm', [1220, 6020, 3620, 2420, 4820]]
+['polybench-gpu-1.0-gesummv-gesummv_kernel', [10012, 2012, 4012, 8012, 6012]]
+['polybench-gpu-1.0-gramschmidt-gramschmidt_kernel1', [2012, 812, 1612, 1212, 412]]
+['polybench-gpu-1.0-gramschmidt-gramschmidt_kernel2', [3212, 4012, 2412, 812, 1612]]
+['polybench-gpu-1.0-gramschmidt-gramschmidt_kernel3', [6012, 2412, 4812, 1212, 3612]]
+['polybench-gpu-1.0-mvt-mvt_kernel1', [4804, 2404, 6004, 1204, 3604]]
+['polybench-gpu-1.0-mvt-mvt_kernel2', [4804, 2404, 6004, 1204, 3604]]
+['polybench-gpu-1.0-syr2k-syr2k_kernel', [1216, 3616, 6016, 2416, 4816]]
+['polybench-gpu-1.0-syrk-syrk_kernel', [816, 1616, 2416, 3216, 4016]]
+['rodinia-3.1-backprop-bpnn_adjust_weights_ocl', [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008]]
+['rodinia-3.1-backprop-bpnn_layerforward_ocl', [16008, 48008, 80008]]
+['rodinia-3.1-bfs-BFS_2', [15004, 11004, 3004, 5004, 9004, 13004, 17004, 7004, 19004]]
+['rodinia-3.1-cfd-initialize_variables', [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004]]
+['rodinia-3.1-cfd-time_step', [12008, 84008, 60008, 36008, 108008, 132008, 156008, 180008, 204008, 228008]]
+['rodinia-3.1-gaussian-Fan1', [808, 1608, 2008, 408, 1208]]
+['rodinia-3.1-gaussian-Fan2', [2408, 4808, 6008, 3608, 1208]]
+['rodinia-3.1-leukocyte-dilate_kernel', [816, 1616, 2416, 3216, 4016]]
+['rodinia-3.1-nn-NearestNeighbor', [40012, 24012, 72012, 56012, 8012, 88012, 104012, 120012, 136012, 152012]]
+['rodinia-3.1-particlefilter-find_index_kernel', [32004, 288004, 224004, 160004, 96004, 352004, 416004, 480004, 544004, 608004]]
+['shoc-1.1.5-FFT-chk1D_512', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]]
+['shoc-1.1.5-Reduction-reduce', [40004, 24004, 72004, 56004, 8004, 88004]]
+['shoc-1.1.5-S3D-gr_base', [16008, 48008, 80008, 144008, 112008, 176008, 208008, 240008, 272008, 304008]]
+['shoc-1.1.5-S3D-qssa2_kernel', [12000, 84000, 60000, 36000, 108000, 132000, 156000, 180000, 204000, 228000]]
+['shoc-1.1.5-S3D-qssa_kernel', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]]
+['shoc-1.1.5-S3D-qssab_kernel', [4000, 20000, 28000, 12000, 36000, 44000, 52000, 60000, 68000, 76000]]
+['shoc-1.1.5-S3D-ratt10_kernel', [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004, 68004, 76004]]
+['shoc-1.1.5-S3D-ratt2_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-ratt3_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-ratt4_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-ratt5_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-ratt6_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-ratt7_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-ratt8_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-ratt9_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-ratt_kernel', [28004, 36004, 20004, 12004, 4004, 44004, 52004, 60004, 68004, 76004]]
+['shoc-1.1.5-S3D-ratx2_kernel', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]]
+['shoc-1.1.5-S3D-ratx4_kernel', [8000, 24000, 40000, 72000, 56000, 88000, 104000, 120000, 136000, 152000]]
+['shoc-1.1.5-S3D-ratx_kernel', [100004, 180004, 60004, 140004, 20004, 220004, 260004, 300004, 340004, 380004]]
+['shoc-1.1.5-S3D-ratxb_kernel', [100004, 180004, 60004, 140004, 20004, 220004, 260004, 300004, 340004, 380004]]
+['shoc-1.1.5-S3D-rdwdot10_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-rdwdot2_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-rdwdot3_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-rdwdot6_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-rdwdot7_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-rdwdot8_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-rdwdot9_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-S3D-rdwdot_kernel', [12004, 84004, 36004, 60004, 108004, 132004, 156004, 180004, 204004, 228004]]
+['shoc-1.1.5-Scan-reduce', [8004]]
+['shoc-1.1.5-Sort-reduce', [8008]]
+['shoc-1.1.5-Triad-Triad', [40004, 24004, 72004, 56004, 8004, 88004, 104004, 120004, 136004, 152004]]
