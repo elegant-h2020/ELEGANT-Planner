@@ -1,3 +1,90 @@
+# Oclude runs #
+
+## Codes to run oclude:
+
+* **[ocludify.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/ocludify.py)** runs the **oclude profiler[^1]** (which must be installed) on a list of OpenCL kernels and times them. To run it expects 3 files:
+  
+   1. a **csv file** with the list of kernels to run. The name of this csv is stored in the **constant [KERNELS_FILE](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/cgo17-amd.csv)** in the GLOBAL VARIABLE SECTION.
+   2. a **csv file** with the list of configurations to use for each kernel. The name of this csv is stored in the **CONFIG_FILE**. The script will only deal with the kernels listed in the **CONFIG_FILE**, regardless of how many kernels are listed in the [KERNELS_FILE](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/cgo17-amd.csv). This is because the **CONFIG_FILE** is expected to be manually edited by the user to specify the kernels to run and their respective configurations.
+   3. a **simple text file** with the list of OpenCL devices to run  the kernels on.
+  
+   <br>
+   
+   > As listed below, I used 4 machines for my experiments. An **example** of running the oclude profiler in epyc7, based on the three aforementioned csvs' is the following:
+
+   > I'm using the [ocludify_epyc7.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/ocludify_epyc7.py) file, and I change the parameters accordingly.
+   > ```python3 
+   > # Change the arguments each time.
+   > machine = 'epyc7'
+   > model = 'CPU'
+   > #model = 'NvidiaA100'
+   > exp = 'exp2' #'exp1'
+   > ```
+
+   > ```
+   > KERNELS_FILE = 'cgo17-amd.csv'
+   > CONFIG_FILE = 'uncompiledkernels_epyc7_cpu_exp1.csv' #uncompiled kernels from experiment1
+   > #CONFIG_FILE = 'benchmarks_config.csv'
+   > DEVICES_FILE = f'devices_{machine}.txt'
+   > ```
+
+* **oclude** can be used as a command line tool through its CLI (command line interface).
+* **oclude** is a command line tool and a Python3 module to run and test arbitrary standalone OpenCL kernels, without the need to write hostcode or specify the arguments.
+*  **oclude** supports 2 different commands:
+   1. the profiling of the selected device
+   2. the execution and/or profiling of an OpenCL kernel, which supports 2 different modes (apart from simply executing the kernel):
+      a. count the LLVM instructions
+      b. measure the execution time
+
+   > * Some extra information concerning **GSIZE**. 
+   > **GSIZE** is the quantity which controls the length of the vectors, whether is output, or input. 
+   > In OpenCL, InputByte and OutputByte arise from the gsize in a deterministic manner.
+
+[^1]: You can check [oclude's](https://github.com/zehanort/oclude) github page for more information.
+
+
+## Machines 
+
+* I used 4 machines for my experiments.
+
+1. **dungani**
+2. **silver1**
+3. **gold2**
+4. **epyc7**
+
+
+## Oclude runs
+
+- **Experiment1**
+
+| Machines        | Device Type         | Platform Type  | Platform ID         |Device ID  |Gsizes  |Samples  |Timeouts  |Output File  |Compiled Kernels  |
+| ------------- |:-------------:|:-----:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+| epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_epyc7_NvidiaA100_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_epyc7_NvidiaA100_exp1.csv) |855 #runs and 112 unique kernels |
+| epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_epyc7_CPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_epyc7_CPU_exp1.csv) |293 (#runs) 55 (unique kernels) |
+| silver1      | Tesla V100-SXM2-32GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_silver1_Tesla_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_silver1_Tesla_exp1.csv) |853 (#runs) 110 (unique kernels) |
+| silver1      | pthread-Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz   |  Portable Computing Language | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_silver1_CPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_silver1_CPU_exp1.csv) |61 (#runs) 7 (unique kernels) | 
+| gold2      | GeForce GTX 1060 6GB | NVIDIA CUDA | 0 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu_cpu_together/results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv) |1248 (#runs) 120 (unique kernels) numbers with cpu|
+| gold2      | Intel(R) Xeon(R) Gold 5120 CPU @ 2.20GHz   |  Intel(R) OpenCL | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu_cpu_together/results_gold2_GeForceGTX_IntelXeonCPU_exp1.csv) |1248 (#runs) 120 (unique kernels) numbers with gpu | 
+| dungani      | Quadro M4000 | NVIDIA CUDA | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_dungani_QuadroTesla_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_dungani_QuadroTesla_exp1.csv) |1648 (#runs) 110 (unique kernels) together with TeslaK40 |
+| dungani      | Tesla K40     |  NVIDIA CUDA | 0 | 2 |[1000,21000,2000] |200 |[10,15,20] |[results_dungani_QuadroTesla_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_dungani_QuadroTesla_exp1.csv) |1648 (#runs) 110 (unique kernels) together with Quadro M4000 | 
+| dungani | pthread-Intel(R) Core(TM) i7-4820K CPU @ 3.70GHz      |    Portable Computing Language | 1 | 0 |[1000,21000,2000] |200 |[10,15,20] |[results_dungani_CPU_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_dungani_CPU_exp1.csv) |296 (#runs) 58 (unique kernels) |
+
+- **Experiment2**
+
+| Machines        | Device Type         | Platform Type  | Platform ID         |Device ID  |Gsizes  |Samples  |Timeouts  |Output File  |Compiled Kernels  |
+| ------------- |:-------------:|:-----:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+| epyc7      | NVIDIA A100-PCIE-40GB | NVIDIA CUDA | 0 | 0 |[100,1000,100] |200 |[10,35] |[results_epyc7_NvidiaA100_exp1.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_epyc7_NvidiaA100_exp2.csv) |322 (#runs) 54 (unique kernels) |
+| epyc7      | pthread-AMD EPYC 7402 24-Core Processor   | Portable Computing Language | 1 | 0 |[100,1000,100] |200 |~~[10,35]~~ [35,40] |[results_epyc7_CPU_exp2.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_epyc7_CPU_exp2.csv) |15 (#runs) 9 (unique kernels) |
+| silver1      | Tesla V100-SXM2-32GB | NVIDIA CUDA | 0 | 0 |[100,1000,100] |200 |~~[10,35]~~ [35,40] |[results_silver1_Tesla_exp2.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_silver1_Tesla_exp2.csv) |344 (#runs) 56 (unique kernels)  |
+| silver1      | pthread-Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz   |  Portable Computing Language | 1 | 0 |[100,1000,100] |200 |~~[10,35]~~ [35,40] |[results_silver1_CPU_exp2.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_silver1_CPU_exp2.csv) |387 (#runs) 56 (unique kernels) | 
+| gold2      | GeForce GTX 1060 6GB | NVIDIA CUDA | 0 | 0 |[100,1000,100] |200 |[10,35] |[results_gold2_GeForceGTX_IntelXeonCPU_exp2.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu_cpu_together/results_gold2_GeForceGTX_IntelXeonCPU_exp2.csv) |302 (#runs) 48 (unique kernels) together with cpu |
+| gold2      | Intel(R) Xeon(R) Gold 5120 CPU @ 2.20GHz   |  Intel(R) OpenCL | 1 | 0 |[100,1000,100] |200 |[10,35] |[results_gold2_GeForceGTX_IntelXeonCPU_exp2.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu_cpu_together/results_gold2_GeForceGTX_IntelXeonCPU_exp2.csv) |302 (#runs) 48 (unique kernels) together with gpu | 
+| dungani      | Quadro M4000 | NVIDIA CUDA | 1 | 0 |[100,1000,100] |200 |[10,35] |[results_dungani_QuadroTesla_exp2.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_dungani_QuadroTesla_exp2.csv) |443 (#runs) 55 (unique kernels) together with TeslaK40 |
+| dungani      | Tesla K40     |  NVIDIA CUDA | 0 | 2 |[100,1000,100] |200 |[10,35] |[results_dungani_QuadroTesla_exp2.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/gpu/results_dungani_QuadroTesla_exp2.csv) |443 (#runs) 55 (unique kernels) together with Quadro M4000 | 
+| dungani | pthread-Intel(R) Core(TM) i7-4820K CPU @ 3.70GHz      |    Portable Computing Language | 1 | 0 |[100,1000,100] |200 |[10,35] |[results_dungani_CPU_exp2.csv](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/cpu/results_dungani_CPU_exp2.csv) |4 (#runs) 2 (unique kernels) |
+
+
+
 # Preprocessing of kernel runs #
 
 * I have one dataset for the cpu, and one for the gpu.
@@ -21,8 +108,9 @@
    This script runs the **oclude profiler**, which must be installed, on a list of OpenCL kernels.
 4. [yacctab.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/yacctab.py) <br>
    This file is automatically generated. Do not edit!
+   
 
-## Codes for preprocessing:
+## Codes for preprocessing (after oclude compilation and before training):
 
 1. [compiled_and_not_compiled_kernels.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/compiled_and_not_compiled_kernels.py) <br>
    - This script reads results.csv from the different runs, and returns which kernels are compiled and which are not, in the form of two dataframes converted into csv.<br>
@@ -70,7 +158,7 @@
    
    - ```def split_on_teams(args)``` <br>
   
-      For each team, before I split it into kfolder and testfolder, I keep the name of the unique kerenls, and I compare them with the llvm ir files. For every llvm ir file that have correspondence to the unique kernels of the team, I copy them to the corresponding team folder. <br>
+      For each team, before I split it into kfolder and testfolder, I keep the name of the unique kernels, and I compare them with the llvm ir files. For every llvm ir file that have correspondence to the unique kernels of the team, I copy them to the corresponding team folder. <br>
       
       *(Create for each team the corresponding ir folder, based on its unique kernels).*
       
@@ -141,3 +229,4 @@
       testfolder-->gpu_test;
 ```
   
+## Codes for training the GNNs: 

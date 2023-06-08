@@ -1,0 +1,1 @@
+Tesla_V100_SXM2_32GB 0 0
