@@ -9,4 +9,6 @@ The above python code consists of the following functions:
   3. ```def check_input_bytes(args, filtered_df)```: This function groups the output of ```def create_df()``` function (filtered_df) based on the **kernel** and **machine** columns, and finds the common across all machines, kernels (see 1), that have at least one common input_byte.
 
   4. ``` def create_final_df(filtered_df, finalkernels, finalbytes)```: This function creates a dataframe out of the initial dataframe, based on the kernels and bytes that are common accross all groups
+
+**Output** of the .py code is 2 csv files, ***commonkernelsinputbytes_acrossmachines_gpu.csv*** for gpu and ***commonkernelsinputbytes_acrossmachines_cpu.csv*** for cpu.
  <br>
