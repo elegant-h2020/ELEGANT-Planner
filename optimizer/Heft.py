@@ -139,7 +139,7 @@ class HeftScheduler():
             for pred in pred_tasks:
                 # Device that the pred tasks has already been assigned
                 pred_device = scheduled_tasks[pred]
-                # We know where pred tasks have been scheduled so we use the actual communication sosts
+                # We know where pred tasks have been scheduled so we use the actual communication costs
                 ready_time = self.aft[pred] + self.transfer_times[(pred, task)][(pred_device, device)]
                 if ready_time > max_ready_time:
                     max_ready_time = ready_time
@@ -207,14 +207,17 @@ class HeftScheduler():
         print("Devices Info", devices_info)
         print("Available devices:",self.available_devices)
         new_constraints = {}
-        #explain what you do here
         for key, value in constraints.items():
             #map node constraints with the devices the node has
             devs = []
             for x, y in devices_info.items():
                # print(y["node_id"])
-                if value == int(''.join(filter(str.isdigit, y["node_id"]))):
-                    devs.append(x)
+                if int(value[0]) == int(''.join(filter(str.isdigit, y["node_id"]))):
+                    parts = y["nes_device_id"].split("-")
+                    if value[1] == y["device_type"]:
+                        devs.append(x)
+                    elif value[1] == parts[1]:
+                        devs.append(x)
             new_constraints[key] = devs
             
 
@@ -282,9 +285,6 @@ class HeftScheduler():
 
     def compute_scheduling_time_execution(self, scheduling):
         """
-        Computes the execution time of a given scheduling
-        (upward rank execution order)
-
         Attributes
         ----------
         scheduling: dict

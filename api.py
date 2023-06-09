@@ -83,15 +83,15 @@ def nx_from_json(task_graph_json):
         
         # Create Constraints
         if task["constraint"] != '':
-            constraints[task_id] = int(''.join(filter(str.isdigit, task["constraint"])))
+            parts = task["constraint"].split('-')
+            constraints[task_id] = [parts[0].split('_')[1], parts[1]]
         # Decode the source code in string format
         code_encoded = task["sourceCode"]
         code_encoded = str.encode(code_encoded)
         code_encoded = base64.b64decode(code_encoded)
         code_str = code_encoded.decode()
-        
         source_codes[task_id] = (code_str, int(task["inputData"]))
-        
+    print(constraints)
     return task_graph, source_codes, constraints
 
 def device_info_from_json(nodes_json):
@@ -337,8 +337,11 @@ class Scheduling(Resource):
         scheduler = HeftScheduler(operator_graph, operator_time_statistics, operator_average_time_statistics, operator_power_statistics,
                                   transfer_times, average_transfer_times, list(range(num_cpu + num_gpu)),constraints,devices_info)
 
-       
+        
+        EXEC_TIME_WEIGHT = float(args.get("time_weight"))
+        POWER_WEIGHT = 1 - EXEC_TIME_WEIGHT
         weights = (EXEC_TIME_WEIGHT, POWER_WEIGHT)
+        print(weights)
         scheduling = scheduler.schedule(weights,constraints,devices_info)
         makespan = scheduler.aft["n_exit"]
         power = total_power_consumption(scheduling, operator_power_statistics)
