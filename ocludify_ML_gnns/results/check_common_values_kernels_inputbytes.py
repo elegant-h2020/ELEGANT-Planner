@@ -74,6 +74,7 @@ def check_input_bytes(args, filtered_df):
     print(f'finaltotalkernels {len(finalkernels)} {finalkernels}')
     return finalbytes, finalkernels
 
+
 # Creates a dataframe out of the initial dataframe, based on the kernels and bytes that are common accross all groups
 """
     The list_of_kernelsbytes list contains tuples representing the conditions. Each tuple consists of values for the 'kernel' and 'input_bytes' columns.
@@ -110,6 +111,10 @@ if __name__ == '__main__':
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f'show me the available device in this machine {device}')
+
+    #  'command': ' '.join(sys.argv[:]),
+    print("This is the name of the program:", sys.argv[0])
+    print("Argument List:", str(sys.argv))
 
     df = pd.read_csv(args.csv_path)
     print(df.head(2))

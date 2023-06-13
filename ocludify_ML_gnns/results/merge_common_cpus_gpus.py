@@ -9,6 +9,7 @@
 
 import os
 import csv
+import sys
 import torch
 import argparse
 import pandas as pd
@@ -24,6 +25,10 @@ if __name__ == '__main__':
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f'show me the available device in this machine {device}')
+
+    #  'command': ' '.join(sys.argv[:]),
+    print("This is the name of the program:", sys.argv[0])
+    print("Argument List:", str(sys.argv))
 
     cpu = pd.read_csv(args.cpu)
     print(f'shape of cpu dataframe is {cpu.shape}')
@@ -97,4 +102,5 @@ if __name__ == '__main__':
 
     print(new_df)
     merged_df.to_csv('merged_cpu_gpu.csv', index=False, sep=',', quoting=csv.QUOTE_ALL)
+    new_df.drop_duplicates(inplace=True)
     new_df.to_csv('commonkernelsinputbytes_cpu_gpu.csv', index=False, sep=',', quoting=csv.QUOTE_ALL)
