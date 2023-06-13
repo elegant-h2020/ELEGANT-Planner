@@ -13,9 +13,7 @@ The above python code consists of the following functions:
 **Output** of the .py code is 2 csv files, ***commonkernelsinputbytes_acrossmachines_gpu.csv*** for gpu and ***commonkernelsinputbytes_acrossmachines_cpu.csv*** for cpu.
  <br>
 
-[^1]: All the input csv for all the machines into one for cpu and one for gpu.- **[check_common_values_kernels_inputbytes.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/check_common_values_kernels_inputbytes.py)** is the source code for finding kernels (and input bytes) that are common between cpu and gpu.
+[^1]: All the input csv for all the machines into one for cpu and one for gpu.
 
 
-
-
-- **[merge_common_cpus_gpus.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/merge_common_cpus_gpus.py)** is the source code for finding
+- **[merge_common_cpus_gpus.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/merge_common_cpus_gpus.py)** is the source code for finding kernels (and input bytes) that are common between cpu and gpu.
