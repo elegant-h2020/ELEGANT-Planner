@@ -230,3 +230,16 @@
 ```
   
 ## Codes for training the GNNs: 
+
+* **Graph Transformers**:
+
+1. [main_kfold_Nospatial_scaled.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/main_kfold_Nospatial_scaled.py) <br>
+    - This script is the main code, which is the backbone of all the codes for the training.
+    - 
+    It contains the code where pytorch_geometric graphs are created by calling the function 
+
+   - This script reads results.csv from the different runs, and returns which kernels are compiled and which are not, in the form of two dataframes converted into csv.<br>
+   **Argument List:** <br>
+   ['compiled_and_not_compiled_kernels.py', 'results/cpu/results_epyc7_cpu_exp2.csv', 'results/analyzing_compiled_uncompiled_kernels/uncompiled_kernels_epyc7_cpu_exp1.csv', 'epyc7', 'cpu', 'exp2']
+
+x`
