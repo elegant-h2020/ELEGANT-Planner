@@ -236,12 +236,13 @@
 1. [main_kfold_Nospatial_scaled.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/main_kfold_Nospatial_scaled.py) <br>
     - This script is the main code, which is the backbone of all the codes for the training. <br>
     It contains the code where pytorch_geometric graphs are created by calling the function  ```def create_pg_graphs(...)``` from [pyg_crossval.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/pyg_crossval.py). <br>
-    What's more, through main we call the model ```class GTModel(nn.Module)``` from [GTM_kfold_nwrap_nospatial.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/GTM_kfold_nwrap_nospatial.py), and then train it by calling ```def train_one_epoch(...)``` from [train_kfold_no_wrapper.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/train_kfold_no_wrapper.py). We also evaluate the model and test it, by calling functions 
+    What's more, through main we call the model ```class GTModel(nn.Module)``` from [GTM_kfold_nwrap_nospatial.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/GTM_kfold_nwrap_nospatial.py), and then train it by calling ```def train_one_epoch(...)``` from [train_kfold_no_wrapper.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/train_kfold_no_wrapper.py). We also evaluate and test the model by calling functions ```def evaluate_per_epoch(...)``` and 
+
 
 
 
    **Argument List:** <br>
-   ['main_kfold_Nospatial_scaled.py', 'gpu', 'team2', '--target_is', 'devicetransfer', 'team2/', 'team2/kfolder_gpu', 'team2/testfolder_gpu', 'team2/scaled_testfolder_gpu.csv', '--epochs', '100', '--batch_size', '32', 'experiments/', '--dataset_name', 'fromCummins', '--scale_type', 'minmax']
+   ['main_kfold_Nospatial_scaled.py', 'gpu', 'team2', '--target_is', 'devicetransfer', 'team2/', 'team2/kfolder_gpu', 'team2/testfolder_gpu', 'team2/scaled_testfolder_gpu.csv', '--epochs', '100', '--batch_size', '32', 'experiments/', '--dataset_name', 'fromCummins', '--scale_type', 'minmax'] 
 
    
 
