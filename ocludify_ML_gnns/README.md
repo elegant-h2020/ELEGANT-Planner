@@ -236,7 +236,7 @@
 1. [main_kfold_Nospatial_scaled.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/main_kfold_Nospatial_scaled.py) <br>
     - This script is the main code, which is the backbone of all the codes for the training. <br>
     It contains the code where pytorch_geometric graphs are created by calling the function  ```def create_pg_graphs(...)``` from [pyg_crossval.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/pyg_crossval.py). <br>
-    What's more, through main we call the model ```class GTModel(nn.Module)``` from [GTM_kfold_nwrap_nospatial.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/GTM_kfold_nwrap_nospatial.py), and then train it by calling ```def train_one_epoch(epoch, model, optimizer, train_pg_graphs, batch_size)``` from [train_kfold_no_wrapper.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/train_kfold_no_wrapper.py). We also evaluate the model and test it, by calling functions 
+    What's more, through main we call the model ```class GTModel(nn.Module)``` from [GTM_kfold_nwrap_nospatial.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/GTM_kfold_nwrap_nospatial.py), and then train it by calling ```def train_one_epoch(...)``` from [train_kfold_no_wrapper.py](https://github.com/elegant-h2020/ELEGANT-Planner/blob/ML-GNNs/ocludify_ML_gnns/results/train_kfold_no_wrapper.py). We also evaluate the model and test it, by calling functions 
 
 
 
