@@ -18,21 +18,21 @@ def create_task_performance_statistics(operators_id_list,   predicted_times_cpu_
     operator_average_time_statistics["n_exit"] = 0
     operator_power_statistics["n_entry"] = 0
     operator_power_statistics["n_exit"] = 0
-    print("Operators ID list:", operators_id_list)
-    print("Pred cpu time vector: ",predicted_times_cpu_standard_real, type(predicted_times_cpu_standard_real))
+    #print("Operators ID list:", operators_id_list)
+    #print("Pred cpu time vector: ",predicted_times_cpu_standard_real, type(predicted_times_cpu_standard_real))
     
     #========== additions to fix tensor indexing problem ======# -x 
     pred_cpu_list = predicted_times_cpu_standard_real.flatten().tolist()
     pred_gpu_list = predicted_times_gpu_standard_real.flatten().tolist()
     pred_cpu_dict = dict(map(lambda i,j : (i,j), operators_id_list, pred_cpu_list)) #could be one dict -x
     pred_gpu_dict = dict(map(lambda i,j : (i,j), operators_id_list, pred_gpu_list))
-    print(pred_cpu_dict)
-    for device_id in range(num_cpu+num_gpu): # what is happening with devices ID? -x
-        print("Device ID: ", device_id) 
+    #print(pred_cpu_dict)
+    #for device_id in range(num_cpu+num_gpu): # what is happening with devices ID? -x
+        #print("Device ID: ", device_id) 
     
     for operator_id in operators_id_list:
         #print("Pred time item: ", predicted_times_cpu_standard_real[operator_id].item(), "Operator ID: ", operator_id)
-        print("Pred time from dict: ", pred_cpu_dict[operator_id], "Operator ID: ",operator_id)
+        #print("Pred time from dict: ", pred_cpu_dict[operator_id], "Operator ID: ",operator_id)
         #========# -x
         stats = [pred_cpu_dict[operator_id] if devices_info[device_id]["device_type"] == "CPU" else pred_gpu_dict[operator_id] for device_id in range(num_cpu+num_gpu)]
         #========#
@@ -44,9 +44,9 @@ def create_task_performance_statistics(operators_id_list,   predicted_times_cpu_
         operator_power_statistics[operator_id] = np.array(power_stats)
         
             
-    print(f"task statistics: {operator_time_statistics}")
-    print(f"average time statistics: {operator_average_time_statistics}")
-    print(f"task power statistics: {operator_power_statistics}")
+    #print(f"task statistics: {operator_time_statistics}")
+    #print(f"average time statistics: {operator_average_time_statistics}")
+    #print(f"task power statistics: {operator_power_statistics}")
         
     return operator_time_statistics, operator_average_time_statistics, operator_power_statistics
 
@@ -88,7 +88,7 @@ def create_task_performance_statistics_simulated(num_tasks, num_cpu, num_gpu):
     return task_statistics, average_task_statistics, task_power_statistics
 
 
-def create_task_transfer_times(G, num_cpu, num_gpu, same_node_devices):
+def create_task_transfer_times(G, num_cpu, num_gpu, same_node_devices, actual_links, rates_dict):
     """
     Creates the communication costs for all tasks and
     all pairs of available devices
@@ -99,34 +99,24 @@ def create_task_transfer_times(G, num_cpu, num_gpu, same_node_devices):
     # Create a pair for every device combination
     device_combinations = []
     device_combinations = list(itertools.combinations_with_replacement(devices, 2))
-
     # Add the reverse links
     devices.reverse()
     device_combinations += list(itertools.combinations_with_replacement(devices, 2))
+    imaginary_device_combinations = [x for x in device_combinations if x not in actual_links]
     device_combinations = set(device_combinations)
-
-    transfer_rates = {}
-
-    # Create transfer rates for all device pairs
-    for link in device_combinations:
-        # Assign non zero rates only for different device pairs
-        # and device pairs on different nodes
-        if link != link[::-1] and link not in same_node_devices:
-            # check if the reverse link is already inserted
-            if link[::-1] not in transfer_rates.keys():
-                rate = random.uniform(5, 10)
-                transfer_rates[link] = rate  # transfer rates in MB/s
-            else:
-                # Assign the same value with its reverse link
-                transfer_rates[link] = transfer_rates[link[::-1]]
-
+    transfer_rates = rates_dict
+    #print("Zeygh suskeuwn",device_combinations)
+    for link in imaginary_device_combinations:
+                transfer_rates[link] = 0  # these links do not actually exist
+    #print("TRANSFER RATES: ", transfer_rates)
     # Average transfer rate among available devices
-    transfer_rate_list = list(transfer_rates.values())
-    average_transfer_rate = np.mean(transfer_rate_list)
+    transfer_rate_list = list(rates_dict.values()) 
+    average_transfer_rate = np.mean(transfer_rate_list) # avg of the actual transfer rates
 
     transfer_times = {}
     average_transfer_times = {}
     data_sent_dict = {}
+    big_M = 999999999
 
     # Calculate communication costs between tasks in the graph
     # 1. The average communication cost between all tasks with a dependency
@@ -141,8 +131,10 @@ def create_task_transfer_times(G, num_cpu, num_gpu, same_node_devices):
             data_sent = random.uniform(0, 10)  # data transmitted between tasks in MB
             data_sent_dict[edge] = data_sent
             # zero transfer times if both tasks executed on the same device or devices of same node
-            transfer_times[edge] = {link: 0 if (link == link[::-1] or link in same_node_devices) else data_sent/transfer_rates[link] for link in device_combinations}
+            transfer_times[edge] = {link: 0 if (link == link[::-1] or link in same_node_devices) else data_sent/transfer_rates[link] if transfer_rates[link] != 0 else big_M for link in transfer_rates}
             average_transfer_times[edge] = data_sent / average_transfer_rate
+        #print("Edge name: ", edge)
+        #print("transfer_times[edge]: ",transfer_times[edge])
 
     return transfer_times, average_transfer_times, transfer_rates
 
