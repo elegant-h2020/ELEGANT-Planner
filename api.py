@@ -14,6 +14,7 @@ from torch_geometric.data import Data
 from torch_geometric.loader import DataLoader
 from GTMcrossval_nwrap_nospatial_newparametrized import GTModel
 import os
+from collections import defaultdict
 
 app = Flask(__name__)
 api = Api(app)
@@ -152,7 +153,40 @@ def device_info_from_json(nodes_json):
     print("Devices_info", devices_info)
     print("same_node_devices", same_node_devices)
     return devices_info, num_cpu, num_gpu, same_node_devices
-    
+
+
+def device_topology_info(nodes_link_json, devices_info):
+    actual_links =[]
+    rates_dict = {}
+    nodes_links = []
+    old_dict = {k: int(v['node_id'].split('_')[1]) for k, v in devices_info.items()}
+    new_dict = defaultdict(list)
+    for k, v in old_dict.items():
+        new_dict[v].append(k)
+    new_dict = dict(new_dict)
+    #print("node_ID-dev_ID: ",new_dict)
+    for item in nodes_link_json:
+        nodes_edge_tmp =  tuple(map(int, item['linkID'].split('-')))
+        nodes_edge = nodes_edge_tmp + (int(item['transferRate']),)
+        nodes_links.append(nodes_edge)
+    #print("NODE LINKS WITH RATES", nodes_links)
+    for link in nodes_links:
+        values1 = new_dict[link[0]]
+        values2 = new_dict[link[1]]
+        values3 = link[2]
+        for v1 in values1:
+            for v2 in values2:
+                 actual_links.append((v1,v2))
+                 #convert to MB/s
+                 rates_dict[(v1,v2)] = values3*0.125
+    print("actual_links: ", actual_links)
+    print("rates_dict: ", rates_dict)
+
+    ## to do: ftiakse tuples me devices, to rates_dict and to actual_links
+    return actual_links, rates_dict
+
+
+
 def pyg_from_string(code_str, input_bytes):
     """
     Create the pyg graph that represents an operator from its source code.
@@ -253,8 +287,16 @@ def create_pyg_list(source_codes):
         pyg_list.append(pyg_graph)
         print("Operator from pyg_list:", operator)
     return pyg_list
-    
-    
+
+
+def feasibility_check(response):
+    big_M = 999999999
+    flag = False
+    time_calculated = float(response["objective"]["time"])
+    if time_calculated > big_M:
+        flag = True
+    return flag
+
 class ObjectivesConfig(Resource):
     def post(self):
         global EXEC_TIME_WEIGHT
@@ -304,14 +346,17 @@ class Scheduling(Resource):
         except:
             abort(400, description="Invalid form of request data in availNodes")
              
+        
+        nodes_link_json = args.get("networkDelays")
+        actual_links, rates_dict = device_topology_info(nodes_link_json, devices_info)
         pyg_list = create_pyg_list(source_codes)
-        print("Pyg List: ", pyg_list)
+        #print("Pyg List: ", pyg_list)
         batch_loader = DataLoader(pyg_list, batch_size=len(pyg_list))
-        for step, data in enumerate(batch_loader):
-            print(f'Step {step + 1}:')
-            print('=======')
-            print(f'Number of graphs in the current batch: {data.num_graphs}')
-            print(data)
+        #for step, data in enumerate(batch_loader):
+        #    print(f'Step {step + 1}:')
+        #    print('=======')
+        #    print(f'Number of graphs in the current batch: {data.num_graphs}')
+        #    print(data)
             
         predicted_times_gpu_standard = gpu_model_standard(next(iter(batch_loader)))
                
@@ -322,15 +367,15 @@ class Scheduling(Resource):
         
         predicted_times_cpu_standard_real = predicted_times_cpu_standard * 29.09 + 2.71
         
-        print(f" estimates for gpu standard real: {predicted_times_gpu_standard_real}")
-        print(f" estimates for cpu standard real: {predicted_times_cpu_standard_real}")
-        print(f" Source Code Keys: {source_codes.keys()}")
+        #print(f" estimates for gpu standard real: {predicted_times_gpu_standard_real}")
+        #print(f" estimates for cpu standard real: {predicted_times_cpu_standard_real}")
+        #print(f" Source Code Keys: {source_codes.keys()}")
         operators_id_list = list(source_codes.keys())
         
         # Calculate the execution times for each operator on each device
         operator_time_statistics, operator_average_time_statistics, operator_power_statistics = create_task_performance_statistics(operators_id_list,   predicted_times_cpu_standard_real, predicted_times_gpu_standard_real, devices_info, num_cpu, num_gpu)
    
-        transfer_times, average_transfer_times, _ = create_task_transfer_times(operator_graph, num_cpu, num_gpu, same_node_devices)
+        transfer_times, average_transfer_times, _ = create_task_transfer_times(operator_graph, num_cpu, num_gpu, same_node_devices, actual_links, rates_dict)
         
         print(f"CCR: {np.mean(list(average_transfer_times.values()))/ np.mean(list(operator_average_time_statistics.values()))}")
         
@@ -360,20 +405,24 @@ class Scheduling(Resource):
 
         response["objective"]["time"] = str(makespan)
         response["objective"]["power"] = str(power)
-        ####
-        filename = 'response.json'
-        with open(filename,'w') as f:
-            json.dump(response,f)
-        
-        @after_this_request
-        def remove_file(response):
-            try:
-                os.remove(filename)
-            except Exception as error:
-                app.logger.error("Error removing response file", error)
-            return response
+        flag = feasibility_check(response)
+        if flag == False:
+            ####
+            filename = 'response.json'
+            with open(filename,'w') as f:
+                json.dump(response,f)
+            
+            @after_this_request
+            def remove_file(response):
+                try:
+                    os.remove(filename)
+                except Exception as error:
+                    app.logger.error("Error removing response file", error)
+                return response
 
-        return send_file(filename,mimetype='application/json')
+            return send_file(filename,mimetype='application/json')
+        else:
+            abort(jsonify(error='Incorrect operators constraint assignment based on network topology. Please check your constraints again.'), 400)
 
         ####
 api.add_resource(Scheduling, "/planner/schedule")
@@ -381,8 +430,8 @@ api.add_resource(ObjectivesConfig, "/planner/configure_objectives")
 
 if __name__ == "__main__":
     parser = ArgumentParser()
-    parser.add_argument("-p", "--port", default=8080, type=int, help="Port to listen on")
+    parser.add_argument("-p", "--port", default=8081, type=int, help="Port to listen on")
     args = parser.parse_args()
     port = args.port
 
-    app.run(host="127.0.0.1", port=port, debug=True)
+    app.run(host="0.0.0.0", port=8081, debug=True)
