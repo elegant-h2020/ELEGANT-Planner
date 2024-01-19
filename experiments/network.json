@@ -1,0 +1,226 @@
+[
+    {
+        "linkID": "1-2",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "1-3",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "1-4",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "1-5",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "1-6",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "1-7",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "1-8",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "2-1",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "2-3",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "2-4",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "2-5",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "2-6",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "2-7",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "2-8",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "3-1",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "3-2",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "3-4",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "3-5",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "3-6",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "3-7",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "3-8",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "4-1",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "4-2",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "4-3",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "4-5",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "4-6",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "4-7",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "4-8",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "5-1",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "5-2",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "5-3",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "5-4",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "5-6",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "5-7",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "5-8",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "6-1",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "6-2",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "6-3",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "6-4",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "6-5",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "6-7",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "6-8",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "7-1",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "7-2",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "7-3",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "7-4",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "7-5",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "7-6",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "7-8",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "8-1",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "8-2",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "8-3",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "8-4",
+        "transferRate": "1000"
+    },
+    {
+        "linkID": "8-5",
+        "transferRate": "250"
+    },
+    {
+        "linkID": "8-6",
+        "transferRate": "500"
+    },
+    {
+        "linkID": "8-7",
+        "transferRate": "500"
+    }
+]

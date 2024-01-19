@@ -1,0 +1,61 @@
+{
+    "placement": [
+        {
+            "operator_id": "3",
+            "device_id": "node_1-device_1",
+            "node_id": "node_1"
+        },
+        {
+            "operator_id": "0",
+            "device_id": "node_1-device_1",
+            "node_id": "node_1"
+        },
+        {
+            "operator_id": "6",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "4",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "1",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "7",
+            "device_id": "node_1-device_1",
+            "node_id": "node_1"
+        },
+        {
+            "operator_id": "5",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "2",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "8",
+            "device_id": "node_1-device_1",
+            "node_id": "node_1"
+        },
+        {
+            "operator_id": "9",
+            "device_id": "node_6-device_1",
+            "node_id": "node_6"
+        }
+    ],
+    "objective": {
+        "time": "34.25761819873743",
+        "actual_time": "40.59953419098853",
+        "power": "760.9919548562467",
+        "actual_power": "819.713399228942",
+        "post_time": 3.399358034133911
+    }
+}
