@@ -4,12 +4,17 @@ import networkx as nx
 import itertools
 
 
+
+
+
 def create_task_performance_statistics(operators_id_list,   predicted_times_cpu_standard_real, predicted_times_gpu_standard_real, devices_info, num_cpu, num_gpu):
     """
     """
     operator_time_statistics = {}
     operator_average_time_statistics = {}
     operator_power_statistics = {}
+    actual_operator_time_statistics = {}
+    actual_operator_power_statistics = {}
     
     # Add zero execution times and powers for entry and exit nodes
     operator_time_statistics["n_entry"] = np.zeros(num_cpu + num_gpu)
@@ -26,29 +31,64 @@ def create_task_performance_statistics(operators_id_list,   predicted_times_cpu_
     pred_gpu_list = predicted_times_gpu_standard_real.flatten().tolist()
     pred_cpu_dict = dict(map(lambda i,j : (i,j), operators_id_list, pred_cpu_list)) #could be one dict -x
     pred_gpu_dict = dict(map(lambda i,j : (i,j), operators_id_list, pred_gpu_list))
-    #print(pred_cpu_dict)
+    #print("pred_cpu_dict: ", pred_cpu_dict)
+    #print("pred_gpu_dict: ", pred_gpu_dict)
     #for device_id in range(num_cpu+num_gpu): # what is happening with devices ID? -x
         #print("Device ID: ", device_id) 
     
+    def generate_time_value(device_id, flag):
+        if flag == False: 
+            random.seed(17) 
+            random_value = random.uniform(1, 10)
+        else:
+            random.seed(42) #seed for actual values
+            random_value = random.uniform(1, 10)           
+        if devices_info[device_id]["device_type"] == "CPU":
+            return random_value
+        else:
+            specific_values = [3, 3.25, 3.5, 3.75, 4]
+            return random_value / random.choice(specific_values)
+        
+    def generate_power_value(device_id, flag):
+        if flag == False: 
+            random.seed(17) 
+            random_value = random.uniform(50, 100)
+        else:
+            random.seed(42) #seed for actual values
+            random_value = random.uniform(50, 100)           
+        if devices_info[device_id]["device_type"] == "CPU":
+            return random_value
+        else:
+            specific_values = [3, 3.25, 3.5, 3.75, 4]
+            return random_value * random.choice(specific_values)
+
     for operator_id in operators_id_list:
         #print("Pred time item: ", predicted_times_cpu_standard_real[operator_id].item(), "Operator ID: ", operator_id)
         #print("Pred time from dict: ", pred_cpu_dict[operator_id], "Operator ID: ",operator_id)
-        #========# -x
-        stats = [pred_cpu_dict[operator_id] if devices_info[device_id]["device_type"] == "CPU" else pred_gpu_dict[operator_id] for device_id in range(num_cpu+num_gpu)]
-        #========#
+        
+        #Change stats when models get retrained with new data
+        #stats = [pred_cpu_dict[operator_id] if devices_info[device_id]["device_type"] == "CPU" else pred_gpu_dict[operator_id] for device_id in range(num_cpu+num_gpu)]
+        stats = [generate_time_value(device_id,flag=False) for device_id in range(num_cpu + num_gpu)]
+        actual_stats = [generate_time_value(device_id,flag=True) for device_id in range(num_cpu + num_gpu)]
 
         operator_time_statistics[operator_id] = np.array(stats)
+        actual_operator_time_statistics[operator_id] = np.array(actual_stats)
         operator_average_time_statistics[operator_id] = np.mean(stats)
         
-        power_stats = [105 if devices_info[device_id]["device_type"] == "CPU" else 120 for device_id in range(num_cpu+num_gpu)]
+
+        power_stats = [generate_power_value(device_id,flag=False) for device_id in range(num_cpu + num_gpu)]
+        actual_power_stats = [generate_power_value(device_id,flag=True) for device_id in range(num_cpu + num_gpu)]
+
         operator_power_statistics[operator_id] = np.array(power_stats)
-        
-            
+        actual_operator_power_statistics[operator_id] = np.array(actual_power_stats)
+
+    actual_operator_time_statistics["n_exit"] = np.zeros(((num_cpu + num_gpu),))
+
     #print(f"task statistics: {operator_time_statistics}")
     #print(f"average time statistics: {operator_average_time_statistics}")
     #print(f"task power statistics: {operator_power_statistics}")
         
-    return operator_time_statistics, operator_average_time_statistics, operator_power_statistics
+    return operator_time_statistics, operator_average_time_statistics, operator_power_statistics, actual_operator_time_statistics, actual_operator_power_statistics
 
 def create_task_performance_statistics_simulated(num_tasks, num_cpu, num_gpu):
     """
