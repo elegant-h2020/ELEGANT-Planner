@@ -1,0 +1,86 @@
+{
+    "placement": [
+        {
+            "operator_id": "0",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "7",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "8",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "1",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "9",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "2",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "10",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "3",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "11",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "4",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "12",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "5",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "13",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "6",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        },
+        {
+            "operator_id": "14",
+            "device_id": "node_5-device_1",
+            "node_id": "node_5"
+        }
+    ],
+    "objective": {
+        "time": "24.419379374624747",
+        "actual_time": "33.77420593060477",
+        "power": "3995.2077629952933",
+        "actual_power": "3688.7102965302374",
+        "post_time": 5.052224159240723
+    }
+}
