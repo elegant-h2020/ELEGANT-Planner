@@ -1,4 +1,3 @@
-pip==21.2.4
 setuptools==61.2.0
 urllib3==1.26.15
 absl-py==1.4.0
@@ -12,7 +11,7 @@ charset-normalizer==3.1.0
 click==8.0.4
 cryptography==39.0.1
 filelock==3.12.0
-Flask==2.0.3
+Flask==2.2.2
 Flask-RESTful==0.3.9
 flit_core==3.8.0
 future==0.18.3
@@ -27,8 +26,8 @@ networkx==2.8.4
 numpy==1.23.5
 packaging==23.0
 pooch==1.4.0
-programl==0.3.2
 protobuf==3.20.1
+programl==0.3.2
 psutil==5.9.5
 pycparser==2.21
 pyOpenSSL==23.0.0
@@ -43,11 +42,9 @@ scipy==1.10.1
 six==1.16.0
 sympy==1.11.1
 threadpoolctl==3.1.0
-torch==2.0.0
+torch==2.0.1
 torch-geometric==2.3.0
-torch-scatter==2.1.1
-torch-sparse==0.6.17
 tqdm==4.65.0
 typing_extensions==4.5.0
-Werkzeug==2.0.3
+Werkzeug==2.2.2
 wheel==0.37.1
