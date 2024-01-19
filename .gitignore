@@ -34,12 +34,4 @@ pyvenv.cfg
 /tests/received_vik.json
 /tests/test_docker_comm.py
 /to_llvm.py
-/experiments/exp_jsons_4
-/experiments/exp_jsons_8
-/experiments/exp_jsons_16
-/experiments/exp_jsons_network
-/experiments/result_jsons_4
-/experiments/result_jsons_8
-/experiments/result_jsons_16
-/experiments/result_jsons_network
-/experiments/train_jsons
+experiments/
