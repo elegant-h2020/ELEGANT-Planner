@@ -39,7 +39,7 @@ class HeftScheduler():
                 Mapping of tasks to nodes as defined by the user
     """
 
-    def __init__(self, G, task_statistics, average_task_statistics, task_power_statistics, transfer_times, average_transfer_times, available_devices,constraints, devices_info):
+    def __init__(self, G, task_statistics, average_task_statistics, task_power_statistics, transfer_times, average_transfer_times, available_devices,constraints, devices_info, actual_operator_time_statistics, actual_operator_power_statistics):
         self.task_graph = G
         self.task_statistics = task_statistics
         self.average_task_statistics = average_task_statistics
@@ -55,6 +55,8 @@ class HeftScheduler():
         self.aft = {}
         self.ast = {}
         self.avail = [0] * len(available_devices)
+        self.actual_operator_time_statistics = actual_operator_time_statistics
+        self.actual_operator_power_statistics = actual_operator_power_statistics
 
     def upward_rank(self):
         """
@@ -203,9 +205,9 @@ class HeftScheduler():
         scheduled_tasks = {}
         rank = self.upward_rank()
         unscheduled_tasks = self.prioritize_tasks(rank)
-        print("Constraints",constraints)
-        print("Devices Info", devices_info)
-        print("Available devices:",self.available_devices)
+        #print("Constraints",constraints)
+        #print("Devices Info", devices_info)
+        #print("Available devices:",self.available_devices)
         new_constraints = {}
         for key, value in constraints.items():
             #map node constraints with the devices the node has
@@ -221,7 +223,7 @@ class HeftScheduler():
             new_constraints[key] = devs
             
 
-        print("New Device Constraints: ", new_constraints)
+        #print("New Device Constraints: ", new_constraints)
             
 
         while not unscheduled_tasks.empty():
@@ -283,7 +285,7 @@ class HeftScheduler():
         return scheduled_tasks
 
 
-    def compute_scheduling_time_execution(self, scheduling):
+    def compute_scheduling_time_execution(self, scheduling, flag):
         """
         Attributes
         ----------
@@ -317,7 +319,10 @@ class HeftScheduler():
 
             # Compute finish time of task and update values
             start_time = max(device_avail_time, max_ready_time)
-            finish_time = start_time + self.task_statistics[task][device]
+            if flag == False:
+                finish_time = start_time + self.task_statistics[task][device]
+            else:
+                finish_time = start_time + self.actual_operator_time_statistics[task][device]
             aft[task] = finish_time
             avail[device] = finish_time
 
